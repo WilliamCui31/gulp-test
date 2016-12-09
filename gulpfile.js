@@ -6,7 +6,7 @@ gulp.task('css',function(){
   gulp.src('src/less/**/*.less')
       .pipe(less())
       .pipe(autoprefixer({ browsers: ['last 2 versions', 'Android >= 4.0'] }))
-      .pipe(gulp.dest('dest/css/'));
+      .pipe(gulp.dest('dist/css/'));
 });
 
 gulp.task('default',['css']);
