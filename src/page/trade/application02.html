@@ -1,0 +1,73 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link type="text/css" rel="stylesheet/less" href="../../css/global.less" />
+<link type="text/css" rel="stylesheet/less" href="../../css/main.less" />
+<link type="text/css" rel="stylesheet/less" href="../../css/trade.less" />
+<title>eIPO</title>
+</head>
+
+<body>
+<div id="container">
+<div id="headerPage"></div>
+<div id="content" name="eIPO">
+	<div id="left_con">
+    	<div id="application" class="mainBox" current="0">
+        	<div class="title">申請<span></span></div>
+            <div id="applicationBarPage"></div>
+            <h3>條款及細則</h3>
+            <div id="clauseBox">
+            	您在進行網上新股認購前，請仔細閱讀本條款及細則及有關新股上市的資料。<br />
+                申請新股認購之條款及細則<br />
+                須視乎並受其他條約及細則所規限和約束，申銀萬國證券(香港)有限公司（以下簡稱「本行」）將透過由本行運作及維持之互聯網網站，讓申請人可以透過本行，就網上公開發售證券提出申請。<br />
+                您於申請香港公開發售股份前，請確定已參閱招股章程及有關申請表格的條款及細則。 您申請香港公開發售股份之決定，應依據招股章程的內容作出，而不應根據其他有關香港公開發售股份的資料，包括推廣或宣傳資料及媒體報道。<br />
+                有關新股上市的公告、招股書、及公開發售 - 申請表格，請參閱「上市事宜及上市公司」:<br />
+                <a href="http://www.hkexnews.hk/listedco/listconews/advancedsearch/search_active_main.asp" target="_blank">http://www.hkexnews.hk/listedco/listconews/advancedsearch/search_active_main.asp</a><br />
+                所有透過此渠道、平台或系統認購新股之申請(“有關申請”)均須由本行覆核及最後審批。透過本行及此渠道、平台或系統遞交申請並不代表有關申請已經生效或成功。本行擁有絕對酌情權並保留所有權利拒絕有關申請，而沒有責任給予任何理由。<br />
+                如你決定透過此渠道、平台或系統申請認購新股，請不要再透過其他途徑遞交申請（包括填妥及遞交白色申請表、黃色申請表或透過中央結算系統平台填妥及遞交電子申請）。否則，此將會構成重複認購的申請，而所有重複認購或懷疑重複認購的申請將一律被拒絕。<br />
+                本行對於此網頁上內容及其文字表達的準確性及完整性將一概不會負任何責任。而本行亦明確地表示不會對任何人士因倚賴此網頁上全部或任何部分內容而引致的任何損失負上任何責任。<br />
+                本行對發售章程及有關申請表格之內容毋須承擔任何責任，且並無及不得視為已對此給予認可。<br />
+                本行並非申請人之投資顧問，毋須就您或申請人（或聯名申請人）因使用本行網上新股認購服務進行投資所蒙受之任何損失而負責。<br />
+                本行毋須因任何理由（包括但不限於任何電腦或電子系統或設備出現故障或錯誤）延遲按申請人指示行事或部分完成或未能按申請人指示行事而令申請人蒙受之任何損失、損害或開支承擔責任。<br />
+            </div>
+            <div class="chk"><label><input type="checkbox" id="chkClause" name="chkClause" value="adf" /> 本人已細閱、明白及接受以上條款及細則、風險披露聲明、免責條款及「公開發售 – 申請表格」內的申請條款及條件。</label></div>
+            <div id="afterMath">
+            	<div id="backHome"><a href="eIPO.html">返回新股申購目錄<img src="../../images/trading/home.png" /></a></div>
+                <div class="btnArea"><input type="image" src="../../images/common/Back_cn.png" id="btnPrev" name="btnPrev" value="上一步" /><input type="image" src="../../images/common/Next_cn.png" id="btnNext" name="btnNext" disabled="disabled" value="下一步" /></div>
+                <div class="clear"></div>
+            </div>
+        </div>
+    </div>
+    <div id="rightBarPage"></div>
+    <div class="clear"></div>
+</div>
+<div id="footerPage"></div>
+</div>
+<script type="text/javascript" src="../../js/less-1.3.0.min.js"></script>
+<script type="text/javascript" src="../../js/jquery-1.7.2.min.js"></script>
+<script type="text/javascript" src="../../js/global.js"></script>
+<script type="text/javascript">
+//包含文件
+$("#headerPage").load("../shared/header.html");
+$("#footerPage").load("../shared/footer.html");
+$("#rightBarPage").load("../shared/rightBar.html");
+$("#applicationBarPage").load("../shared/applicationBar.html");
+$.getScript("../../js/global.js");
+
+//页面逻辑
+$("#chkClause").click(function(){
+	$("#btnNext").attr("disabled","disabled");
+	if($(this).attr("checked")=="checked"){
+		$("#btnNext").removeAttr("disabled");
+	}
+})
+$("#btnPrev").click(function(){
+	window.open("application01.html","_top");
+})
+$("#btnNext").click(function(){
+	window.open("application03.html","_top");
+})
+</script>
+</body>
+</html>

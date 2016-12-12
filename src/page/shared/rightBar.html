@@ -1,0 +1,98 @@
+<div id="right_bar">
+	<div class="plate" style="margin-top:0px;">
+        <h3>參考指數（15分鐘延時）</h3>
+        <div class="plate_con">
+            <table width="100%">
+              <tr>
+                <td width="35%">&nbsp;</td>
+                <td width="32%" align="right">指數</td>
+                <td align="right"><a href="javascript:void(0);" class="switch">升跌<em></em></a></td>
+              </tr>
+              <tr>
+                <td>恒生指數</td>
+                <td align="right"><span>21,206.27</span></td>
+                <td align="right"><span class="percent">(-2.85%)</span><span class="num">-598.27</span></td>
+              </tr>
+              <tr>
+                <td>創業板</td>
+                <td align="right"><span>392.01</span></td>
+                <td align="right"><span class="percent">(-1.21%)</span><span class="num">-4.81</span></td>
+              </tr>
+              <tr>
+                <td>恒生中資</td>
+                <td align="right"><span>3,895.33</span></td>
+                <td align="right"><span class="percent">(-3.28%)</span><span class="num">-131.84</span></td>
+              </tr>
+              <tr class="raise">
+                <td>恒生國企</td>
+                <td align="right"><span>9,753.35</span></td>
+                <td align="right"><span class="percent">(+0.89%)</span><span class="num">+85.93</span></td>
+              </tr>
+              <tr>
+                <td>大型股</td>
+                <td align="right"><span>25,257.17</span></td>
+                <td align="right"><span class="percent">(-2.99%)</span><span class="num">-747.69</span></td>
+              </tr>
+              <tr>
+                <td>主板成交額</td>
+                <td align="right"><span>59.23B</span></td>
+                <td align="right"><span class="percent">--</span><span class="num">--</span></td>
+              </tr>
+              <tr>
+                <td colspan="3" align="right" style="color:#666;">至少15分鐘延時報價</td>
+              </tr>
+            </table>
+        </div>
+    </div>
+    <div class="plate">
+        <h3>Account Balance</h3>
+        <div class="plate_con">
+            <div class="data"><div class="name">Cash Balance:</div><div class="value">HK$100,000.00</div><div class="clear"></div></div>
+            <div class="data"><div class="name">Buying Power:</div><div class="value">HK$100,000.00</div><div class="clear"></div></div>
+            <div class="data"><div class="name">Credit Limit:</div><div class="value">HK$1000,000.00</div><div class="clear"></div></div>
+        </div>
+    </div>
+    <div class="plate">
+        <h3>Contact Information</h3>
+        <div class="plate_con">
+            <div class="service">
+                <b>Customer Services</b><br />
+                @ <a href="#">cs@sywg.com.hk</a>
+            </div>
+        </div>
+    </div>
+    <div class="plate" style="display:none;">
+        <h3>HSI Chart</h3>
+        <div class="plate_con">
+            <div class="plate_img">
+                <img id="hsi" width="190" height="118" src="http://content.etnet.com.hk/content/sywg/common/chart_oneminute.php?code=HSI" />
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+	$("a.switch").toggle(
+		function(){
+			$("span.num").hide();
+			$("span.percent").show();
+		},
+		function(){
+			$("span.percent").hide();
+			$("span.num").show();
+		}
+	)
+	$("#hsi").click(function(){
+		$("body").append('<div id="hsiMask" style="display:none;"></div><div id="hsiPop" class="pop" style="display:none; position:absolute; z-index:101;  padding:5px; *padding:25px 5px 5px 5px; background-color:#FFF; margin-top:-100px; margin-left:-150px; top:50%; left:50%;"><div class="close"><a href="#">X</a></div><div id="hsiBox" class="mainBox" style="margin-bottom:0px;"><div class="title">HSI Chart<span></span></div><img src="http://content.etnet.com.hk/content/sywg/common/chart_oneminute.php?code=HSI" /></div></div>');
+		$("#hsiMask").fadeTo("slow","0.3");
+		$("#hsiPop").fadeIn("slow");
+	});
+	$("body").on("click","#hsiMask",function(){
+		$("#hsiPop").fadeOut().remove();
+		$(this).fadeOut().remove();
+	});
+	$("body").on("click","#hsiPop .close",function(){
+		$("#hsiPop").fadeOut().remove();	
+		$("#hsiMask").fadeOut().remove();
+		return false;
+	});
+</script>

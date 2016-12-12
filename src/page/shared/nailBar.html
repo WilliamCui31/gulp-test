@@ -1,0 +1,36 @@
+<div id="nail_bar">
+    <div class="handle">Quick Ref.</div>
+    <div id="rightBarPage"></div>
+</div>
+<script type="text/javascript">
+$("#rightBarPage").load("../shared/rightBar.html");
+
+(function(){
+	var spread=true;
+	$("#nail_bar").hover(
+		function(){
+			if(spread){
+				$("#right_bar:hidden").slideDown("fast");
+			}
+		},
+		function(){
+			if(spread){
+				$("#right_bar:visible").slideUp("fast");
+			}
+		}
+	);
+	$("#nail_bar .handle").toggle(
+		function(){
+			$("#right_bar").slideDown("fast",function(){
+				spread=false;
+			});
+		},
+		function(){
+			$("#right_bar").slideUp("fast",function(){
+				spread=true;
+			});
+		}
+	)
+})();
+
+</script>

@@ -1,0 +1,500 @@
+@charset "utf-8";
+/* CSS Document */
+
+@main-color:#4F8EC3; //蓝色
+@light-color:#A3D9F5; //浅蓝色
+@gray-color:#EFEFEF;
+@lightGray-color:#F3F7F8;
+@blue-color:#0D69BE;
+@hover-color:#A3D9F5;
+@global-margin-width:10px;
+@global-border:1px solid #7A7A7A;
+
+#master{
+	.tipTitle{
+		padding:10px;
+		img{
+			vertical-align:text-bottom;
+		}
+	}
+	.stress{
+		background-color:@light-color;
+		td{
+			border-left:none;
+			border-bottom:20px solid #FFF;
+		}
+	}
+	td{
+		padding:10px 20px;
+		border-left:2px solid #FFF;
+	}
+	.changeButton{
+		float:right;
+		margin-bottom:5px;
+	}
+	.innerTable{
+		td{
+			border-left:none;
+			padding:2px 40px 2px 0px;
+			&.alignCenter{
+				text-align:center;
+			}
+		}
+	}
+}
+
+#enOtp{
+	#contactInfoCon{
+		p{
+			color:#666;
+			line-height:16px;
+			margin-bottom:15px;
+		}
+	}
+	p{
+		color:#666;
+		line-height:16px;
+	}
+	tr.warn td{
+		color:#F00; 
+		font-size:16px; 
+		font-weight:bolder;
+	}
+	td span{
+		color:#F00;
+	}
+}
+#enSuccess{
+	h2{
+		text-align:center; 
+		padding:10px; 
+		background-color:@light-color; 
+		color:#333; 
+		font-size:16px;
+		font-weight:400;
+	}
+	#refNum{
+		float:right;
+		margin:15px 5px;
+		font-weight:bolder;
+		text-decoration:underline;
+	}
+	p{
+		line-height:16px;
+		margin:0px 5px 15px 20px;
+	}
+	td{
+		padding:10px 20px;
+	}
+}
+
+#enSuspended{
+	h2{
+		text-align:center; 
+		padding:10px; 
+		background-color:@light-color; 
+		color:#333; 
+		font-size:16px;
+		font-weight:400;
+	}
+	p{
+		font-size:16px; 
+		font-weight:bold;
+		padding:10px;
+	}
+	td{
+		padding:10px 20px;
+	}
+	.modules{
+		span{
+			padding-left:10px;
+		}
+	}
+	tr.warn td{
+		color:#F00; 
+		font-size:16px; 
+		font-weight:bolder;
+	}
+}
+
+#steps{
+	margin-bottom:20px;
+	height:25px;
+	padding:4px 0px;
+	background-color:@light-color;
+	li{
+		float:left;
+		width:150px;
+		height:25px;
+		line-height:25px;
+		margin-right:-14px;
+		padding-left:30px;
+		font-weight:bolder;
+		background:url(../images/common/steps_dark.png) no-repeat;
+		span{
+			display:inline-block;
+			margin-right:10px;
+			margin-top:-5px;
+			color:#FFF;
+			font-size:25px;
+			vertical-align:middle;
+		}
+		&.current{
+			background:url(../images/common/steps_bright.png) no-repeat;
+		}
+	}
+}
+
+#accInfo,#perInfo{
+	line-height:20px;
+	.desText{
+		padding-bottom:12px;
+	}
+	tr.border_bottom{
+		td{
+			border-bottom-color:#E5EFF8; 
+			border-bottom-style:solid; 
+			border-bottom-width:1px;
+			p{
+				color:#333;
+				padding-left:20px;
+			}
+		}
+	}
+	p{
+		color:#666;
+		font-size:12px;
+	}
+	.btnArea{
+		text-align:right;
+		padding:10px 0px;
+		img{
+			margin-left:100px;
+		}
+	}
+	#topTip{
+		text-align:center; 
+		padding: 10px; 
+		background-color:@light-color; 
+		color:#333; 
+		font-size:16px;
+	}
+	#tips{
+		text-align:right;
+		margin-top:15px;
+	}
+	.centerAlign{
+		text-align:center;
+	}
+	ol{
+		color:#666;
+		padding-left:20px;
+		ul{
+			padding-left:20px;
+			list-style:decimal;
+		}
+	}
+}
+
+#termsPop{
+	margin-top:-250px;
+	margin-left:-300px;
+	top:50%;
+	left:50%;
+	width:600px;
+	border:2px solid #999;
+	padding:10px 20px;
+	.close{
+		width:20px;
+		height:20px;
+		cursor:pointer;
+		text-align:center;
+		line-height:20px;
+	}
+	.statement{
+		color:#1178B2;
+		font-size:14px;
+		font-weight:bolder;
+		background:url(../images/log.png) left 5px no-repeat;
+		padding-left:28px;
+		padding-top:10px;
+		width:560px;
+	}
+	#termsBox{
+		margin-top:5px;
+		padding:0px 10px 20px 10px;
+		border:2px solid #1178B2;
+		h1{
+			margin:20px 0px;
+		}
+		p{
+			font-size:16px;
+			margin-top:20px;
+		}
+	}
+	#agree{
+		padding:5px 10px 0px 15px;
+		.checkBox{
+			float:left;
+			padding-top:2px;
+		}
+		.checkCon{
+			float:left;
+			margin-left:10px;
+			font-size:16px;
+			width:550px;
+		}
+		.btnArea{
+			clear:both;
+			text-algin:center;
+			padding-left:200px;
+			input{
+				margin-right:20px;
+			}
+		}
+	}
+}
+#birthday input{
+	color:#999;
+}
+
+.chPwd{
+	padding:20px 40px 10px 40px;
+	.pwdCon{
+		width:650px;
+		padding-top:20px;
+		text-align:left;
+	}
+	.tips{
+		float:left;
+		text-align:left;
+		line-height:24px;
+		width:300px;
+		padding-bottom:50px;
+		background:url(../images/common/line.png) right center no-repeat;
+		h3{
+			margin-left:20px;
+			margin-bottom:5px;
+		}
+		li{
+			list-style:none;
+			padding-left:18px;
+			padding-bottom:5px;
+			background:url(../images/common/dot.png) left 5px no-repeat;
+		}
+	}
+	.loginPwd{
+		float:right;
+		padding-top:20px;
+		width:350px;
+		input{
+			width:160px;
+			height:20px;
+			line-height:20px;
+			padding-left:5px;
+			border:1px solid #999;
+		}
+		td{
+			text-align:right;
+			line-height:20px;
+			&#error{
+				color:red;
+			}
+		}
+		.errorTips{
+			left:170px;
+		}
+	}
+	.tradePwd{
+		float:right;
+		padding-top:20px;
+		width:350px;
+		#userId,#oPwd,#nTradePwd,#aTradePwd{
+			width:120px;
+			height:20px;
+			line-height:20px;
+			padding-left:5px;
+			border:1px solid #999;
+		}
+		td{
+			line-height:20px;
+			&.rightAlign{
+				text-align:right;
+			}
+			&.leftAlign{
+				text-align:left;
+			}
+		}
+		.errorTips{
+			left:130px;
+		}
+	}
+	.validate{
+		position:relative;
+		text-align:left;
+	}
+	.errorTips{
+		visibility:hidden;
+		position:absolute;
+		left:170px;
+		top:-1px;
+		margin-right:-280px;
+		padding:2px 4px 2px 20px;
+		line-height:16px;
+		color:#F00;
+		text-align:left;
+		border:1px dashed @main-color;
+		white-space:nowrap;
+		background:url(../images/common/warning.png) 2px 2px no-repeat;
+	}
+	.btnArea{
+		clear:both;
+		text-align:right;
+		margin-bottom:10px;
+		a{
+			display:inline-block;
+			margin-left:30px;
+		}
+	}
+}
+
+#forms{
+	padding:15px 20px;
+	.item{
+		margin-bottom:25px;
+		h3{
+			color:#A66600;
+			margin-bottom:10px;
+		}
+		li{
+			padding:5px 10px 5px 5px;
+			border-bottom:1px dotted #999;
+			a:link,a:visited{
+				text-decoration:none;
+				color:@main-color;
+			}
+			a:hover{
+				text-decoration:underline;
+			}
+		}
+	}
+}
+
+#faq{
+	padding:20px 60px 10px 20px;
+	h3{
+		color:@main-color;
+		margin-bottom:15px;
+	}
+	li{
+		margin-bottom:25px;
+		h4{
+			display:inline;
+			font-weight:normal;
+			color:#A18C53;
+			cursor:pointer;
+		}
+		p{
+			display:none;
+			position:relative;
+			margin-top:15px;
+			padding:10px;
+			background-color:#F0ECE1;
+			font-size:14px;
+			line-height:22px;
+			zoom:1;
+			span{
+				position: absolute;
+				top: -10px;
+				top: -12px/0;
+				left: 20px;
+				color: #F0ECE1;
+				font-size: 24px;
+			}
+		}
+	}
+}
+
+#monthly,#daily{
+	ul{
+		margin-bottom:8px;
+		li{
+			width:27%;
+			float:left;
+			margin-right:2%;
+			padding:8px 15px;
+			border-bottom:1px dotted #999;
+			a:link,a:visited{
+				color:@main-color;
+				text-decoration:none;
+			}
+			a:hover{
+				text-decoration:underline;
+			}
+		}
+	}
+}
+#limited,#HK_limited{
+	td{
+		font-size:14px;
+		padding:10px 10px;
+		border:2px solid @main-color;
+		a:link,a:visited{
+			color:#908D84;
+			text-decoration:none;
+		}
+		a:hover{
+			text-decoration:underline;
+		}
+	}
+	tr.tit{
+		td{
+			background-color:@light-color;
+		}
+	}
+}
+
+#fundIn,#fundOut{
+	line-height:24px;
+	.left{
+		float:left;
+		width:270px;
+		padding-left:30px;
+		li{
+			padding-left:20px;
+			margin-bottom:8px;
+			background:url(../images/common/dot.png) left 5px no-repeat;
+		}
+	}
+	.right{
+		float:right;
+		width:370px;
+		padding:50px 0px 60px 35px;
+		background:url(../images/common/line.png) left center no-repeat;
+		td{
+			div{
+				font-weight:normal;
+			}
+			span.stress{
+				color:@main-color;
+			}
+			input{
+				padding-left:5px;
+			}
+		}
+		#deposit{
+			width:112px;
+		}
+		textarea{
+			width:145px;
+			height:60px;
+			padding:5px;
+		}
+	}
+	#btnBack{
+		clear:both;
+		position:absolute;
+		right:10px;
+		bottom:10px;
+	}
+}

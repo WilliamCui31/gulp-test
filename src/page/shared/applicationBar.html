@@ -1,0 +1,13 @@
+<div id="applicationBar">
+	<ul>
+        <li><span>1</span>公開發售詳情</li>
+        <li><span>2</span>輸入申購資料</li>
+        <li><span>3</span>確認申購</li>
+        <li><span>4</span>申購完成</li>
+        <div class="clear"></div>
+    </ul>
+</div>
+<script type="text/javascript">
+	var current=$("#application").attr("current");
+	$("#applicationBar").find("li").eq(current).addClass("current");
+</script>

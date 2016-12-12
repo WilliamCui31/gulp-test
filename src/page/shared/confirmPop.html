@@ -1,0 +1,112 @@
+<div id="confirmPop" class="pop" style="display:none;">
+    <div class="close"><a href="#">X</a></div>
+    <div id="confirmation" class="blueBox">
+        <div class="title">Confirmation<span></span></div>
+        <div class="tips">
+        	Please verify the following details and click the <b>CONFIRM</b> button to proceed. or, Click the <b>CANCEL</b> button to return.
+        </div>
+        <div class="modules">
+        <table width="100%">
+          <tr class="secondaryColor">
+            <td width="160" class="bold">Account:</td>
+            <td id="tdAccount">0024894-00-2 Chan Tai Man(HKD)</td>
+          </tr>
+          <tr>
+            <td class="bold">Instruction</td>
+            <td id="tdMethod"></td>
+          </tr>
+          <tr class="secondaryColor">
+            <td class="bold">Stock Code:</td>
+            <td id="tdCode">00218.HK</td>
+          </tr>
+          <tr>
+            <td class="bold">Stock Name:</td>
+            <td id="tdName">Shenyin Wanguo</td>
+          </tr>
+          <tr class="secondaryColor">
+            <td class="bold">Price:</td>
+            <td id="tdPrice"><span class="stress">0</span></td>
+          </tr>
+          <tr>
+            <td class="bold">Quantity:</td>
+            <td id="tdQuantity">5.000</td>
+          </tr>
+          <tr class="secondaryColor">
+            <td class="bold">Transaction Amount:</td>
+            <td id="tdAmount">HKD 49.750.00</td>
+          </tr>
+          <tr class="charges">
+            <td class="bold">Charges:</td>
+            <td>
+            	$49.750.00 <a href="javascript:void(0);"></a>
+                <div id="chargesDetail">
+                	<div class="arrow"></div>
+                	<div class="tit">Charges Detail</div>
+                	<table width="100%">
+                      <tr>
+                        <td width="75%">Commission</td>
+                        <td class="rightAlign">127.50</td>
+                      </tr>
+                      <tr class="secondaryColor">
+                        <td>Stamp Duty</td>
+                        <td class="rightAlign">60.00</td>
+                      </tr>
+                      <tr>
+                        <td>Transaction Levies</td>
+                        <td class="rightAlign">3.00</td>
+                      </tr>
+                      <tr class="secondaryColor">
+                        <td>Investors Compensate Levy</td>
+                        <td class="rightAlign">0.00</td>
+                      </tr>
+                      <tr>
+                        <td>Trading Fee</td>
+                        <td class="rightAlign">3.00</td>
+                      </tr>
+                      <tr class="secondaryColor">
+                        <td>CCASS</td>
+                        <td class="rightAlign">6.00</td>
+                      </tr>
+                      <tr>
+                        <td>Handing Charge</td>
+                        <td class="rightAlign">0.00</td>
+                      </tr>
+                      <tfoot>
+                          <tr class="line secondaryColor">
+                            <td>Total Charges</td>
+                            <td class="rightAlign"><em>199.50<em></td>
+                          </tr>
+                      </tfoot>
+                    </table>
+                </div>
+            </td>
+          </tr>
+          <tr class="secondaryColor">
+            <td class="bold">Order Type:</td>
+            <td id="tdType">Limit Price Order</td>
+          </tr>
+          <tr>
+            <td class="bold">GTD</td>
+            <td id="tdDate">15 Mar 2012</td>
+          </tr>
+        </table>
+        </div>
+        <div class="btnArea">
+        	<input type="button" id="btnCancel" value="CANCEl" /> <input type="button" id="btnConfirm" value="CONFIRM"  />
+        </div>
+        <div class="clear"></div>
+    </div>
+</div>
+<script type="text/javascript">
+	$(".charges a").on("click",function(e){
+		$("#chargesDetail:hidden").fadeIn().css({"top":e.pageY-$("#confirmPop").offset().top-$("#chargesDetail").outerHeight()
+		+"px","left":$("#confirmPop").innerWidth()-$("#chargesDetail").outerWidth()-20+"px"});
+	});
+	$("*").click(function(){
+		if($(this).parents("tr").hasClass("charges")){
+			return false;
+		}else{
+			$("#chargesDetail:visible").fadeOut("slow");
+		}
+	});
+</script>

@@ -1,0 +1,184 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link type="text/css" rel="stylesheet/less" href="../../css/global.less" />
+<link type="text/css" rel="stylesheet/less" href="../../css/main.less" />
+<link type="text/css" rel="stylesheet/less" href="../../css/services.less" />
+<title>Account Master</title>
+</head>
+
+<body>
+<div id="container">
+    <div id="headerPage"></div>
+    <div id="content" name="accountMaster">
+        <div id="left_con">
+        	<div id="enOtp" class="mainBox">
+                <div class="title">One Time Password (OTP) Service Registration<span></span></div>
+                <div class="modules">
+                  <div id="contactInfoCon">
+                    <p>One Time Password (OTP) is security feature adopted by SWS. It further improves the security of our Consolidated e-Service by providing additional password authentication. When you perform designated transactions such as fund transfer and updating your personal information, a 6-digit OTP will be sent by us to your registered mobile phone number via a Short Message Service (SMS) and you need to key in this OTP for authorizing the transaction.
+                    </p>
+                    <p>OTP Service is free of charge and you only have to register this service once.</p>
+                  </div>
+                  <table width="100%">
+                    <tr class="secondaryColor">
+                      <td width="25%"><strong>Account:</strong></td>
+                      <td width="75%">7000000 Chan Tai Man</td>
+                    </tr>
+                    <tr>
+                      <td colspan="2">
+                        To register our OTP Service, please key in the following personal information to verify your identity 
+                      </td>
+                    </tr>
+                    <tr id="idCard">
+                      <td><strong>Hong Kong Identity (HKID):</strong></td>
+                      <td>
+                        <input type="text"  style="width:10px;" maxlength="1" size="1"  value=""/>
+                        <input type="text"  style="width:10px;" maxlength="1" size="1"  value=""/>-
+                        <input type="text"  style="width:10px;" maxlength="1" size="1" value=""/>
+                        <input type="text"  style="width:10px;" maxlength="1" size="1" value=""/>
+                        <input type="text"  style="width:10px;" maxlength="1" size="1" value=""/>
+                        <input type="text"  style="width:10px;" maxlength="1" size="1" value=""/>
+                        <input type="text"  style="width:10px;" maxlength="1" size="1" value=""/>
+                        <input type="text"  style="width:10px;" maxlength="1" size="1" value=""/>
+                        (<input type="text"  style="width:10px;" maxlength="1" size="1" value=""/>) 
+                        </td>
+                    </tr>
+                    <tr id="birthday">
+                      <td><strong><span>Birthday:</span></strong></td>
+                      <td>
+                        <input type="text"  style="width:12px;" alt="D" maxlength="1" size="1" value="D"/>
+                        <input type="text"  style="width:12px;" alt="D" maxlength="1" size="1" value="D"/>-
+                        <input type="text"  style="width:12px;" alt="M" maxlength="1" size="1" value="M"/>
+                        <input type="text"  style="width:12px;" alt="M" maxlength="1" size="1" value="M"/>-
+                        <input type="text"  style="width:12px;" alt="Y" maxlength="1" size="1" value="Y"/>
+                        <input type="text"  style="width:12px;" alt="Y" maxlength="1" size="1" value="Y"/>
+                        <input type="text"  style="width:12px;" alt="Y" maxlength="1" size="1" value="Y"/>
+                        <input type="text"  style="width:12px;" alt="Y" maxlength="1" size="1" value="Y"/>
+                       </td>
+                    </tr>
+                    <tr><td colspan="2">Please select the following mobile phone number which you would like to receive One Time Password(OTP) in future</td></tr>
+                    <tr>
+                      <td width="25%"><strong>Mobile Phone:</strong></td>
+                      <td width="75%" colspan="2" id="mobilePhone">
+                          <label><input type="radio" name="group1"  checked> +852 12XXX678</label> <br>
+                          <label><input type="radio" name="group1"  /> +852 98XXX765</label>
+                      </td>
+                    </tr>
+                    <tr class="warn">
+                        <td colspan="2">
+                            **We are unable to process the registration as the information highlighted above in red is incorrect. Please retry again.**
+                        </td>
+                    </tr>
+                    <tr >
+                      <td colspan="2">
+                        If you need any assistance, please contact your Account Executive or our Customer Service Hotline (852) 2250 8298 during the office hour. 
+                      </td>
+                    </tr>
+                    <tr >
+                      <td colspan="2" style="text-align:right;"><p><a href="#"><img src="../../images/service/Register_en.png" width="140px" title="Register" /></a></p></td>
+                    </tr>
+                  </table>
+                  <p>
+                    Notes:<br />Your mobile number cannot be updated here. If you would like to update the record, please complete <a href="#">Change of Client Data Form</a> and return to <strong>Unit B&C, 24/F, United Centre, 95 Queensway, Admiralty, Hong Kong </strong>
+                  </p>
+                </div>
+            </div>
+        </div>
+        <div id="rightBarPage"></div>
+        <div class="clear"></div>
+    </div>
+    <div id="footerPage"></div>
+</div>
+<script type="text/javascript" src="../../js/less-1.3.0.min.js"></script> 
+<script type="text/javascript" src="../../js/jquery-1.7.2.min.js"></script> 
+<script type="text/javascript" src="../../js/global.js"></script> 
+<script type="text/javascript" src="../../js/zebra_datepicker.js"></script> 
+<script type="text/javascript">
+//包含头部,尾部和右边栏
+$("#headerPage").load("../shared/header.html");
+$("#footerPage").load("../shared/footer.html");
+$("#rightBarPage").load("../shared/rightBar.html");
+$.getScript("../../js/global.js");
+
+//调用datepicker日历
+$("#dateStart").Zebra_DatePicker({
+});
+
+var value;
+$("#other").find("input").keydown(function(){
+	value=$(this).val();
+}).keyup(function(evt){
+	if(evt.keyCode!=8){
+		var reg1=/[a-zA-Z0-9]/,
+		reg2=/[a-z]/,
+		charCode=String.fromCharCode(evt.keyCode);
+		if(!reg2.test(charCode)){
+			$(this).val((value+charCode).toUpperCase());
+		}
+		if(reg1.test(charCode)){
+			$(this).next("input").focus();
+		}
+	}
+	
+});
+$("#idCard").find("input").keyup(function(evt){
+	if(evt.keyCode==8){
+		$(this).val("");
+		$(this).prev("input").select();
+		return false;
+	}
+	var reg1=/[a-zA-Z0-9]/,
+		reg2=/[a-z]/,
+		charCode=String.fromCharCode(evt.keyCode);
+	if(!reg2.test(charCode)){
+		$(this).val(charCode.toUpperCase());
+	}
+	if(reg1.test(charCode)){
+		$(this).next("input").focus();
+	}
+}).focus(function(){
+	$(this).select();
+});
+$("#idCard").find("input:last").keyup(function(evt){
+	var reg=/[a-zA-Z0-9]/,
+		charCode=String.fromCharCode(evt.keyCode);
+	if(reg.test(charCode)){
+		$("#birthday").find("input:first").focus();
+	}
+});
+
+$("#birthday").find("input").keydown(function(){
+	$(this).css("color","#000");
+}).keyup(function(evt){
+	if(evt.keyCode==8){
+		$(this).val("");
+		$(this).prev("input").select();
+		return false;
+	}
+	if(evt.keyCode>=96&&evt.keyCode<=105){
+		$(this).next("input").focus();
+	}else{
+		$(this).val("");
+	}
+}).focus(function(){
+	if($(this).val()==$(this).attr("alt")){
+		$(this).val("");
+	}
+	$(this).select();
+}).blur(function(){
+	if($.trim($(this).val())==""){
+		$(this).css("color","#999");
+		var alt=$(this).attr("alt");
+		$(this).val(alt);
+	}
+});
+$("#birthday").find("input:last").keyup(function(evt){
+	if(evt.keyCode>=96&&evt.keyCode<=105){
+		$("#mobilePhone").find("input:first").focus();
+	}
+});
+</script>
+</body>
+</html>

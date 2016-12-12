@@ -1,0 +1,30 @@
+@charset "utf-8";
+/* LESS Document */
+
+#steps{
+	margin-bottom:20px;
+	height:25px;
+	padding:4px 0px;
+	background-color:#C6E3FB;
+	li{
+		float:left;
+		width:150px;
+		height:25px;
+		line-height:25px;
+		margin-right:-14px;
+		padding-left:30px;
+		font-weight:bolder;
+		background:url(../images/revoked_dark.png) no-repeat;
+		span{
+			display:inline-block;
+			margin-right:10px;
+			margin-top:-5px;
+			color:#FFF;
+			font-size:25px;
+			vertical-align:middle;
+		}
+		&.current{
+			background:url(../images/revoked_bright.png) no-repeat;
+		}
+	}
+}

@@ -1,0 +1,108 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link type="text/css" rel="stylesheet/less" href="../../css/global.less" />
+<link type="text/css" rel="stylesheet/less" href="../../css/main.less" />
+<link type="text/css" rel="stylesheet/less" href="../../css/trade.less" />
+<script type="text/javascript" src="../../js/jquery-1.7.2.min.js"></script>
+<script type="text/javascript" src="../../js/global.js"></script>
+<title>Stock</title>
+</head>
+
+<body>
+<div id="container">
+    <div id="headerPage"></div>
+    <div id="content" name="stock">
+        <div id="left_con">
+            <div id="acknowledgement" class="mainBox">
+                <div class="title">Acknowledgement<span></span></div>
+                <div class="note" style="display:none;">We have received you instruction. Please note the reference No. for you records</div>
+                <div class="sorry">Sorry,your instruction cannot complete.</div>
+                <div class="modules">
+                    <table width="100%">
+                      <tr style="display:none;">
+                        <td width="160" class="bold">Reference No:</td>
+                        <td id="tdAccount">S-123456</td>
+                      </tr>
+                      <tr>
+                        <td width="160" class="bold">System Code:</td>
+                        <td id="tdAccount"><span id="sysTips">G8010 - Order Placing Accept Time for Hong Kong Market:(HKT) 09:00 - 16:00</span></td>
+                      </tr>
+                      <tr class="secondaryColor">
+                        <td class="bold">Account:</td>
+                        <td id="tdAccount">0024894-00-2 Chan Tai Man(HKD)</td>
+                      </tr>
+                      <tr>
+                        <td class="bold">Instruction</td>
+                        <td id="tdMethod">Delete Order</td>
+                      </tr>
+                      <tr class="secondaryColor">
+                        <td class="bold">Type</td>
+                        <td id="tdCode"><span style="display:none;color:#00F">Buy</span><span style="color:#F00">Sell</span></td>
+                      </tr>
+                      <tr>
+                        <td class="bold">Stock Code:</td>
+                        <td id="tdCode">00218.HK</td>
+                      </tr>
+                      <tr class="secondaryColor">
+                        <td class="bold">Stock Name:</td>
+                        <td id="tdName">Shenyin Wanguo</td>
+                      </tr>
+                      <tr>
+                        <td class="bold">Price:</td>
+                        <td id="tdPrice">HKD 2.95</td>
+                      </tr>
+                      <tr class="secondaryColor">
+                        <td class="bold">Quantity:</td>
+                        <td id="tdQuantity">5.000</td>
+                      </tr>
+                      <tr>
+                        <td class="bold">Transaction Amount:</td>
+                        <td id="tdAmount">HKD 49.750.00</td>
+                      </tr>
+                      <tr class="secondaryColor">
+                        <td class="bold">Order Type:</td>
+                        <td id="tdType">Limit Price Order</td>
+                      </tr>
+                      <tr>
+                        <td class="bold">GTD</td>
+                        <td id="tdDate">15 Mar 2012</td>
+                      </tr>
+                    </table>
+                    <div class="btnArea"><input type="image" src="../../images/common/Back_en.png" id="btnBack" value="BACK" style="float:left;" /> <input type="button" id="btnSave" value="SAVE" style="float:right;" /><div class="clear"></div></div>
+                </div>
+            </div>
+        </div>
+        <div id="rightBarPage"></div>
+        <div class="clear"></div>
+    </div>
+    <div id="footerPage"></div>
+</div>
+<script type="text/javascript" src="../../js/less-1.3.0.min.js"></script>
+<script type="text/javascript" src="../../js/orderConfirm.js"></script>
+<script type="text/javascript">
+//包含文件
+$("#headerPage").load("../shared/header.html");
+$("#footerPage").load("../shared/footer.html");
+$("#rightBarPage").load("../shared/rightBar.html");
+$.getScript("../../js/global.js");
+
+var t1=setInterval(function(){
+	$("#sysTips").addClass("yellowFlash");
+},200);
+var t2=setInterval(function(){
+	$("#sysTips").removeClass("yellowFlash");
+},350);
+setTimeout(function(){
+	clearInterval(t1,t2);
+},5000);
+
+//页面逻辑
+//跳转到stock页面
+$("#btnBack").click(function(){
+	window.open("stockStreaming.html","_top");
+})
+</script>
+</body>
+</html>

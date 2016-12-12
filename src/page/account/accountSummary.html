@@ -1,0 +1,384 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<link type="text/css" rel="stylesheet/less" href="../../css/global.less" />
+<link type="text/css" rel="stylesheet/less" href="../../css/main.less" />
+<link type="text/css" rel="stylesheet/less" href="../../css/account.less" />
+<script type="text/javascript" src="../../js/jquery-1.7.2.min.js"></script>
+<script type="text/javascript">
+function browserRedirect() { 
+	var sUserAgent= navigator.userAgent.toLowerCase(); 
+	var bIsIpad= sUserAgent.match(/ipad/i) == "ipad"; 
+	var bIsIphoneOs= sUserAgent.match(/iphone os/i) == "iphone os"; 
+	var bIsMidp= sUserAgent.match(/midp/i) == "midp"; 
+	var bIsUc7= sUserAgent.match(/rv:1.2.3.4/i) == "rv:1.2.3.4"; 
+	var bIsUc= sUserAgent.match(/ucweb/i) == "ucweb"; 
+	var bIsAndroid= sUserAgent.match(/android/i) == "android"; 
+	var bIsCE= sUserAgent.match(/windows ce/i) == "windows ce"; 
+	var bIsWM= sUserAgent.match(/windows mobile/i) == "windows mobile"; 
+	
+	if (bIsIpad) { 
+		//window.location.href= 'http://url/mobile.html'; 
+		alert("你用的是iPad！");
+	}else if(bIsIphoneOs){
+		alert("你用的是iPhone！");
+	}else if(bIsMidp){
+		alert("你用的是Midp！");
+	}else if(bIsUc7){
+		alert("你用的是UC7！");
+	}else if(bIsUc){
+		alert("你用的是UC！");
+	}else if(bIsAndroid){
+		alert("你用的是Android手持设备！");
+	}else if(bIsCE){
+		alert("你用的是Windows CE！");
+	}else if(bIsWM){
+		alert("你用的是Windows Mobile！");
+	}else { 
+		//window.location= 'http://url/pc.html'; 
+		alert("你用的是个人电脑！");
+	} 
+} 
+//browserRedirect(); 
+</script>
+<title>Account Summary</title>
+</head>
+
+<body>
+<div id="container">
+    <div id="headerPage"></div>
+    <div id="content" name="accountSummary">
+        <div id="left_con">
+            <div id="total" class="mainBox">
+            	<div id="welcome" class="pre_area">Welcome, Vince Lam&nbsp;&nbsp;Last Successful Logon: 2012-08-07 10:20:05</div>
+                <div class="title">Total Equity<span></span></div>
+                <div>As at2012-05-09,<br />Tatal Equity of Account</div>
+                <select>
+                    <option value="">7000000-10-1 acc_name</option>
+                </select>
+                <div class="money">HKD $2,765,703,00</div>
+                <div class="clear"></div>
+            </div>
+            <div id="summary" class="mainBox">
+                <div class="title">Summary<span></span></div>
+                <div class="modules">
+                	<h4>帳面結餘（HKD-港幣）&nbsp;<img src="../../images/common/info.png" /></h4>
+                    <table width="200">
+                      <tr>
+                        <td>帳面結餘</td>
+                        <td>-$182,398.77</td>
+                      </tr>
+                      <tr>
+                        <td>可用結餘</td>
+                        <td>-$168,398.77</td>
+                      </tr>
+                    </table>
+                    <h4>Cash Summary</h4>
+                    <table id="cash" class="date" width="100%">
+                      <tr class="tit">
+                        <th width="9%">Currency</th>
+                        <th width="20%">&nbsp;</th>
+                        <th width="14%">&nbsp;</th>
+                        <th width="11%">&nbsp;</th>
+                        <th width="20%" class="rightAlign">Available Balance</th>
+                        <th width="11%">&nbsp;</th>
+                        <th width="15%" class="rightAlign">Ledger Balance</th>
+                      </tr>
+                      <tr>
+                        <td>HKD</td>
+                        <td>Hong Kong Dollars</td>
+                        <td><img src="../../images/common/info.png" /></td>
+                        <td>&nbsp;</td>
+                        <td class="rightAlign">$<span>100,000,00</span></td>
+                        <td>&nbsp;</td>
+                        <td class="rightAlign">$<span>100,000,00</span></td>
+                      </tr>
+                      <tr class="secondaryColor">
+                        <td>RMB</td>
+                        <td>Chinese Yuan</td>
+                        <td><img src="../../images/common/info.png" /></td>
+                        <td>&nbsp;</td>
+                        <td class="rightAlign">$<span>10,000,00</span></td>
+                        <td>&nbsp;</td>
+                        <td class="rightAlign">$<span>10,000,00</span></td>
+                      </tr>
+                      <tr>
+                        <td>JPY</td>
+                        <td>Japanese Yen</td>
+                        <td><img src="../../images/common/info.png" /></td>
+                        <td>&nbsp;</td>
+                        <td class="rightAlign">$<span>100,000,00</span></td>
+                        <td>&nbsp;</td>
+                        <td class="rightAlign">$<span>100,000,00</span></td>
+                      </tr>
+                      <tr class="secondaryColor">
+                        <td>USD</td>
+                        <td>United States Dollars</td>
+                        <td><img src="../../images/common/info.png" /></td>
+                        <td>&nbsp;</td>
+                        <td class="rightAlign">$<span>2,000,00</span></td>
+                        <td>&nbsp;</td>
+                        <td class="rightAlign">$<span>2,000,00</span></td>
+                      </tr>
+                      <tr class="total">
+                        <td>&nbsp;</td>
+                        <td colspan="2" class="rightAlign">Total Cash(Eqv.):</td>
+                        <td>&nbsp;</td>
+                        <td class="rightAlign">HKD <span>$122,414.00</span></td>
+                        <td>&nbsp;</td>
+                        <td class="rightAlign"><span>$122,414.00</span></td>
+                      </tr>
+                    </table>
+              </div>
+              <div class="modules">
+                  <h4>Securities Summary</h4>
+                  <h5>Hong Kong - HKD</h5>
+                  <table class="date" width="100%">
+                      <tr class="tit">
+                        <th width="9%">Code</th>
+                        <th width="20%">Stock Name</th>
+                        <th width="14%" class="rightAlign">Ref.Price</th>
+                        <th width="11%" class="rightAlign">Quantity</th>
+                        <th width="20%" class="rightAlign">Market Value</th>
+                        <th width="11%" class="rightAlign">Margin %</th>
+                        <th width="15%" class="rightAlign">Margin Value</th>
+                      </tr>
+                      <tr>
+                        <td>0001</td>
+                        <td>Cheung Kong Hldg.</td>
+                        <td class="rightAlign">100.50</td>
+                        <td class="rightAlign">1.000</td>
+                        <td class="rightAlign">$100.500.00</td>
+                        <td class="rightAlign">0.0</td>
+                        <td class="rightAlign">$0.00</td>
+                      </tr>
+                      <tr class="secondaryColor">
+                        <td>0002</td>
+                        <td>CLP Holdings</td>
+                        <td class="rightAlign">67.45</td>
+                        <td class="rightAlign">500</td>
+                        <td class="rightAlign">$33.725.00</td>
+                        <td class="rightAlign">0.0</td>
+                        <td class="rightAlign">$0.00</td>
+                      </tr>
+                      <tr>
+                        <td>0001</td>
+                        <td>Cheung Kong Hldg.</td>
+                        <td class="rightAlign">100.50</td>
+                        <td class="rightAlign">1.000</td>
+                        <td class="rightAlign">$100.500.00</td>
+                        <td class="rightAlign">0.0</td>
+                        <td class="rightAlign">$0.00</td>
+                      </tr>
+                      <tr class="secondaryColor">
+                        <td>0002</td>
+                        <td>CLP Holdings</td>
+                        <td class="rightAlign">67.45</td>
+                        <td class="rightAlign">500</td>
+                        <td class="rightAlign">$33.725.00</td>
+                        <td class="rightAlign">0.0</td>
+                        <td class="rightAlign">$0.00</td>
+                      </tr>
+                      <tr class="total">
+                        <td>&nbsp;</td>
+                        <td colspan="2" class="rightAlign">Total Securities Value:</td>
+                        <td>&nbsp;</td>
+                        <td class="rightAlign">HKD <span>$268.450.00</span></td>
+                        <td>&nbsp;</td>
+                        <td class="rightAlign"><span>$0.00</span></td>
+                      </tr>
+                    </table> 
+                </div>
+                <div class="modules">
+                    <h5>Shenzhen "B" Shares - Equity - HKD - SYWG Investor Code</h5>
+                    <table class="date" width="100%">
+                      <tr class="tit">
+                        <th width="9%">Code</th>
+                        <th width="20%">Stock Name</th>
+                        <th width="14%" class="rightAlign">Ref.Price</th>
+                        <th width="11%" class="rightAlign">Quantity</th>
+                        <th width="20%" class="rightAlign">Market Value</th>
+                        <th width="11%" class="rightAlign">Margin %</th>
+                        <th width="15%" class="rightAlign">Margin Value</th>
+                      </tr>
+                      <tr>
+                        <td>200017</td>
+                        <td>SZEN CHINA BICYCLE-B</td>
+                        <td class="rightAlign">$1.8500</td>
+                        <td class="rightAlign">200</td>
+                        <td class="rightAlign">$370.00</td>
+                        <td class="rightAlign">0.0</td>
+                        <td class="rightAlign">$0.00</td>
+                      </tr>
+                      <tr class="secondaryColor">
+                        <td>200869</td>
+                        <td>SZEN YANTAL CHANGYUB</td>
+                        <td class="rightAlign">$87.4300</td>
+                        <td class="rightAlign">300</td>
+                        <td class="rightAlign">$26.599.00</td>
+                        <td class="rightAlign">0.0</td>
+                        <td class="rightAlign">$0.00</td>
+                      </tr>
+                      <tr class="total">
+                        <td>&nbsp;</td>
+                        <td colspan="2" class="rightAlign">Total Securities Value:</td>
+                        <td>&nbsp;</td>
+                        <td class="rightAlign">HKD <span>$26.599.00</span></td>
+                        <td>&nbsp;</td>
+                        <td class="rightAlign"><span>$0.00</span></td>
+                      </tr>
+                    </table>
+                </div> 
+                <div class="modules">
+                    <h5>USA - Equity - USD</h5>
+                    <table class="date" width="100%">
+                      <tr class="tit">
+                        <th width="9%">Code</th>
+                        <th width="20%">Stock Name</th>
+                        <th width="14%" class="rightAlign">Ref.Price</th>
+                        <th width="11%" class="rightAlign">Quantity</th>
+                        <th width="20%" class="rightAlign">Market Value</th>
+                        <th width="11%" class="rightAlign">Margin %</th>
+                        <th width="15%" class="rightAlign">Margin Value</th>
+                      </tr>
+                      <tr>
+                        <td>AAPL</td>
+                        <td>Apple Inc. - Common Stock</td>
+                        <td class="rightAlign">$25.0000</td>
+                        <td class="rightAlign">9.000</td>
+                        <td class="rightAlign">$225.000.00</td>
+                        <td class="rightAlign">0.0</td>
+                        <td class="rightAlign">$112.500.00</td>
+                      </tr>
+                      <tr class="secondaryColor">
+                        <td>RENN</td>
+                        <td>RENREN INC</td>
+                        <td class="rightAlign">$6.2300</td>
+                        <td class="rightAlign">11.000</td>
+                        <td class="rightAlign">$68.530.00</td>
+                        <td class="rightAlign">0.0</td>
+                        <td class="rightAlign">$0.00</td>
+                      </tr>
+                      <tr class="total">
+                        <td>&nbsp;</td>
+                        <td colspan="2" class="rightAlign">Total Securities Value:</td>
+                        <td>&nbsp;</td>
+                        <td class="rightAlign">HKD <span>$293.530.00</span></td>
+                        <td>&nbsp;</td>
+                        <td class="rightAlign"><span>$112.500.00</span></td>
+                      </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div id="rightBarPage"></div>
+        <div class="clear"></div>
+    </div>
+    <div id="footerPage"></div>
+</div>
+<div id="Mask" style="display:none;"></div>
+<div id="newEipoPop" class="pop" style="display:none;">
+    <div class="close"><a href="#">X</a></div>
+    <div id="newEIPO" class="mainBox">
+    	<div class="title">正在接受公开申购之新股<span></span></div>
+        <div class="modules">
+            <table width="100%">
+              <tr class="tit">
+                <td width="20%">編號</td>
+                <td width="55%">股份名稱</td>
+                <td class="centerAlign">操作</td>
+              </tr>
+              <tr class="secondaryColor">
+                <td>737</td>
+                <td>æ³“æˆŠç•¯</td>
+                <td class="centerAlign"><a href="#" class="aApplication"><img src="../../images/trading/IconOnly_Apply.png" alt="申請" title="申請" /></a></td>
+              </tr>
+              <tr>
+                <td>3883</td>
+                <td>æœ‹ä¿�ç•ˆæµš</td>
+                <td class="centerAlign"><a href="#" class="aApplication"><img src="../../images/trading/IconOnly_Apply.png" alt="申請" title="申請" /></a></td>
+              </tr>
+              <tr class="secondaryColor">
+                <td>80737</td>
+                <td>ç¥�èž�ä½›</td>
+                <td class="centerAlign"><a href="#" class="aApplication"><img src="../../images/trading/IconOnly_Apply.png" alt="申請" title="申請" /></a></td>
+              </tr>
+            </table>
+        </div>
+    </div>
+</div>
+<div id="accountDetailsPop" class="pop" style="display:none;">
+    <div class="close"><a href="#">X</a></div>
+    <div id="accountDetails" class="mainBox">
+    	<div class="title">Account details - 000911101-2-011<span></span></div>
+        <div class="modules">
+            <table width="100%">
+              <tr>
+              	<td>Cash Balance</td>
+                <td class="rightAlign">HKD$2,000,000.00</td>
+              </tr>
+              <tr class="secondaryColor">
+              	<td>Free Cash</td>
+                <td class="rightAlign">HKD$0.00</td>
+              </tr>
+              <tr>
+              	<td>Voucher Hold</td>
+                <td class="rightAlign">HKD$20,000.00</td>
+              </tr>
+              <tr class="secondaryColor">
+              	<td>Lock-up Cash</td>
+                <td class="rightAlign">HKD$10,000.00</td>
+              </tr>
+              <tr>
+              	<td>Max Loan</td>
+                <td class="rightAlign">HKD$10,000,000.00</td>
+              </tr>
+              <tr class="secondaryColor">
+              	<td>Acc Sec Value</td>
+                <td class="rightAlign">HKD$10,000,000.00</td>
+              </tr>
+              <tr>
+              	<td>Margin Call</td>
+                <td class="rightAlign"><span class="sell">HKD$20,000.00</span></td>
+              </tr>
+            </table>
+        </div>
+    </div>
+</div>
+<script type="text/javascript" src="../../js/less-1.3.0.min.js"></script>
+<script type="text/javascript" src="../../js/global.js"></script>
+<script type="text/javascript">
+//包含头部,尾部和右边栏
+$("#headerPage").load("../shared/header.html");
+$("#footerPage").load("../shared/footer.html");
+$("#rightBarPage").load("../shared/rightBar.html");
+$.getScript("../../js/global.js");
+
+//$("#Mask").fadeTo("slow","0.5");
+//$("#newEipoPop").fadeIn("slow");
+
+$("#cash").on("mouseover","tr.tit,tr.total",function(){
+	$(this).siblings("tr.over").removeClass("over");
+});
+$("#cash").on("mouseover","tr:not(.tit,.total)",function(evt){
+	$(this).addClass("over");
+}).on("mouseout","tr:not(.tit,.total)",function(){
+	$(this).removeClass("over");
+}).on("click","tr:not(.tit,.total)",function(){
+	$("#Mask").fadeTo("fast","0.3").after($("#accountDetailsPop"));
+	$("#accountDetailsPop").fadeIn("slow");
+});
+
+$("#Mask").click(function(){
+	$(this).next(".pop").fadeOut("slow");
+	$(this).fadeOut("slow");
+});
+$(".pop .close").click(function(){
+	$(this).parent(".pop").fadeOut("slow");
+	$("#Mask").fadeOut("slow");
+});
+</script>
+</body>
+</html>

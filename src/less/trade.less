@@ -1,0 +1,1366 @@
+@charset "utf-8";
+/* CSS Document */
+//定义颜色值
+@main-color:#4F8EC3; //蓝色
+@light-color:#A3D9F5; //浅蓝色
+@gray-color:#EFEFEF;
+@lightGray-color:#F3F7F8;
+@blue-color:#0D69BE;
+@hover-color:#A3D9F5;
+@global-margin-width:10px;
+@global-border:1px solid #7A7A7A;
+
+.trend(@url){
+	width:100%;
+	align:center;
+	padding-left:10px;
+	color:#333;
+	font-weight:bolder;
+	background-position: left center;
+	background-repeat:no-repeat;
+	background-image:@url;
+}
+
+span.btnApplication,span.btnEnquire,span.btnModify,span.btnCancel{
+	padding:2px 4px;
+	text-decoration:underline;
+}
+
+//-----------------------------------------------------------------Stock---------------------------------------------------------------
+#right_con{
+	float:right;
+	width:688px;
+	margin-top:10px;
+}
+.quotedPrice{
+	zoom:1;
+	z-index:9;
+}
+
+#nail_bar{
+	position:absolute;
+	width:202px;
+	right:0px;
+	bottom:0px;
+	z-index:10;
+}
+#nail_bar #right_bar{
+	position:absolute;
+	display:none;
+	width:202px;
+	margin-bottom:0px;
+	padding-bottom:0px;
+	top:0px;
+	right:0px;
+	border:1px solid @main-color;
+	box-shadow:3px 3px 10px #999,-1px 1px 10px #999;
+}
+#nail_bar .handle{
+	position:absolute;
+	top:-19px;
+	right:0px;
+	width:75px;
+	height:20px;
+	color:#FFF;
+	text-align:center;
+	line-height:22px;
+	background:url(../images/trading/quick_ref.png) no-repeat;
+	cursor:pointer;
+}
+#nail_bar .handle img{
+	margin-top:20px;
+	margin-left:3px;
+}
+
+#orderBar{
+	position:fixed;
+	width:282px;
+	margin-top:10px;
+}
+#order{
+	zoom:1;
+	background-color:#FFF;
+	tr.tit td{
+		color:#FFF;
+		text-align:center;
+		background-color:@blue-color;
+	}
+	tr.edit td{
+		background-color:@main-color;
+	}
+	tr.line td{
+		padding-top:10px;
+		border-top:1px solid @blue-color;
+	}
+	td{
+		padding:4px 0px;
+		&.flash{
+			color:@blue-color;
+		}
+		&.redFlash{
+			color:#F00;
+		}
+		select{
+			width:180px;
+		}
+		img{
+			border:none;
+			vertical-align:top;
+			margin-left:4px;
+		}
+		#orderSideBuy{
+			margin-left:10px;
+		}
+		#orderSideSell{
+			margin-left:40px;
+		}
+		#iptDateOrder{
+			vertical-align:middle;
+		}
+		#stockCode,#price,#quantity,#expiryDate,#penceEqv{
+			width:100px;
+		}
+		#iptPrice{
+			text-align:left;
+		}
+		#delayQuoteBtn{
+			margin-left:10px;
+			height:20px;
+			cursor:pointer;
+			width:65px;
+			height:25px;
+			border:none;
+			color:#FFF;
+			border-radius:5px;
+			background-color:@blue-color;
+		}
+	}
+	.submitArea{
+		padding-left:40px;
+		margin-top:10px;
+		padding-right:10px;
+		input{
+			margin-left:20px;
+			background-color:@blue-color;
+		}
+	}
+	&.redBox{
+		#delayQuoteBtn{
+			background-color:#F00;
+		} 
+		tr.tit td{
+			background-color:#F00;
+		}
+		tr.edit td{
+			background-color:@main-color;
+		}
+		tr.line td{
+			border-top:1px solid #F00;
+		}
+		.submitArea{
+			input{
+				background-color:#F00;
+			}
+		}
+	}
+}
+.swop{
+	#right_con{
+		float:left;
+		margin-left:0px;
+	}
+	#orderBar{
+		margin-left:698px;
+		//jsp中兼容IE7 这里demo会错位
+  		*margin-left:10px;
+	}
+}
+
+//order提示遮罩层
+#orderMask{
+	position:absolute;
+	top:0px;
+	right:0px;
+	bottom:0px;
+	left:0px;
+	width:100%;
+	border-radius:3px;
+	background-color:#999;
+	filter:Alpha(Opacity=50); //IE 透明度50%
+	-moz-opacity:0.5; //Moz + FF 透明度50%
+    opacity: 0.5; //chrome 透明度50%
+}
+//order tips
+#orderTips{
+	position:absolute;
+	left:0px;
+	width:100%;
+	font-size:24px;
+	color:#F00;
+	font-weight:bolder;
+	text-align:center;
+}
+
+#stockHoldings{
+	padding:0px;
+	.modules{
+		padding:10px;
+		*padding-right:25px;
+		overflow-x:hidden;
+		overflow-y:auto;
+	}
+	tr.topBorder td{
+		border-top:1px solid @main-color;
+	}
+	td{
+		padding:4px 0px;
+		.switchStockInfo{
+			color:#FFF;
+			text-decoration:none;
+			padding:2px 5px;
+			background-color:@main-color;
+			border-radius:2px;
+		}
+	}
+}
+
+#streaming{
+	applet{
+		margin-bottom:10px;
+	}
+}
+#appletServer{
+	position:absolute;
+	top:-22px;
+	right:0px;
+	select {
+		width:165px;
+		height:20px;
+		font-size:12px;
+		line-height:20px;
+		border:1px solid #999;
+	}
+}
+
+.switch{
+	color:@main-color;
+	a:link,a:visited{
+		display:inline-block;
+		color:@main-color;
+		text-decoration:none;
+		padding:0px 5px;
+	}
+	a.selected:link,a.selected:visited{
+		color:#fff;
+		border-radius:2px;
+		background-color:@main-color;
+	}
+	a:hover{
+		text-decoration:underline;
+	}
+}
+
+#traderStyle{
+	padding:10px 5px;
+	h3{
+		*font-size:14px;
+		overflow:hidden;
+		.hl{
+			float:left;
+			width:520px;
+			input{
+				width:60px;
+				height:20px;
+				text-align:center;
+				line-height:20px;
+				vertical-align:middle;
+			}
+			.traderName{
+				display:inline-block;
+				width:450px;
+				font-weight:normal;
+				vertical-align:middle;
+				overflow:hidden;
+				white-space:nowrap;
+				text-overflow:ellipsis;
+				span{
+					font-size:12px;
+				}
+			}
+		}
+		.hr{
+			float:right;
+			&.connectState{
+				font-size:12px;
+				font-weight:normal;
+				margin-top:5px;
+			}
+		}
+	}
+	.traderCon{
+		margin:5px 0px;
+		padding:5px 0px;
+		border-top:1px solid @main-color;
+		border-bottom:1px solid @main-color;
+		overflow:hidden;
+		h3{
+			text-align:center;
+			color:#FFF;
+			font-size:16px;
+			padding:3px 5px;
+			background-color:@main-color;
+			.hl{
+				width:auto;
+			}
+		}
+		td{
+			padding:1px;
+		}
+		.traConOne{
+			float:left;
+			width:266px;
+			height:367px;
+			margin-right:2px;
+			border:1px solid #999;
+			.bidAsk{
+				overflow:hidden;
+				line-height:15.3px\0;
+				border-bottom:1px solid #999;
+				.bid{
+					float:left;
+					width:132px;
+					border-right:1px solid #999;
+					background-color:#D8EBFC;
+					h3{
+						background-color:@blue-color;
+					}
+					tr.secondaryColor td{
+						background-color:#ADDFFF;
+					}
+				}
+				.ask{
+					float:left;
+					width:133px;
+					background-color:#FFE0E0;
+					h3{
+						background-color:#F00;
+					}
+					tr.secondaryColor td{
+						background-color:#FBBBB9;
+					}
+				}
+			}
+			.broker{
+				overflow:hidden;
+				line-height:15.2px\0;
+				ul{
+					width:32px;
+					float:left;
+					text-align:center;
+					&.noBorder{
+						width:33px;
+					}
+					li{
+						padding:1px 0px;
+						background-color:#FFF;
+						&.gray{
+							background-color:@gray-color;
+						}
+					}
+				}
+				span,em{
+					display:inline-block;
+					color:#FFF;
+					width:30px;
+					font-style:normal;
+					text-align:center;
+					background-color:#FFB143;
+				}
+				.brokerL{
+					float:left;
+					width:132px;
+					border-right:1px solid #999;
+					ul{
+						border-right:1px solid #D8EBFC;
+						&.noBorder{
+							border-right:none;
+						}
+					}
+					span{
+						background-color:@blue-color;
+					}
+				}
+				.brokerR{
+					float:left;
+					width:133px;
+					ul{
+						border-right:1px solid #FFE0E0;
+						&.noBorder{
+							border-right:none;
+						}
+					}
+					span{
+						background-color:#F00;
+					}
+				}
+			}
+		}
+		.traConTwo{
+			float:left;
+			width:250px;
+			height:367px;
+			margin-right:2px;
+			border:1px solid #999;	
+			.trend{
+				border-bottom:1px solid #999;
+				padding:0px 8px;
+				span{
+					display:inline-block;
+				}
+				.trendIcon{
+					color:#333;
+					font-size:14px;
+					img{
+						margin-right:5px;
+						vertical-align:bottom;
+						*vertical-align:text-bottom;
+					}
+				}
+				.trendData{
+					padding:0px 15px;
+					font-size:24px;
+					font-weight:bolder;
+				}
+			}
+			.eqtyType,.WrntAndBwrtType{
+				display: none;
+			}
+			td.leftBorder{
+				border-left:1px solid #999;	
+			}	
+		}
+		.traConThr{
+			float:left;
+			width:150px;
+			height:367px;
+			border:1px solid #999;
+			.transaction{
+				.dataCon{
+					height:190px;
+					overflow-y:auto;
+					overflow-x:hidden;
+					td{
+						padding:2px 1px;
+					}
+				}
+			}
+			.related{
+				.dataCon{
+					height:124px;
+					height:127px\0;
+					overflow-y:auto;
+					overflow-x:hidden;
+					td{
+						padding:2px 1px;
+					}
+				}
+			}
+		}
+	}
+	p{	
+		width:668px;
+		text-align:right;
+		padding:2px;
+		border:1px solid #333;
+		.updateTime{
+			span{
+				color:#999;
+			}
+		}
+	}
+	.rise{
+		color:#0BB60B;
+	}
+	.fall{
+		color:#F00;
+	}
+	.buy{
+		color:@blue-color;
+	}
+	.stockHistoryList{
+		.listHeader{
+			padding-bottom:5px;
+			margin-bottom:5px;
+			border-bottom:1px solid #f2963a;
+			.cutover{
+				font-size:12px;
+				font-weight:normal;
+				margin-top:5px;
+				color: #f2963a;
+				padding-right:10px;
+				a:link,a:visited{
+					color: @main-color;
+				}
+			}
+		}
+		td{
+			padding:2px;
+		}
+	}
+	.brief{
+		.traConOne,.traConTwo,.traConThr{
+			height:197px;
+			height:195px\0;
+			.transaction .dataCon{
+				height:76px;
+				overflow:hidden;
+		    }
+			.related .dataCon{
+				height:60px;
+				overflow:hidden;
+			}
+		}
+	}
+}
+
+// IE9 hack
+:root #traderStyle .traderCon{
+	.traConTwo .details{
+		line-height:15.6px\9\0;
+	}
+	.traConThr {
+		line-height:15px\9\0;
+		.related .dataCon{
+			height:135px\9\0;
+		}
+	}
+}
+
+// FF hack
+@-moz-document url-prefix() { 
+	#traderStyle .traderCon .traConOne .bidAsk{
+		line-height:15.2px;
+	}
+	#traderStyle .traderCon .traConOne .broker{
+		line-height:15.3px;
+	}
+	#traderStyle .traderCon .traConTwo .details{
+		line-height:15.8px;
+	}
+	#traderStyle .traderCon .traConTwo .index{
+		line-height:16px;
+	}
+	#traderStyle .traderCon .traConThr .transaction{
+		line-height:15px;
+	}
+	#traderStyle .traderCon .traConThr .related .dataCon{
+		height:128px;
+	}
+	#traderStyle .brief .traConOne .bidAsk{
+		line-height:15.5px;
+	}
+	#traderStyle .brief .traConOne .broker{
+		line-height:15.4px;
+	}
+}
+
+#summary{
+	.time{
+		position:absolute;
+		top:-22px;
+		right:0px;
+	}
+}
+#risk{
+	margin-top:-20px;
+	margin-bottom:30px;
+	//margin-bottom:0px\0;
+  	//*margin-bottom:0px;
+	//border-radius:3px;
+	padding:5px 10px;
+	line-height:20px;
+	border:1px solid #000;
+	zoom:1;
+	h4{
+		font-size:14px;
+		margin-bottom:5px;
+	}
+}
+#quote{
+	position:relative;
+	background-color:#FFF;
+	padding:8px 5px;
+	#updatedTime{
+		position:absolute;
+		top:-20px;
+		right:10px;
+	}
+	.tips{
+		position:absolute;
+		top:20px;
+		right:55px;
+		color:@main-color;
+		font-weight:bolder;
+	}	
+	.quote_left{
+		float:left;
+		width:50%;
+	}
+	.quote_right{
+		float:right;
+		width:50%;
+	}
+	td{
+		word-break:keep-all;
+		white-space:nowrap; 
+		overflow:hidden; 
+		text-overflow:ellipsis;
+		padding:5px;
+		text-align:center;
+	}
+	tr.secondaryColor td{
+		padding:8px;
+		text-align:left;
+		background-color:@gray-color;
+		b{
+			font-size:16px;
+			color:#666;
+		}
+		img{
+			vertical-align:middle;
+		}
+	}
+	#quoteNumber{
+		width:60px;
+		font-size:16px;
+		font-weight:bold;
+		text-align:center;
+	}
+	th{
+		padding:5px;
+		color:#949494;
+		font-size:14px;
+		font-weight:normal;
+		text-align:center;
+		border-right:1px solid #949494;
+		background-color:#3A3A3A;
+	}
+	tr.buySellNumber td{
+		font-size:22px;
+		padding:20px 5px;
+	}
+	td#buyN{
+		color:#0B579C;
+	}
+	td#sellN{
+		color:#D90000;
+	}
+	tr.buyBlue td{
+		background-color:#DEF7FF;
+	}
+	tr.sellRed td{
+		background-color:#FFDFDE;
+	}
+	td.buySellTd{
+		padding:0px;
+		tr{
+			cursor:pointer;
+		}
+		td{
+			padding:2px 0px;
+		}
+	}
+	#interim{
+		float:left;
+	  	width:100%;
+	 	padding:5px 0px;
+	  	height:15px;
+	  	border: 1px solid #333;
+		span{
+		  padding:0px 5px;
+		}
+	}
+	#quote_basicInfo{
+		td{
+			padding:0px;
+			border-left:1px solid #FFF;
+			td{
+				text-align:left;
+				height:25px;
+				line-height:25px;
+				border-left:none;
+				padding:0px 5px;
+				border-top:1px solid #FFF;
+				background-color:#E6E6E6;
+			}
+		}
+		td.alignRight{
+			text-align:right;
+		}
+		td.basicTd{
+			background-color:#F5EDCD;
+			height:77px;
+			.norminal{
+				margin-top:-10px;
+				*margin-top:0px;
+			}
+			.basicNumber{
+				text-align:center;
+				margin-top:10px;
+				span{
+					font-size:26px;
+					&.rise{
+						color:#016401;
+					}
+					&.fall{
+						color:#F00;
+					}
+					img{
+						vertical-align:middle;
+					}
+				}
+			}
+		}
+	}
+	.quote_bottom{
+		margin-top:2px;
+	}
+	#quote_transactionHistory,#quote_relatedCodes{
+		float:left;
+		width:50%;
+		.quTit{
+			background-color:#DEF7FF;
+			text-align:center;
+			padding:5px;
+		}
+		.quCon{
+			height:100px;
+			overflow-y:auto;
+			margin-bottom:40px;
+			td{
+				text-align:left;
+			}
+			td.alignCenter{
+				text-align:center;
+			}
+			td.alignRight{
+				text-align:right;
+			}
+		}
+		li{
+			float:left;
+			width:33%;
+			*width:31%;
+			height:25px;
+			text-align:center;
+			cursor:pointer;
+		}
+	}
+	.quote_data{
+		padding-top:5px;
+		#buyBroker,#sellBroker{
+			float:left;
+			width:50%;
+			*width:49.5%;
+		}
+		ul{
+			float:left;
+			width:24%;
+		}
+		li{
+			text-align:center;
+			height:23px;
+  			font-height:23px;
+		}
+		#buyBroker{
+			span{
+				color:#FFF;
+				padding:1px 5px;
+				background-color:#0e6bbb;
+			}
+		}
+		#sellBroker{
+			span{
+				color: #FFF;
+				padding: 1px 5px;
+				background-color: #FF5959;
+			}
+		}
+	}
+	.rise{
+		color:#0BB60B;
+		font-weight:bold;
+	}
+	.fall{
+		color:#F00;
+		font-weight:bold;
+	}
+}
+#quote_snapshot_lv1,#quote_snapshot_lv2{
+	.quote_left{
+		*margin-bottom:60px;
+	}
+	.btnArea{
+		position:absolute;
+		left:0px;
+		bottom:10px;
+		input{
+			display:block;
+			float:left;
+			margin-left:10px;
+			margin-top:20px;
+		}
+	}
+}
+.btnArea{
+	input{
+		display:block;
+		float:left;
+	}
+	#shk{
+		display:block;
+		float:left;
+		margin-left:10px;
+	}
+}
+#quote #quote_snapshot_lv1 #interim {
+  width:99%;
+  margin-bottom:60px;
+}
+#quote_snapshot_lv3{
+	.btnArea{
+		position:absolute;
+		left: 10px;
+		bottom: 10px;
+		input{
+			display:block;
+			float:left;
+			margin-top:20px;
+		}
+	}
+	.quote_left{
+		margin-bottom:60px;
+	}
+	#hidden{
+		margin:0px auto;
+		height: 8px;
+		width: 161px;
+		cursor: pointer;
+		background: url(../images/trading/hidden.png) center no-repeat;
+	}
+}
+#quote_delay{
+	table{
+		margin-bottom:0px;
+	}
+	td{
+		padding:8px;
+		text-align:center;
+	}
+	td#buySellN{
+		color:#000000;
+	}
+	tr.odd td{
+		background:#F7D281 url(../images/trading/splitLine.png) right no-repeat;
+		&.oddLast{
+			background-image:none;
+		}
+	}	
+	.btnArea{
+		margin-top:20px;
+		input{
+			margin-left:10px;
+			margin-top:20px;
+		}
+	}
+}
+#chartPop{
+	position:absolute; 
+	z-index:101;  
+	padding:5px;
+	*padding:25px 5px 5px 5px; 
+	background-color:#FFF; 
+	cursor:move;
+	img{
+		cursor:default;
+	}
+}
+#new{
+	td{
+		text-align:left;
+		color:#666;
+		padding:8px 10px;
+		&.newTit{
+			color:@main-color;
+		}
+	}
+}
+#acknowledgement{
+	.note{
+		padding-bottom:15px;
+		margin-bottom:10px;
+		border-bottom:1px solid #666;
+	}
+	.sorry{
+		padding-bottom:15px;
+		margin-bottom:10px;
+		border-bottom:1px solid #666;
+		color:#F00;
+	}
+	td{
+		padding:8px 5px;
+	}
+}
+
+#chargesDetail{
+	display:none;
+	position:absolute;
+	width:260px;
+	padding-bottom:5px;
+	border:1px solid @main-color;
+	background-color:#FFF;
+	.arrow{
+		position:absolute;
+		left:-32px;
+		bottom:10px;
+		width:0px;
+		height:0px;
+		line-height:0px;
+		overflow:hidden;
+		border-top:15px solid transparent;
+		border-right:15px solid @main-color;
+		border-bottom:15px solid transparent;
+		border-left:15px solid transparent;
+	}
+	.tit{
+		color:#FFF;
+		padding:5px 0px;
+		text-align:center;
+		background-color:@main-color;
+	}
+	table{
+		margin-bottom:0px;
+		tfoot td{
+			font-weight:bolder;
+			em{
+				font-style:normal;
+				text-decoration:underline;
+				border-bottom:1px solid #000;
+			}
+		}
+	}
+	tr.line{
+		td{
+			border-top:1px solid #000;
+		}
+	}
+	td{
+		padding:4px 4px;
+	}
+}
+//-----------------------------------------------------------------eIPO---------------------------------------------------------------
+#eipo{
+	padding-top:20px;
+	td{	
+		padding:10px 0px;
+		text-align:center;
+		img{
+			margin-left:2px;
+		}
+	}
+	tr.tit td{
+		border:none;
+		padding:5px 0px;
+	}
+	td.leftAlign{
+		text-align:left;
+		padding:5px;
+		span{
+			color:#F00;
+		}
+	}
+	.note{
+		color:#999;
+	}
+}
+
+//新股资料弹出层
+#morePop{
+	margin-top:-250px;
+	margin-left:-300px;
+	top:50%;
+	left:50%;
+	width:600px;
+	padding:5px;
+	*padding:25px 5px;
+	td{
+		padding:3px 5px;
+		background-color:@gray-color;
+		border-bottom:1px solid #FFF;
+	}
+	tr.empty td{
+		background-color:#FFF;
+		padding:0px;
+	}
+	#stockInfo{
+		margin-bottom:0px;
+		*margin-bottom:-20px;
+		padding-bottom:0px;
+	}
+	#purchaseClause{
+		margin-top:30px;
+		*margin-top:50px;
+		margin-bottom:0px;
+		*margin-bottom:-20px;
+		padding-bottom:0px;
+	}
+}
+
+//查询弹出层
+#enquirePop{
+	margin-top:-250px;
+	margin-left:-300px;
+	top:50%;
+	left:50%;
+	width:600px;
+	padding:5px;
+	*padding:25px 5px 20px 5px;
+	#enquireInfo{
+		margin-bottom:0px;
+		*margin-bottom:-15px;
+		padding-bottom:0px;
+	}
+	td{
+		padding:3px 5px;
+		background-color:@gray-color;
+		border-bottom:1px solid #FFF;
+	}
+	tr.tit td,td.tit{
+		color:#FFF;
+		padding:5px;
+		background-color:@main-color;
+	}
+	tr.whiteBorder td{
+		border-bottom:10px solid #FFF;
+	}
+	tr.last td{
+		border-bottom:none;
+	}
+	.modules{
+		margin-bottom:15px;
+		border:2px solid @main-color;
+		table{
+			margin-bottom:0px;
+		}
+	}
+	td.rightAlign{
+		text-align:right;
+	}
+	h4{
+		margin-bottom:5px;
+	}
+	.records{
+		td{
+			text-align:center;
+			border-right:1px solid #FFF;
+			&.leftAlign{
+				text-align:left;
+				padding-left:5px;
+			}
+		}
+		tr.tit td{
+			border:none;
+		}
+	}
+}
+
+#revoke,#modify,#application{
+	h3{
+		margin-bottom:10px;
+		padding-left:30px;
+		background:url(../images/trading/log.png) left center no-repeat;
+	}
+	td{
+		padding:3px 5px;
+		background-color:@gray-color;
+		border-bottom:1px solid #FFF;
+		input{
+			text-align:right;
+		}
+	}
+	tr.tit td,td.tit{
+		color:#FFF;
+		padding:5px;
+		background-color:@main-color;
+	}
+	tr.whiteBorder td{
+		border-bottom:10px solid #FFF;
+	}
+	tr.last td{
+		border-bottom:none;
+	}
+	.modules{
+		margin-bottom:15px;
+		border:2px solid @main-color;
+		table{
+			margin-bottom:0px;
+		}
+	}
+	td.rightAlign{
+		text-align:right;
+	}
+	#tips{
+		height:100px;
+		line-height:100px;
+		text-align:center;
+		font-weight:bolder;
+		border-top:1px solid #FFF;
+		background-color:@gray-color;
+		margin-bottom:20px;
+	}
+	#afterMath{
+		*overflow:hidden;
+		margin-top:40px;
+		#backHome{
+			float:left;
+			img{
+				vertical-align:middle;
+			}
+			a:link,a:visited{
+				color:@main-color;
+				text-decoration:none;
+			}
+			a:hover{
+				text-decoration:underline;
+			}
+		}
+		#savePdf{
+			float:right;
+			margin-right:10px;
+			margin-top:5px;
+		}
+		.btnArea{
+			padding-right:5px;
+			float:right;
+			input{
+				margin-left:20px;
+			}
+		}
+	}
+	#clauseBox{
+		padding:5px 10px;
+		margin-bottom:20px;
+		background-color:@gray-color;
+		line-height:24px;
+		a:link,a:visited{
+			color:#2D6E98;
+			text-decoration:none;
+		}
+		a:hover{
+			color:#CD664C;
+		}
+	}
+	.chk{
+		margin-bottom:30px;
+		line-height:20px;
+		input{
+			vertical-align:middle;
+		}
+	}
+	#stockQuantityTable{
+		position:relative;
+		margin-bottom:30px;
+		td{
+			border-right:1px solid #FFF;
+			img{
+				margin-left:8px;
+			}
+		}
+		#appQtyMsg{
+			position:absolute;
+			top:5px;
+  			left:510px;
+			color:#F00;
+			line-height:12px;
+		}
+	}
+	#extra{
+		margin-left:50px;
+		margin-top:10px;
+		td{
+			background-color:#FFF;
+			input{
+				width:100px;
+			}
+			span{
+				line-height:12px;
+			}
+		}
+	}
+}
+
+//撤单进度条，修改进度条,申请进度条
+#revokeBar,#modifyBar,#applicationBar{
+	margin-bottom:20px;
+	height:25px;
+	padding:4px 0px;
+	background-color:@light-color;
+	li{
+		float:left;
+		width:150px;
+		height:25px;
+		line-height:25px;
+		margin-right:-14px;
+		padding-left:30px;
+		font-weight:bolder;
+		background:url(../images/common/steps_dark.png) no-repeat;
+		span{
+			display:inline-block;
+			margin-right:10px;
+			margin-top:-5px;
+			color:#FFF;
+			font-size:25px;
+			vertical-align:middle;
+		}
+		&.current{
+			background:url(../images/common/steps_bright.png) no-repeat;
+		}
+	}
+}
+
+//股数选择弹出层
+#stockSelectPop{
+	margin-top:-250px;
+	margin-left:-350px;
+  	top:50%;
+  	left:50%;
+  	width:735px;
+	padding:5px 0px 10px 5px;
+	*padding:25px 0px 10px 5px;
+	#stockQuantity{
+		margin-top:22px;
+	}
+	table{
+		float:left;
+		margin-right:5px;
+	}
+	td{
+		cursor:pointer;
+		text-align:center;
+		padding:5px;
+	}
+	tr.tit th{
+		color:#FFF;
+		padding:5px;
+		text-align:center;
+		background-color:@main-color;
+	}
+	tr.selected td{
+		color:@main-color;
+		background-color:@hover-color;
+	}
+	tr.selected td.tick{
+		background:@hover-color url(../images/trading/tick.png) right center no-repeat;
+	}
+}
+
+
+//------------------------------------------------------Order Book---------------------------------------------------------
+
+#condition{
+	margin-bottom:10px;
+	font-weight:bolder;
+	td{
+		padding:5px;
+	}
+	select{
+		width:auto;
+		min-width:100px;
+	}
+}
+#orderBook{
+	position:relative;
+	.modules table{
+		td{
+			padding:5px 2px;
+			input{
+				width:50px;
+			}
+		}
+	}
+}
+u{
+	cursor:pointer;
+}
+.clearFilter{
+	position:absolute;
+	top:0px;
+	right:-70px;
+	a:link,a:visited {
+	  text-decoration: none;
+	  color: @main-color;
+	  font-style:normal;
+	}
+	a:hover {
+	  text-decoration: underline;
+	}
+}
+.queryBox{
+	display:none;
+	position:absolute;
+	padding:8px;
+	border-radius:5px;
+	border:1px solid #666;
+	background-color:#FFF;
+	box-shadow:5px 5px 10px #666;
+	z-index:10;
+	span{
+		display:block;
+		position:absolute;
+		left:15px;
+		bottom:-9px;
+		color:#333;
+	}
+	b{
+		display:block;
+		position:absolute;
+		font-weight:normal;
+		left:15px;
+		bottom:-7px;
+		color:#FFF;
+	}
+	input[type=text]{
+		border:1px solid @main-color;
+		width:100px;
+		height:23px;
+		line-height:23px;
+		vertical-align:top;
+		padding-left:5px;
+	}
+}
+
+#detailOrderPop{
+	margin-top:-250px;
+	margin-left:-470px;
+	top:50%;
+	left:50%;
+	width:920px;
+	padding:5px;
+	*padding:25px 5px;
+	padding-bottom:0px;
+	#detailOrder{
+		margin-bottom:5px;
+	}
+	td{
+		padding:8px 2px 8px 10px;
+	}
+	.tips{
+		margin-bottom:20px;
+	}
+	.btnArea{
+		text-align:right;
+		input{
+			margin-left:20px;
+		}
+	}
+}

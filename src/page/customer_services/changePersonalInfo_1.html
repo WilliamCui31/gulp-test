@@ -1,0 +1,293 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link type="text/css" rel="stylesheet/less" href="../../css/global.less" />
+<link type="text/css" rel="stylesheet/less" href="../../css/main.less" />
+<link type="text/css" rel="stylesheet/less" href="../../css/services.less" />
+<link type="text/css" rel="stylesheet" href="../../css/zebra_datepicker.css" />
+<title>Account Master</title>
+</head>
+
+<body>
+<div id="container">
+    <div id="headerPage"></div>
+    <div id="content" name="accountMaster">
+        <div id="left_con">
+        	<div id="perInfo" class="mainBox">
+                <div id="steps">
+                    <ul>
+                        <li class="current"><span>1</span>Modify Information</li>
+                        <li><span>2</span>Confirmation</li>
+                        <li><span>3</span>Acknowledgement</li>
+                        <div class="clear"></div>
+                    </ul>
+                </div>
+                <div class="title">Contact Information<span></span></div>
+                <div class="modules">
+                    <table width="100%">
+                        <tr >
+                            <td width="30%"><strong>Account:</strong></td>
+                            <td>
+                                <select>
+                                    <option value="">7000000 Chan Tai Man</option>
+                                </select>
+                            </td>
+                        </tr>
+                    </table>
+                    <div class="desText">This service requires a One-Time Password(OTP) for your further protection.Please review your contact information and make changes  where applicable. </div>
+                    <table width="100%">
+                        <tr class="secondaryColor">
+                            <td  width="35%">Effective Date of Required Changes:</td>
+                            <td  width="65%">
+                                <input type="radio" name="a" id="a_1" value="" checked="checked" /> With Immediate Effect <br/>
+                                <div style="position:relative; margin-top:15px;">
+                                    <input type="radio"  name="a" id="a_2" value="" /> From
+                                    <input type="text" id="dateStart" name="dateStart" />(Can choose date within 1 month)
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+                    <table width="100%">
+                        <tr>
+                            <td width="25%"></td>
+                            <td width="5%"></td>
+                            <td width="5%"></td>
+                            <td width="40%"></td>
+                        </tr>
+                        <tr class="tit">
+                            <td colspan="4">Phone Numbers / Email Address</td>
+                        </tr>
+                        <tr>
+                            <td colspan="4">For oversea's phone / fax number(s), please input country code with the area code (if applicable)</td>
+                        </tr>
+                        <tr>
+                            <td>&nbsp;</td>
+                            <td class="centerAlign"><div align="center">Country<br />Code</div></td>
+                            <td class="centerAlign"><div align="center">Area<br />Code</div></td>
+                            <td><div style="padding-left:20px;">Number</div></td>
+                        </tr>
+                        <tr>
+                            <td>Mobile Phone</td>
+                            <td class="centerAlign">
+                                <div align="center">
+                                    <label maxlength="3" size="3">852</label>
+                                </div>
+                            </td>
+                            <td class="centerAlign">
+                                <div align="center">
+                                    <label maxlength="3" size="3">--</label>
+                                </div>
+                            </td>
+                            <td><label maxlength="16" size="10">12XXX678</label></td>
+                        </tr>
+                        <tr>
+                            <td>Office Phone</td>
+                            <td class="centerAlign">
+                                <input type="text" name="code" maxlength="3" size="3" value="852" />
+                            </td>
+                            <td class="centerAlign">
+                                <input type="text" name="code" maxlength="3" size="3" />
+                            </td>
+                            <td>
+                                <input type="text" name="code" maxlength="16" size="10" value="22508298" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Office Phone 2</td>
+                            <td class="centerAlign">
+                                <input type="text" name="code" maxlength="3" size="3" value="852" />
+                            </td>
+                            <td class="centerAlign">
+                                <input type="text" name="code" maxlength="3" size="3" />
+                            </td>
+                            <td>
+                                <input type="text" name="code" maxlength="16" size="10" value="22508298" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Residental Telephone</td>
+                            <td class="centerAlign">
+                                <input type="text" name="code" maxlength="3" size="3" value="852" />
+                            </td>
+                            <td class="centerAlign">
+                                <input type="text" name="code" maxlength="3" size="3" />
+                            </td>
+                            <td><input type="text" name="code" maxlength="16" size="10" value="12XXX678" /></td>
+                        </tr>
+                        <tr>
+                            <td>Office Tel</td>
+                            <td class="centerAlign">
+                                <input type="text" name="code" maxlength="3" size="3" value="852" />
+                            </td>
+                            <td class="centerAlign">
+                                <input type="text" name="code" maxlength="3" size="3" />
+                            </td>
+                            <td><input type="text" name="code" maxlength="16" size="10" value="12XXX678" /></td>
+                        </tr>
+                        <tr>
+                            <td>Fax</td>
+                            <td class="centerAlign">
+                                <input type="text" name="code" maxlength="3" size="3" value="852" />
+                            </td>
+                            <td class="centerAlign">
+                                <input type="text" name="code" maxlength="3" size="3" />
+                            </td>
+                            <td><input type="text" name="code" maxlength="16" size="10" value="12XXX678" /></td>
+                        </tr>
+                        <tr>
+                            <td>Email</td>
+                            <td colspan="3">
+                                <input type="text" name="code" maxlength="50" size="50" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Email 2</td>
+                            <td colspan="3">
+                                <input type="text" name="code" maxlength="50" size="50" />
+                            </td>
+                        </tr>
+                        <tr class="tit">
+                            <td colspan="4">Correspondence Address Details</td>
+                        </tr>
+                        <tr>
+                            <td>Address 1</td>
+                            <td colspan="3">Unit B &#38; C, 24/F, United Centre</td>
+                        </tr>
+                        <tr>
+                            <td>Address 2</td>
+                            <td colspan="3">95 Queensway</td>
+                        </tr>
+                        <tr>
+                            <td>Address 3</td>
+                            <td colspan ="3">Admiralty</td>
+                        </tr>
+                        <tr>
+                            <td>Address 4</td>
+                            <td colspan="3">Hong Kong</td>
+                        </tr>
+                        <tr>
+                            <td>Country</td>
+                            <td colspan="3">Hong Kong</td>
+                        </tr>
+                        <tr>
+                            <td>Postal Code</td>
+                            <td colspan="3"></td>
+                        </tr>
+                        <tr class="secondaryColor">
+                            <td colspan="3">Update Your correspondence address</td>
+                            <td id="switchDisplay">
+                                <input id="address_1" name="address" type="radio" value="" /> Yes &nbsp;&nbsp;
+                                <input id="address_2" name="address" type="radio" value="" checked="checked" /> No 
+                            </td>
+                        </tr>
+                        <tbody id="address" style="display:none;">
+                        <tr>
+                            <td colspan="4"><u><strong>Enter the new correspondence address</strong></u></td>
+                        </tr>
+                        <tr>
+                            <td colspan="4"><p style="color:#F00">Address in Canada is not allowed.</p></td>
+                        </tr>
+                        <tr>
+                            <td >Address 1</td>
+                            <td colspan="3"><input type="text" size="60" value="Unit B &amp; C, 24/F, United Centre" /></td>
+                        </tr>
+                        <tr>
+                            <td>Address 2</td>
+                            <td colspan ="3"><input type="text" size="60" value="95 Queensway" /></td>
+                        </tr>
+                        <tr>
+                            <td>Address 3</td>
+                            <td colspan ="3"><input type="text" size="60" value ="Admiralty"/></td>
+                        </tr>
+                        <tr>
+                            <td>Address 4</td>
+                            <td colspan ="3"><input type="text" size="60" value="Hong Kong"/></td>
+                        </tr>
+                        <tr>
+                            <td>Country</td>
+                            <td colspan ="3">
+                                <select name="select">
+                                    <option value="">Hong Kong</option>
+                                    <option value="">China</option>
+                                    <option value="">Macau</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Postal Code</td>
+                            <td colspan ="3"><input type="text" size="60" /></td>
+                        </tr>
+                        </tbody>
+                    </table>
+                    <table width="100%">
+                        <tr>
+                            <td width="34%"></td>
+                            <td width="50%"></td>
+                            <td></td>
+                        </tr>
+                        <tr class="tit">
+                            <td colspan="3">Synchronizing Shenyin Wanguo Securities Account's Contact Information to Shenyin Wanguo Futures Account(s)</td>
+                        </tr>
+                        <tr>
+                            <td colspan="3">Do you want to apply all the updated information to the Futures Account(s) which maintained in Shenyin Wanguo Futures(H.K.) Limited?</td>
+                        </tr>
+                        <tr class="secondaryColor">
+                            <td><u>Futures Account Number</u></td>
+                            <td><u>Futures Account Name</u></td>
+                            <td><u>Synchronize</u></td>
+                        </tr>
+                        <tr>
+                            <td>01234567</td>
+                            <td>Chan Tai Man</td>
+                            <td><input type="radio" name="ab1" id="ab1_1" value="yes" checked="checked" /> Yes&nbsp;&nbsp;<input type="radio" name="ab1" id="ab1_2" value="no" /> No </td>
+                        </tr>
+                        <tr>
+                            <td>77788899</td>
+                            <td>Chan Tai Man,David</td>
+                            <td><input type="radio" name="abc1" id="abc1_1" value="yes" checked="checked" /> Yes&nbsp;&nbsp;<input type="radio" name="abc1" id="abc1_2" value="no" /> No </td>
+                        </tr>
+                    </table>
+                    <div class="btnArea"><a href="changePersonalInfo_2.html"><img src="../../images/common/Next_en.png" width="140" alt="next" title="next" /></a></div>
+                    <p>
+                        Notes:
+                        <ol>
+                            <li>This request will be processed within 2 working days upon receipt and confirmation.</li>
+                            <li>the updated setting will only effective on the selected account</li>
+                            <li>It is inapplicable for joint name account and corporate account to update contact information from here. If you want to update your joint name account / corporate account record, please complete <a href="javascript:void(0);">Change of Client Data Form</a>  and return to <b>Unit B&C, 24/F, United Centre, 95 Queensway, Admiralty, Hong Kong</b>.</li>
+                            <li>Delivery of SMS may be subject to delayed transmission due to network traffic or the public nature of the network. Furthermore, delivery of SMS relies on support from service providers. If you are abroad, the service provider may not allow you to receive international SMS. Your service provider may also levy charges. You may like to consult your service provider and/ or hardware supplier for details.</li>
+                        </ol>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div id="rightBarPage"></div>
+        <div class="clear"></div>
+    </div>
+    <div id="footerPage"></div>
+</div>
+<script type="text/javascript" src="../../js/less-1.3.0.min.js"></script> 
+<script type="text/javascript" src="../../js/jquery-1.7.2.min.js"></script> 
+<script type="text/javascript" src="../../js/global.js"></script> 
+<script type="text/javascript" src="../../js/zebra_datepicker.js"></script> 
+<script type="text/javascript">
+//包含头部,尾部和右边栏
+$("#headerPage").load("../shared/header.html");
+$("#footerPage").load("../shared/footer.html");
+$("#rightBarPage").load("../shared/rightBar.html");
+$("#perInfoPage").load("perInfo_1.html");
+$.getScript("../../js/global.js");
+
+//调用datepicker日历
+$("#dateStart").Zebra_DatePicker({
+});
+$("#switchDisplay input").click(function(){
+	if($(this).attr("id")=="address_1"){
+		$("#address").show();
+	}else{
+		$("#address").hide();
+	}
+});	
+</script>
+</body>
+</html>

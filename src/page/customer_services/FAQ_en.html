@@ -1,0 +1,62 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link type="text/css" rel="stylesheet/less" href="../../css/global.less" />
+<link type="text/css" rel="stylesheet/less" href="../../css/main.less" />
+<link type="text/css" rel="stylesheet/less" href="../../css/services.less" />
+<title>FAQ</title>
+</head>
+
+<body>
+<div id="container">
+  <div id="headerPage"></div>
+  <div id="content" name="faq">
+    <div id="left_con">
+    	<div id="faq" class="mainBox">
+        	<div class="title">FAQ<span></span></div>
+            <div class="modules">
+            	<h3>Online Trading</h3>
+                <ul>
+                	<li>
+                    	<h4>1.How to apply online trading service?</h4>
+                        <p><span>&#9670</span> For current customer,please contact with Account Executive or visiting branches for application.If you are a new customer,then please mention to our staffs before application.</p>
+                    </li>
+                    <li>
+                    	<h4>2.Do I need to pay any application feeds on online trading service?</h4>
+                        <p><span>&#9670</span> There is no additional charge on online trading application.</p>
+                    </li>
+                    <li>
+                    	<h4>3.Can I enjoy any free real time quotation service?</h4>
+                        <p><span>&#9670</span> Online trading clients can enjoy 250 times free snapshot Quotation serrvice,and clients also can earn extra 100 times snapshots for each successful trading via online system. Besides snapshots quotation service, we also provide streaming real time quotation services(monthly fees applied, please refer to " Real Time Quotation Service" section for detail). </p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div id="rightBarPage"></div>
+    <div class="clear"></div>
+  </div>
+  <div id="footerPage"></div>
+</div>
+<script type="text/javascript" src="../../js/less-1.3.0.min.js"></script> 
+<script type="text/javascript" src="../../js/jquery-1.7.2.min.js"></script> 
+<script type="text/javascript" src="../../js/global.js"></script> 
+<script type="text/javascript">
+//包含头部,尾部和右边栏
+$("#headerPage").load("../shared/header.html");
+$("#footerPage").load("../shared/footer.html");
+$("#rightBarPage").load("../shared/rightBar.html");
+$.getScript("../../js/global.js");
+
+$("#faq h4").toggle(
+	function(){
+		$(this).next("p").slideDown();
+	},
+	function(){
+		$(this).next("p").slideUp();
+	}
+)
+</script>
+</body>
+</html>

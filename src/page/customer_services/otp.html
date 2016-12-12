@@ -1,0 +1,113 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link type="text/css" rel="stylesheet/less" href="../../css/global.less" />
+<link type="text/css" rel="stylesheet/less" href="../../css/main.less" />
+<link type="text/css" rel="stylesheet/less" href="../../css/services.less" />
+<title>Account Master</title>
+</head>
+
+<body>
+<div id="container">
+    <div id="headerPage"></div>
+    <div id="content" name="accountMaster">
+        <div id="left_con">
+            <div id="perInfo" class="mainBox">
+                <div id="steps">
+                    <ul>
+                        <li><span>1</span>Modify Information<br />
+                        <li class="current"><span>2</span>Confirmation<br />
+                        <li><span>3</span>Acknowledgement<br />
+                        <div class="clear"></div>
+                    </ul>
+                </div>
+                <div class="title">Contact Information<span></span></div>
+                <div class="modules">
+                    The One Time Password (OTP) will be sent to your registered mobile phone number shortly. 
+                    Please input the One Time Password (OTP) and  click <img src="../../images/common/Submit_en.png" width="80" /> to process.
+                    <table width="100%">
+                        <tr>
+                            <td width="30%"></td>
+                            <td></td>
+                        </tr>
+                        <tr class="tit">
+                            <td colspan="2">This transaction requires authorization.</td>
+                        </tr>
+                        <tr>
+                            <td>Transaction ID</td>
+                            <td>2187-4898</td>
+                        </tr>
+                        <tr>
+                            <td>SMS One Time Password (OTP)</td>
+                            <td id="otp">
+                                SYWG-
+                                <input type="password"  style="width:10px;" maxlength="1" size="1" value=""/>
+                                <input type="password"  style="width:10px;" maxlength="1" size="1" value=""/>
+                                <input type="password"  style="width:10px;" maxlength="1" size="1" value=""/>
+                                <input type="password"  style="width:10px;" maxlength="1" size="1" value=""/>
+                                <input type="password"  style="width:10px;" maxlength="1" size="1" value=""/>
+                                <input type="password"  style="width:10px;" maxlength="1" size="1" value=""/>
+                                <input type="password"  style="width:10px;" maxlength="1" size="1" value=""/>
+                                <input type="password"  style="width:10px;" maxlength="1" size="1" value=""/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>One Time Password (OTP) Expired</td>
+                            <td>2012-10-24 14:45 HKT</td>
+                        </tr>
+                        <tr>
+                            <td>&nbsp;</td>
+                            <td>
+                                If you do not receive the OTP after the One Time Password (OTP) Expired,<br />
+                                please click the “New OTP” to try again.<br />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2" style="text-align:center">
+                                <a href="javascript:void(0);"><img src="../../images/service/NewOTP_en.png" width="140" title="New OTP" /></a>
+                            </td>
+                        </tr>
+                    </table>
+                    </div>
+                    <div class="btnArea">
+                        <a href="changePersonalInfo_3.html"><img src="../../images/common/Submit_en.png" width="140" title="Submit"/></a>
+                    </div>
+                    <p>
+                        Notes:
+                        <ol>
+                            <li>This request will be processed within 2 working days upon receipt and confirmation.</li>
+                            <li>the updated setting will only effective on the selected account</li>
+                            <li>It is inapplicable for joint name account and corporate account to update contact information from here. If you want to update your joint name account / corporate account record, please complete <a href="javascript:void(0);">Change of Client Data Form</a>  and return to <strong>Unit B&C, 24/F, United Centre, 95 Queensway, Admiralty, Hong Kong</strong>.</li>
+                            <li>Delivery of SMS may be subject to delayed transmission due to network traffic or the public nature of the network. Furthermore, delivery of SMS relies on support from service providers. If you are abroad, the service provider may not allow you to receive international SMS. Your service provider may also levy charges. You may like to consult your service provider and/ or hardware supplier for details.</li>
+                        </ol>
+                    </p>
+                </div>
+        </div>
+        <div id="rightBarPage"></div>
+        <div class="clear"></div>
+    </div>
+    <div id="footerPage"></div>
+</div>
+<script type="text/javascript" src="../../js/less-1.3.0.min.js"></script> 
+<script type="text/javascript" src="../../js/jquery-1.7.2.min.js"></script> 
+<script type="text/javascript" src="../../js/global.js"></script> 
+<script type="text/javascript" src="../../js/zebra_datepicker.js"></script> 
+<script type="text/javascript">
+//包含头部,尾部和右边栏
+$("#headerPage").load("../shared/header.html");
+$("#footerPage").load("../shared/footer.html");
+$("#rightBarPage").load("../shared/rightBar.html");
+$.getScript("../../js/global.js");
+
+$("#otp").find("input").keyup(function(evt){
+	if(evt.keyCode==8){
+		$(this).val("");
+		$(this).prev("input").select();
+		return false;
+	}
+	$(this).next("input").focus();
+});
+</script>
+</body>
+</html>

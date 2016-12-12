@@ -1,0 +1,11 @@
+<div id="revokeBar">
+	<ul>
+    	<li><span>1</span>確認撤單</li>
+        <li><span>2</span>撤单完成</li>
+        <div class="clear"></div>
+    </ul>
+</div>
+<script type="text/javascript">
+	var current=$("#revoke").attr("current");
+	$("#revokeBar").find("li").eq(current).addClass("current");
+</script>

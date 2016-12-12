@@ -1,0 +1,218 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link type="text/css" rel="stylesheet/less" href="../../css/global.less" />
+<link type="text/css" rel="stylesheet/less" href="../../css/main.less" />
+<link type="text/css" rel="stylesheet/less" href="../../css/trade.less" />
+<script type="text/javascript" src="../../js/jquery-1.7.2.min.js"></script>
+<script type="text/javascript" src="../../js/global.js"></script>
+<title>Order Book</title>
+</head>
+
+<body>
+<div id="container">
+    <div id="headerPage"></div>
+    <div id="content" name="orderBook">
+        <div id="left_con">
+        	<div id="orderBook" class="mainBox">
+            	<div class="title">Order Book <span></span></div>
+                <div id="condition">
+                	<form action="#" method="post">
+                	<table width="100%">
+                      <tr>
+                      	<td width="35%">
+                        	Account&nbsp:&nbsp;
+                            <select>
+                                <option value="">7000000-10-1 acc_name</option>
+                            </select>
+                        </td>
+                        <td width="30%">
+                        	Market&nbsp;&nbsp; 
+                            <select name="market">
+                            	<option value="All">All</option>
+                            	<option value="Australia">Australia</option>
+                                <option value="United States">United States</option>
+                                <option value="United Kingdom" selected="selected">United Kingdom</option>
+                                <option value="Japan">Japan</option>
+                            </select>
+                        </td>
+                        <td width="25%">&nbsp;</td>
+                        <td>&nbsp;</td>
+                      </tr>
+                      <tr>
+                      	 <td>
+                        	Status&nbsp;&nbsp; 
+                            <select name="status">
+                            	<option value="All">All</option>
+                                <option value="Open">Open</option>
+                                <option value="Partial/Fully Filled" selected="selected">Partial/Fully Filled</option>
+                                <option value="Open,Filled,Rejected">Open,Filled,Rejected</option>
+                                <option value="Close">Close</option>
+                            </select>
+                        </td>
+                        <td width="26%">
+                        	Date Range&nbsp;&nbsp;  
+                            <select name="range">
+                            	<option value="Today">Today</option>
+                                <option value="Last 7 Days">Last 7 Days</option>
+                                <option value="Last 30 Days">Last 30 Days</option>
+                                <option value="Last 90 Days" selected="selected">Last 90 Days</option>
+                            </select>
+                        </td>
+                        <td>
+                        	B/S&nbsp;&nbsp;  
+                            <select name="market">
+                            	<option value="B/S" selected="selected">Buy / Sell</option>
+                            	<option value="B">Buy</option>
+                                <option value="S">Sell</option>
+                            </select>
+                        </td>
+                        <td align="right"><a href="javascript:void(0);"><img width="20" height="20" src="../../images/common/sinchronize.png" id="refresh" title="refresh" /></a>
+                        </td>
+                      </tr>
+                    </table>
+                    </form>
+                </div>
+                <div class="modules">
+                	<table width="100%">
+                      <tr class="tit">
+                        <td width="20%">Date</td>
+                        <td width="10%">Code</td>
+                        <td width="20%">Name</td>
+                        <td width="5%">B/S</td>
+                        <td width="10%" class="rightAlign">Status</td>
+                        <td width="10%" class="rightAlign">Quantity</td>
+                        <td width="10%" class="rightAlign">Price</td>
+                        <td width="15%" class="centerAlign">Action</td>
+                      </tr>
+                      <tr>
+                        <td>2012-10-28 10:23:45</td>
+                        <td>00001.HK</td>
+                        <td>Cheung Kong</td>
+                        <td><span class="buy">B</span></td>
+                        <td class="rightAlign">Fully Filled</td>
+                        <td class="rightAlign">1,000</td>
+                        <td class="rightAlign">100.00</td>
+                        <td class="centerAlign">-</td>
+                      </tr>
+                      <tr class="secondaryColor">
+                        <td>2012-10-28 10:23:45</td>
+                        <td>00218.HK</td>
+                        <td>Shenyin Wanguo</td>
+                        <td><span class="sell">S</span></td>
+                        <td class="rightAlign">Reg</td>
+                        <td class="rightAlign">5,000</td>
+                        <td class="rightAlign">2.95</td>
+                        <td class="centerAlign"><span class="btnModify">Modify</span><span class="btnCancel">Cancel</span></td>
+                      </tr>
+                      <tr>
+                        <td>2012-10-28 10:23:45</td>
+                        <td>00003.HK</td>
+                        <td>HK & China Gas</td>
+                        <td><span class="buy">B</span></td>
+                        <td class="rightAlign">Fully Filled</td>
+                        <td class="rightAlign">2,000</td>
+                        <td class="rightAlign">38.60</td>
+                        <td class="centerAlign">&nbsp;</td>
+                      </tr>
+                      <tr class="secondaryColor">
+                        <td>2012-10-28 10:23:45</td>
+                        <td>00004.HK</td>
+                        <td>Wharf Holdings</td>
+                        <td><span class="sell">S</span></td>
+                        <td class="rightAlign">Fully Filled</td>
+                        <td class="rightAlign">1,000</td>
+                        <td class="rightAlign">9.90</td>
+                        <td class="centerAlign">&nbsp;</td>
+                      </tr>
+                      <tr>
+                        <td>2012-10-28 10:23:45</td>
+                        <td>00005.HK</td>
+                        <td>HSBC</td>
+                        <td><span class="buy">B</span></td>
+                        <td class="rightAlign">Fully Filled</td>
+                        <td class="rightAlign">400</td>
+                        <td class="rightAlign">65.70</td>
+                        <td class="centerAlign">&nbsp;</td>
+                        <td class="centerAlign">&nbsp;</td>
+                      </tr>
+                      <tr class="secondaryColor">
+                        <td>2012-10-28 10:23:45</td>
+                        <td>00006.HK</td>
+                        <td>Power Assets</td>
+                        <td><span class="sell">S</span></td>
+                        <td class="rightAlign">Fully Filled</td>
+                        <td class="rightAlign">1,000</td>
+                        <td class="rightAlign">5.10</td>
+                        <td class="centerAlign">&nbsp;</td>
+                      </tr>
+                      <tr>
+                        <td>2012-10-28 10:23:45</td>
+                        <td>AAPL.US</td>
+                        <td>Apple Inc.</td>
+                        <td><span class="buy">B</span></td>
+                        <td class="rightAlign">Fully Filled</td>
+                        <td class="rightAlign">800</td>
+                        <td class="rightAlign">3.60</td>
+                        <td class="centerAlign">&nbsp;</td>
+                      </tr>
+                      <tr class="secondaryColor">
+                        <td>2012-10-28 10:23:45</td>
+                        <td>SXX.GB</td>
+                        <td>SIRIUS MINERALS</td>
+                        <td><span class="sell">S</span></td>
+                        <td class="rightAlign">Rejected</td>
+                        <td class="rightAlign">12,000</td>
+                        <td class="rightAlign">1.80</td>
+                        <td class="centerAlign">&nbsp;</td>
+                      </tr>
+                    </table>
+                    <div id="pagingPage"></div>
+                </div>
+            </div>
+        </div>
+        <div id="rightBarPage"></div>
+        <div class="clear"></div>
+    </div>
+    <div id="footerPage"></div>
+</div>
+<div id="Mask" style="display:none;"></div>
+<div id="detailOrderPopPage"></div>
+<script type="text/javascript" src="../../js/less-1.3.0.min.js"></script>
+<script type="text/javascript">
+//包含文件
+$("#headerPage").load("../shared/header.html");
+$("#footerPage").load("../shared/footer.html");
+$("#rightBarPage").load("../shared/rightBar.html");
+$("#stockNotePage").load("../shared/stockNote.html");
+$("#pagingPage").load("../shared/paging.html");
+$("#detailOrderPopPage").load("../shared/detailOrderPop.html");
+$.getScript("../../js/global.js");
+
+$(".modules tr").not("tr:first").mouseover(function(){
+	$(this).addClass("over");
+}).mouseout(function(){
+	$(this).removeClass("over");
+}).click(function(){
+	$("#Mask").fadeTo("slow","0.3");
+	$("#detailOrderPop").fadeIn("slow");
+})
+$("#Mask").click(function(){
+	$("#detailOrderPop").fadeOut("slow");
+	$("#Mask").fadeOut("slow");
+})
+$("body").on("click","#detailOrderPop .close",function(){
+	$("#detailOrderPop").fadeOut("slow");
+	$("#Mask").fadeOut("slow");
+});
+
+$(".btnModify").click(function(){
+	window.open("modifyOrder.html","_top");
+});
+$(".btnCancel").click(function(){
+	window.open("cancelOrder.html","_top");
+})
+</script>
+</body>
+</html>

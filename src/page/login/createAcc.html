@@ -1,0 +1,177 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link type="text/css" rel="stylesheet/less" href="../../css/main.less" />
+<link type="text/css" rel="stylesheet" href="../../css/newLogin.css" />
+<script type="text/javascript" src="../../js/jquery-1.7.2.min.js"></script>
+<title>登錄 Login</title>
+</head>
+
+<body>
+<div id="container">
+	<div id="header">
+    	<div id="header_center">
+        	<div id="language">
+                <a href="javascript:void(0);">繁</a> | 
+                <a href="javascript:void(0);" class="selected">简</a> | 
+                <a href="javascript:void(0);" class="stree">EN</a>
+            </div>
+            <div id="logo"><a href="#"><img src="../../images/login/title_logo.png" /></a></div>
+            <div id="nav">
+                <ul>
+                    <li><a href="/Portal/page/login/newLogin.html" class="selected">登入</a></li>
+                    <li><a href="#">常見問題</a></li>
+                    <li><a href="/Portal/page/login/loginContactUs.html">聯絡我們</a></li>
+                    <li><a href="#">下載</a></li>
+                    <li><a href="#">收費</a></li>
+                    <li><a href="#">關於我們</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div id="content">
+    	<div id="content_center">
+        	<div id="createAcc">
+            	<div class="createAcc_top"></div>
+                <div class="createAcc_con">
+                    <div class="remind">
+                    	<div class="company_name">
+                             <img src="../../images/company/loginpage_logo_cn.png" />
+                             <div class="ce">CE:AGK283</div>
+                        </div>
+                        <ul>
+                        	<li>填妥右方資料後，<div>我們會儘快與閣下聯絡並預約開戶。</div></li>
+                            <li>如需要瞭解更多，歡迎與我們職員聯絡查詢</li>
+                            <li>所有資料必須填寫</li>
+                        </ul>
+                    </div>
+                    <div class="info">
+                    	<img src="../../images/login/createAcc_zh.png" />
+                    	<form action="newLogin.html">
+                    	<table width="320">
+                          <tr>
+                            <td>身份證姓名：</td>
+                            <td width="152"><input class="text" type="text" /></td>
+                          </tr>
+                          <tr>
+                            <td>聯絡電話：</td>
+                            <td><input class="text" type="text" /></td>
+                          </tr>
+                          <tr>
+                            <td>聯絡電郵：</td>
+                            <td><input class="text" type="text" /></td>
+                          </tr>
+                          <tr>
+                            <td valign="top">身份证后四位：</td>
+                            <td><input class="text" type="text" /><div class="tip">只用作核實身份用途</div></td>
+                          </tr>
+                          <tr>
+                            <td>是否舊有客户：</td>
+                            <td style="text-align:left;"><input type="checkbox" /></td>
+                          </tr>
+                          <tr>
+                            <td colspan="2" class="errorTips"></td>
+                          </tr>
+                          <tr>
+                            <td><input class="btn" type="reset" value="重設" /></td>
+                            <td align="right"><input class="btn" type="submit" value="提交" /></td>
+                          </tr>
+                        </table>
+                        </form>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+                <div class="createAcc_bottom"></div>
+            </div>
+        </div>
+    </div>
+    <div id="footer">
+        <div id="footer_left">
+        	<p>Trading Hotline:(852)2848 9310 | CS Hotline:(852)2848 9333 | Email:<a href="mailto:cscls@clh.com.hk">cscls@clh.com.hk</a></p>
+            <p>Technical Support:(852)2232 0333 or <a href="mailto:support@sGoTrade.com">support@sGoTrade.com</a></p>
+        </div>
+        <div id="footer_right">
+        	<p>ID:63os05-1.5.1125</p>
+            <p><span>&copy; 2013 XYZ</span> <a href="../shared/disclaimer_en.html" target="_blank">Disclaimer</a> | <a href="../shared/privacy_en.html" target="_blank">Privacy</a></p>
+        </div>
+        <div class="clear"></div>
+    </div>
+</div>
+<div class="loadingMask" style="display:none;"></div>
+<script type="text/javascript" src="../../js/less-1.3.0.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+	setInterval(function(){
+		$.autoHeight();
+	},1);
+	
+	myScroll=setInterval(scrollBox,3000);
+	$("#banner").hover(
+		function(){
+			clearInterval(myScroll);
+		},
+		function(){
+			myScroll=setInterval(scrollBox,3000);
+		}
+	)
+	
+	var account=$("#username").val();
+	$("#username").focus(function(){
+		if($.trim($(this).val())==account){
+			$(this).val("");
+			$(this).css("color","#000");
+		}
+	}).keypress(function(e){
+		if(e.keyCode==13){
+			$("#pwdTxt").focus();
+			return false;
+		}
+	}).blur(function(){
+		if($.trim($(this).val())==""){
+			$(this).val(account);
+			$(this).css("color","#999");
+		} 
+	})
+	$("#pwdTxt").focus(function(){
+		$(this).hide();
+		$("#password").show().focus();
+	});
+	$("#password").keypress(function(e){
+		if(e.keyCode==13){
+			$("#subLogin").click();
+		}
+	}).blur(function(){
+		if($.trim($(this).val())==""){
+			$(this).hide();
+			$("#pwdTxt").show();
+		}
+	});
+	$("#subLogin").click(function(e){
+		e.stopPropagation();
+		$(".loadingMask").show();
+		setTimeout(function(){
+			$(".loadingMask").hide();
+		},3000); 
+	});
+});
+
+function scrollBox(){
+	var first=$("#banner .imgCon img:first");
+	var width=-(first.outerWidth(true))+"px";
+	$("#banner .imgCon").animate({left:width},{
+		duration:500,
+		complete:function(){$("#banner .imgCon").append(first).css("left","0");}
+	});
+};
+
+$.extend({
+	//高度自适应
+	autoHeight:function(){
+		var conHeight=$(window).height()-$("#header").outerHeight()-$("#footer").outerHeight();
+		$("#content").height(conHeight);
+	}
+});
+</script>
+</body>
+</html>

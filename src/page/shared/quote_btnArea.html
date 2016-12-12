@@ -1,0 +1,86 @@
+<div class="btnArea">
+    <input type="button" id="btnChart" name="btnChart" value="Chart" />
+    <div id="shk">
+		<a href="http://202.64.120.205/ismnew/setsession.php?userid=2gotrade&password=jchan&language=E" target="_blank"><img src="../../images/trading/SHKFinancialData.gif" /></a>
+	</div>
+    <div class="clear"></div>
+</div>
+
+<script>
+//绑定有命名空间的window.resize事件
+var $chartPopTop=0;
+$(window).bind("resize.positionChartPop",function(e){
+	var chartLeft=$(document).width()-$("#chartPop").outerWidth()+10;
+	$("#chartPop").css({"left":chartLeft+"px"});
+	if($(window).height()<$chartPopTop+$("#chartPop").outerHeight()){
+		var chartTop=$("#footer").offset().top-$("#chartPop").outerHeight()+40;
+		$("#chartPop").css({"top":chartTop+"px"});
+	};
+});
+
+//chart弹出层控制
+var flag=true;
+$("#btnChart").live("click",function(){
+	if(flag){
+		var quoteNumber=$("#quoteNumber").val();
+		$("body").append('<div id="chartPop" class="pop" style="display:none;">'
+			+'<div class="close"><a href="#">X</a></div>'
+			+'<div class="blueBox" style="margin-bottom:0px;">'
+				+'<div class="title">Chart<span></span></div>'
+				+'<img src="http://content.etnet.com.hk/content/sywg/common/chart_oneminute.php?code='+quoteNumber+'" />'
+			+'</div>'
+		+'</div>');
+		setTimeout(function(){
+			var chartTop=$("#quote").offset().top+$("#quote").outerHeight()-$("#chartPop").outerHeight();
+			var chartLeft=$(document).width()-$("#chartPop").outerWidth()-17;
+			$("#chartPop").css({"top":chartTop+"px","left":chartLeft+"px"}).fadeIn();
+			$chartPopTop=$("#chartPop").offset().top;
+		},500);
+		flag=false;
+	}else{
+		$("#chartPop").fadeOut().remove();
+		flag=true;
+	}
+})
+$("#chartPop .close").live("click",function(){
+	$("#chartPop").fadeOut().remove();
+	flag=true;
+	return false;
+});
+$("#quoteNumber").keyup(function(){
+	var quoteNumber=$(this).val();
+	var chartImgSrc="http://content.etnet.com.hk/content/sywg/common/chart_oneminute.php?code="+quoteNumber;
+	$("#chartPop img").attr("src",chartImgSrc);
+});
+
+//chart弹出层移动
+$(function(){
+	var top=0,left=0,move=false;
+	$("#chartPop").live("mousedown",function(e){
+		$("#chartPop img").live("mousedown",function(){
+			return false;
+		});
+		top=e.pageY-$(this).offset().top;
+		left=e.pageX-$(this).offset().left;
+		move=true;
+	});
+	$(document).mousemove(function(e){
+		if(move){
+			var x= e.pageX-left;
+			var y= e.pageY-top;
+			
+			//移动范围的限制
+			if(x<0) x=0;
+			if(y<0) y=0;
+			var rightest=$(document).width()-$("#chartPop").outerWidth();
+			var bottomest=$(window).height()-$("#chartPop").outerHeight();
+			if(x>rightest) x=rightest;
+			if(y>bottomest) y=bottomest;
+			
+			$("#chartPop").css({"left":x+"px","top":y+"px"});
+		}
+	}).mouseup(function(){
+		move=false;
+	});
+}) 
+</script>

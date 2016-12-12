@@ -1,0 +1,177 @@
+<div id="stockSelectPop" class="pop" style="display:none;">
+    <div class="close"><a href="#">X</a></div>
+    <div id="stockQuantity" class="modules">
+    	<table width="230">
+          <tr class="tit">
+            <th width="120px">申購股數</th>
+            <th width="100px">申購金額</th>
+          </tr>
+          <tr>
+            <td>2,000</td>
+            <td>4,512.12</td>
+          </tr>
+          <tr class="secondaryColor">
+            <td>4,000</td>
+            <td>6,123.21</td>
+          </tr>
+          <tr>
+            <td>6,000</td>
+            <td>965,342.09</td>
+          </tr>
+          <tr class="secondaryColor">
+            <td>8,000</td>
+            <td>324,432.32</td>
+          </tr>
+          <tr>
+            <td>10,000</td>
+            <td>563,234.53</td>
+          </tr>
+          <tr class="secondaryColor">
+            <td>12,000</td>
+            <td>12.423.93</td>
+          </tr>
+          <tr>
+            <td>14,000</td>
+            <td>235,123.00</td>
+          </tr>
+          <tr class="secondaryColor">
+            <td>16,000</td>
+            <td>6.120.04</td>
+          </tr>
+          <tr>
+            <td>20,000</td>
+            <td>1,233,232.32</td>
+          </tr>
+          <tr class="secondaryColor">
+            <td>24,000;</td>
+            <td>2,232,87.90</td>
+          </tr>
+        </table>
+        <table width="230">
+          <tr class="tit">
+            <th width="120px">申購股數</th>
+            <th width="100px">申購金額</th>
+          </tr>
+          <tr>
+            <td>28,000</td>
+            <td>4,512.12</td>
+          </tr>
+          <tr class="secondaryColor">
+            <td>30,000</td>
+            <td>6,123.21</td>
+          </tr>
+          <tr>
+            <td>36,000</td>
+            <td>965,342.09</td>
+          </tr>
+          <tr class="secondaryColor">
+            <td>40,000</td>
+            <td>324,432.32</td>
+          </tr>
+          <tr>
+            <td>50,000</td>
+            <td>563,234.53</td>
+          </tr>
+          <tr class="secondaryColor">
+            <td>80,000</td>
+            <td>12.423.93</td>
+          </tr>
+          <tr>
+            <td>100,000</td>
+            <td>235,123.00</td>
+          </tr>
+          <tr class="secondaryColor">
+            <td>120,000</td>
+            <td>6.120.04</td>
+          </tr>
+          <tr>
+            <td>150,000</td>
+            <td>1,233,232.32</td>
+          </tr>
+          <tr class="secondaryColor">
+            <td>200,000;</td>
+            <td>2,232,87.90</td>
+          </tr>
+        </table>
+        <table width="230">
+          <tr class="tit">
+            <th width="120px">申購股數</th>
+            <th width="100px">申購金額</th>
+          </tr>
+          <tr>
+            <td>300,000</td>
+            <td>4,512.12</td>
+          </tr>
+          <tr class="secondaryColor">
+            <td>500,000</td>
+            <td>6,123.21</td>
+          </tr>
+          <tr>
+            <td>800,000</td>
+            <td>965,342.09</td>
+          </tr>
+          <tr class="secondaryColor">
+            <td>1,000,000</td>
+            <td>324,432.32</td>
+          </tr>
+          <tr>
+            <td>1,500,000</td>
+            <td>563,234.53</td>
+          </tr>
+          <tr class="secondaryColor">
+            <td>2,000,000</td>
+            <td>12.423.93</td>
+          </tr>
+          <tr>
+            <td>2,500,000</td>
+            <td>235,123.00</td>
+          </tr>
+          <tr class="secondaryColor">
+            <td>3,000,000</td>
+            <td>6.120.04</td>
+          </tr>
+          <tr>
+            <td>4,000,000</td>
+            <td>1,233,232.32</td>
+          </tr>
+          <tr class="secondaryColor">
+            <td>50,000,000;</td>
+            <td>2,232,87.90</td>
+          </tr>
+        </table>
+        <div class="clear"></div>
+    </div>
+</div>
+<script type="text/javascript">
+var quantity=$("#appQty").val();
+$("#stockQuantity tr").find("td:first").each(function() {
+    if($(this).text().split(",").join("")==quantity){
+		$(this).parent("tr").addClass("selected");
+		$(this).next("td").addClass("tick");
+	}
+});
+$("#Mask,#stockSelectPop .close a").click(function(){
+	$("#stockSelectPop").fadeOut();
+	$("#Mask").fadeOut();
+	return false;
+})
+$("#stockSelectPop tr").not(".tit").hover(
+	function(){
+		$(this).addClass("over");
+	},
+	function(){
+		$(this).removeClass("over");
+	}
+).click(function(){
+	$("#stockSelectPop tr").removeClass("selected");
+	$(this).addClass("selected");
+	$(this).find("td:last").addClass("tick");
+	var stockQuantity=$(this).find("td:first").text();
+	stockQuantity=stockQuantity.split(",").join("");
+	$("#appQty").val(stockQuantity);
+	$("#stockQuantityTable").find("td:last").text("港幣 $"+$(this).find("td:last").text());
+	$("#stockSelectPop").fadeOut();
+	$("#Mask").fadeOut();
+	$("#stockError").text("");
+})
+</script>

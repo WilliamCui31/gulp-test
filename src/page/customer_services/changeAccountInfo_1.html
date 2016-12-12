@@ -1,0 +1,155 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link type="text/css" rel="stylesheet/less" href="../../css/global.less" />
+<link type="text/css" rel="stylesheet/less" href="../../css/main.less" />
+<link type="text/css" rel="stylesheet" href="../../css/zebra_datepicker.css" />
+<link type="text/css" rel="stylesheet/less" href="../../css/services.less" />
+<title>Account Master</title>
+</head>
+
+<body>
+<div id="container">
+    <div id="headerPage"></div>
+    <div id="content" name="accountMaster">
+        <div id="left_con">
+        	<div id="accInfo" class="mainBox">
+                <div id="steps">
+                    <ul>
+                        <li class="current"><span>1</span>Modify Information</li>
+                        <li><span>2</span>Confirmation</li>
+                        <li><span>3</span>Acknowledgement</li>
+                        <div class="clear"></div>
+                    </ul>
+                </div>
+                <div class="title">Account Setting<span></span></div>
+                <div class="modules">
+                    <table width="100%" cellspacing="0" cellpadding="0">
+                        <tr >
+                            <td width="40%"><strong>Account:</strong></td>
+                            <td width="60%">
+                                <select>
+                                  <option value="">7000000-10 Chan Tai Man</option>
+                                </select>
+                            </td>
+                        </tr>
+                    </table>
+                    <div class="desText">
+                        Please review your account setting and make change when applicable
+                    </div>
+                    <table width="100%" cellspacing="0" cellpadding="0" class="border_table">
+                        <tr class="gray">
+                            <td width="35%" >Effective Date of Required Changes:</td>
+                            <td width="65%" >
+                                <input name="x" id="x_1" type="radio" value="" checked />With Immediate Effect
+                                <div style="position:relative; padding-top:10px;">
+                                    <input name="x" id="x_2" type="radio" value="" /> From
+                                    <input type="text" id="dateStart" name="dateStart" /> (Can choose date within 1 month)
+                                </div>
+                            </td>
+                        </tr>
+                        <tr class="tit">
+                            <td colspan="2">Account Services</td>
+                        </tr>
+                        <tr class="border_bottom">
+                            <td valign="top"><strong>Statement Language:</strong></td>
+                            <td>
+                                <input name="" type="radio" value="" checked/> Traditional Chinese<br />
+                                <input name="" type="radio" value="" /> Simplified Chinese<br />
+                                <input name="" type="radio" value="" /> English
+                            </td>
+                        </tr>
+                        <tr class="border_bottom">
+                            <td valign="top"><strong>Mode of Posting - Daily Statement:</strong></td>
+                            <td>
+                                <input name="" type="radio" value="" checked/> By Email
+                                <p>
+                                    <input name="" type="radio" value="" checked/> chantaiman@demo.com<br />
+                                    <input name="" type="radio" value="" /> demo@2go.com
+                                </p>
+                                <input name="" type="radio" value="" /> By Post
+                            </td>
+                        </tr>
+                        <tr class="border_bottom">
+                            <td valign="top"><strong>Mode of Posting -  Monthly Statement:</strong></td>
+                            <td>
+                                <input name="" type="radio" value="" /> By Email<br />
+                                <input name="" type="radio" value="" checked/> By Post<br />
+                                <p>
+                                    Room 2801- 2805,28/F, <br />
+                                    Citibank Tower, <br />
+                                    Citibank Plaza, 3 Garden Road, <br />
+                                    Central, Hong Kong
+                                </p>
+                            </td>
+                        </tr>
+                        <tr class="border_bottom">
+                            <td valign="top"><strong>Standing Cheque Request:</strong></td>
+                            <td>
+                                <input name="" type="radio" value="" checked="checked"/> Yes   (Default Bank Account: HSBC 21321654-21-351) <br />
+                                <p>
+                                    <input name="" type="radio" value="" checked="checked"/> Withdrawal Balance<br />
+                                    <input name="" type="radio" value="" /> Maximum Withdrawal Balance
+                                </p>
+                                <input name="" type="radio" value="" /> No
+                            </td>
+                        </tr>
+                    </table>
+                    <div style="text-align:right">
+                        <a href="changeAccountInfo_2.html"><img src="../../images/common/Next_en.png" width="140" title="Next" /></a>         
+                    </div>
+                    <p>
+                        Notes:
+                        <ol>
+                            <li>The request will be processed within 2 working days upon receipt and confirmation.</li>
+                            <li>The updated setting will only effective on the selected account. </li>
+                            <li>The monthly postal statement fee will be charged to clients who request to receive our postal statement.</li>
+                            <li>We will revert to send all statements by post until receipt your instruction to contrary if the email be returned undelivered after 3 attempts. If you want to add or change your registered email address please go to contact information section to update your email address.</li>
+                            <li>Standing cheque service is not applicable for Online trading and Margin clients</li>
+                            <li>By using the request standing cheque service you must have a designated bank account registered withus. if you would like to add/Change the designated bank account, please complete <a href="#"> Change of Client Data Form</a> and return to Unit B&C,24/F,United centre,95 Queensway,Admiralty,Hong Kong</li>
+                            <li>If you choose to use our standing cheque service, withdrawal balance and maximum withdrawal balance, then we will deposit to your designated bank account whenever there is a credit cash balance calculated in accordance with the following computation method of balance if you chooses not to provide withdrawal instruction upon each transaction.
+                                <ul>
+                                    <li>Maximum withdrawal balance – Daily maximum withdrawal balance as determined by SWS</li>
+                                    <li>Withdrawal balance – After deducting all the unsettled amounts and charges, the daily withdrawal balance as determined by SWS Standing cheque service is not applicable for Online trading and Margin clients.</li>
+                                </ul>
+                            </li>
+                        </ol>
+                    </p>
+                </div>
+            </div>
+        </div>
+    	<div id="rightBarPage"></div>
+    	<div class="clear"></div>
+    </div>
+    <div id="footerPage"></div>
+</div>
+<div id="Mask" style="display:none;"></div>
+<script type="text/javascript" src="../../js/less-1.3.0.min.js"></script> 
+<script type="text/javascript" src="../../js/jquery-1.7.2.min.js"></script> 
+<script type="text/javascript" src="../../js/global.js"></script> 
+<script type="text/javascript" src="../../js/zebra_datepicker.js"></script> 
+<script type="text/javascript">
+//包含头部,尾部和右边栏
+$("#headerPage").load("../shared/header.html");
+$("#footerPage").load("../shared/footer.html");
+$("#rightBarPage").load("../shared/rightBar.html");
+$("#accInfoPage").load("accInfo_1.html");
+$("#termsPopPage").load("termsPop.html");
+$.getScript("../../js/global.js");
+
+$("#margin,#enabled").live("click",function(){
+	$("#Mask").fadeTo("slow","0.3");
+	$("#termsPop").fadeIn("slow");
+})
+$("#Mask,#termsPop .close").live("click",function(){
+	$("#termsPop").fadeOut("slow");
+	$("#Mask").fadeOut("slow");
+})
+
+//调用datepicker日历
+$("#dateStart").Zebra_DatePicker({
+});
+</script>
+</body>
+</html>

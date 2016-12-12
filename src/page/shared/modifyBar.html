@@ -1,0 +1,12 @@
+<div id="modifyBar">
+	<ul>
+    	<li><span>1</span>修改申購資料</li>
+        <li><span>2</span>確認修改申請</li>
+        <li><span>3</span>修改完成</li>
+        <div class="clear"></div>
+    </ul>
+</div>
+<script type="text/javascript">
+	var current=$("#modify").attr("current");
+	$("#modifyBar").find("li").eq(current).addClass("current");
+</script>

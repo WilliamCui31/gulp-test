@@ -1,0 +1,193 @@
+<link type="text/css" rel="stylesheet" href="../../css/zebra_datepicker.css" />
+<script type="text/javascript" src="../../js/zebra_datepicker.js"></script>
+<div id="orderBar">
+    <div id="order" class="blueBox">
+        <div class="title">Order<span></span></div>
+        <table width="100%">
+          <tr>
+            <td width="80">Market</td>
+            <td>
+                <select id="sltMarket" name="sltMarket">
+                    <option value="United Kingdom">United Kingdom</option>
+                    <option value="Hong Kong">Hong Kong</option>
+                    <option value="USA">USA</option>
+                    <option value="Shen Zhen">Shen Zhen</option>
+                </select>
+            </td>
+          </tr>
+          <tr>
+            <td>Account</td>
+            <td>
+                <select id="sltAccount" name="sltAccount">
+                    <option value="0024894-00 Cash GBP">0024894-00 Cash GBP</option>
+                    <option value="aaaaaaaaaaaaaaaaaaaaaa">aaaaaaaaaaaaaaaaaaaaaa</option>
+                </select>
+            </td>
+          </tr>
+          <tr>
+            <td>Buying Power</td>
+            <td>GBP$ 10.000.00</td>
+          </tr>
+          <tr class="tit"><td colspan="2">New Order</td></tr>
+          <tr>
+            <td>Order</td>
+            <td class="method"><label><input type="radio" name="iptMethod" id="orderSideBuy" checked="checked" value="Buy" /> <b>Buy</b></label> <label><input type="radio" name="iptMethod" id="orderSideSell" value="Sell" /> <b>Sell</b></label></td>
+          </tr>
+          <tr>
+            <td>Stock Code</td>
+            <td><input type="text" id="iptCode" name="stockCode" value="MSFT" style="width:100px;" /><input type="button" id="delayQuoteBtn" value="Quote" /></td>
+          </tr>
+          <tr>
+            <td>Stock Name</td>
+            <td id="stockName">Microsoft Incorpotation</td>
+          </tr>
+           <tr>
+            <td>Prev. Close</td>
+            <td>GBP$ 133.66</td>
+          </tr>
+          <tr>
+            <td>Investor Code</td>
+            <td>
+                <select id="InvestorCode" name="InvestorCode">
+                    <option value="111111111">111111111</option>
+                    <option value="22222222222222">2222222222222</option>
+                </select>
+            </td>
+          </tr>
+          <tr>
+            <td>Order Type</td>
+            <td>
+                <select id="sltType" name="sltType">
+                    <option value="Limit Price Order">Limit Price Order</option>
+                </select>
+            </td>
+          </tr>
+          <tr>
+            <td valign="top">Price</td>
+            <td><input id="price" name="iptPrice" type="text" /></td>
+          </tr>
+          <tr>
+            <td>Pence Eqv.</td>
+            <td>GBP$134.50</td>
+          </tr>
+          <tr>
+            <td valign="top">Quantity</td>
+            <td>
+                <input id="quantity" name="iptQuantity" type="text" value="1" />
+                <a href="#" id="addQuantity"><img src="../../images/trading/add.png" /></a>
+                <a href="#" id="minusQuantity"><img src="../../images/trading/minus.png" /></a>
+                <a href="#" id="heightQuantity"><img src="../../images/trading/highest.png" /></a><br />
+            </td>
+          </tr>
+          <tr>
+            <td>Lot Size</td>
+            <td id="lotSize">1000/lot</td>
+          </tr>
+          <tr>
+            <td>&nbsp;</td>
+            <td><input id="iptDateOrder" name="iptDateOrder" type="checkbox" value="Good-Till-Date-Order" /> Good-Till-Date-Order</td>
+          </tr>
+          <tr class="line">
+            <td valign="top">Expiry Date</td>
+            <td>
+                <div style="position:relative;"><input type="text" id="expiryDate" name="exDate" /></div>
+                <div>(2012-03-08 - 2012-03-12)</div>
+            </td>
+          </tr>
+        </table>
+        <div class="submitArea">
+            <input type="reset" id="iptReset" value="Clear" /> 
+            <input type="submit" id="sbtSubmit" value="Submit" />
+        </div>
+    </div>
+    <script type="text/javascript">
+        //添加order 遮罩提示
+        $("#order").append('<div id="orderMask"></div><div id="orderTips">No account(s) are available for this market</div>');
+        //$("#order").append('<div id="orderMask"></div><div id="orderTips">Oversea market<br/> cannot trade with<br/> Cash Account</div>');
+        $("#orderMask").css("top","50px");
+        //$("#orderMask").css("top","80px");
+        var orderTipsTop=($("#orderMask").outerHeight()-$("#orderTips").outerHeight())/2;
+        $("#orderTips").css("top",orderTipsTop);
+        $("#sbtSubmit").live("click",function(){
+            
+        })
+        $("#orderMask").live("click",function(){
+            $("#orderTips").hide();
+            $("#orderMask").hide();
+        })
+        
+        $("td.method input").click(function(){
+            if($(this).attr("id")=="orderSideBuy"){
+                $("#order").attr("class","blueBox");
+            }else{
+                $("#order").attr("class","redBox");
+            }
+        });
+        
+        var t1=setInterval(function(){
+            $("#stockName,#lotSize").addClass("redFlash");
+        },200);
+        var t2=setInterval(function(){
+            $("#stockName,#lotSize").removeClass("redFlash");
+        },450);
+        setTimeout(function(){
+            clearInterval(t1,t2);
+        },3000);
+        
+        $("#expiryDate").Zebra_DatePicker({});
+    </script>
+    <div id="stockHoldings" class="mainBox">
+    	<div class="title">Stock Holdings for 000701101 Cash HKD<span></span></div>
+        <div class="modules">
+        	<table width="100%">
+              <tr>
+                <td width="60%">Stock</td>
+                <td class="rightAlign"><a href="javascript:void(0);" class="aBtn">On Sell/Qty&nbsp;<em></em></a></td>
+              </tr>
+              <tr class="topBorder">
+                <td>00001-CHEUNG KONG</td>
+                <td class="rightAlign">1,000/3,000</td>
+              </tr>
+              <tr>
+                <td>00005-HSBC HOLDINGS</td>
+                <td class="rightAlign">0/3,000</td>
+              </tr>
+              <tr>
+                <td>00011-HANG SENG BANK</td>
+                <td class="rightAlign">0/25,000</td>
+              </tr>
+              <tr>
+                <td>00023-BANK OF EASIA</td>
+                <td class="rightAlign">0/10,000</td>
+              </tr>
+              <tr>
+                <td>00001-CHEUNG KONG</td>
+                <td class="rightAlign">1,000/3,000</td>
+              </tr>
+              <tr>
+                <td>00005-HSBC HOLDINGS</td>
+                <td class="rightAlign">0/3,000</td>
+              </tr>
+              <tr>
+                <td>00011-HANG SENG BANK</td>
+                <td class="rightAlign">0/25,000</td>
+              </tr>
+              <tr>
+                <td>00023-BANK OF EASIA</td>
+                <td class="rightAlign">0/10,000</td>
+              </tr>
+            </table>
+        </div>
+    </div>
+    <script type="text/javascript">
+		$("#stockHoldings tr:not(:first-child)").mouseenter(function(){
+			$(this).addClass("over");
+		}).mouseleave(function(){
+			$(this).removeClass("over");
+		});
+		$(window).resize(function(e) {
+           var height=$(window).height()-$("#header").outerHeight(true)-$("#footer").outHeight(true)-$("#order").outerHeight(true)-90;
+		   $("#stockHoldings .modules").css({"max-height":height+1+"px"});
+        });
+	</script>
+</div>

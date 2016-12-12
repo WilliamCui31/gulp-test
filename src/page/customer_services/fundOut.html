@@ -1,0 +1,161 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link type="text/css" rel="stylesheet/less" href="../../css/global.less" />
+<link type="text/css" rel="stylesheet/less" href="../../css/main.less" />
+<link type="text/css" rel="stylesheet/less" href="../../css/services.less" />
+<link type="text/css" rel="stylesheet" href="../../css/zebra_datepicker.css" />
+<title>Fund Out</title>
+<style type="text/css">
+
+</style>
+</head>
+
+<body>
+<div id="container">
+  <div id="headerPage"></div>
+  <div id="content" name="fundOut">
+    <div id="left_con">
+        <div id="fundOut" class="mainBox">
+            <div class="title">Voucher Out<span></span></div>
+            <div class="modules">
+            	<div class="left">
+                	<h4 style="margin-top:60px;">Warm Reminder:</h4>
+                    <ul>
+                        <li>2 working days for fund withdrawal request via Web</li>
+                        <li>Withdrawal currency is default as account currency</li>
+                        <li>Please mark the Reference No. after request</li>
+                    </ul>
+                </div>
+                <div class="right">
+                	<form id="voucher" action="fundOut_OK.html" method="post">
+                	<table width="100%">
+                      <tr>
+                        <td width="130" class="rightAlign bold">Widthdrawal Method:</td>
+                        <td>
+                        	<select name="method" id="method">
+                            	<option value="cheque">Cheque</option>
+                                <option value="bankAccount">Bank Account</option>
+                            </select>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td class="rightAlign bold">From Account:</td>
+                        <td>
+                        	<select name="account">
+                            	<option value="700000001-2-01-1 Margin HKD [1]">700000001-2-01-1 Margin HKD [1]</option>
+                                <option value="700000001-2-01-1 Margin HKD [2]">700000001-2-01-1 Margin HKD [2]</option>
+                            </select>
+                        </td>
+                      </tr>
+                      <tr class="hiddenEle">
+                        <td class="rightAlign bold">Bank:</td>
+                        <td><input type="text" name="bank" id="bank" value="HSBC" /></td>
+                      </tr>
+                      <tr class="hiddenEle">
+                        <td class="rightAlign bold">Bank Account NO.:</td>
+                        <td><input type="text" name="bankAccount" id="bankAccount" value="223-2-888888" /></td>
+                      </tr>
+                      <tr>
+                        <td class="rightAlign bold">Account Withdrawal:</td>
+                        <td><input type="text" name="accWithdrawal" id="accWithdrawal" value="HKD"/></td>
+                      </tr>
+                      <tr>
+                        <td valign="top" class="rightAlign bold">Remarks:</td>
+                        <td><textarea name="remarks"></textarea><div>(200 character only)</div></td>
+                      </tr>
+                      <tr>
+                        <td colspan="2" style="padding-top:15px;"><input type="image" id="submitBtn" src="../../images/common/Submit_en.png" style="margin-right:20px;" /> <input type="image" id="clearBtn" src="../../images/service/Clear_en.png" /></td>
+                      </tr>
+                    </table>
+                    </form>
+                </div>
+                <div class="clear"></div>
+            </div>
+        </div>
+    </div>
+    <div id="rightBarPage"></div>
+    <div class="clear"></div>
+  </div>
+  <div id="footerPage"></div>
+</div>
+<div id="confirmPop" class="pop" style="display:none;">
+    <div class="close"><a href="#">X</a></div>
+    <div id="confirmation" class="mainBox">
+        <div class="title">Confirmation<span></span></div>
+        <div class="tips">
+        	Please verify the following details and click the <b>CONFIRM</b> button to proceed. or, Click the <b>CANCEL</b> button to return.
+        </div>
+        <div class="modules">
+        <table width="100%">
+          <tr class="secondaryColor">
+            <td width="160" class="bold">Widthdrawal Method:</td>
+            <td>Cheque</td>
+          </tr>
+          <tr>
+            <td class="bold">From Account:</td>
+            <td>700000001-2-01-1 Margin HKD [1]</td>
+          </tr>
+          <tr class="secondaryColor hiddenEle">
+            <td class="bold">Bank:</td>
+            <td>HSBC</td>
+          </tr>
+          <tr class="hiddenEle">
+            <td class="bold">Bank Account No.:</td>
+            <td>328-8-888888</td>
+          </tr>
+          <tr class="secondaryColor">
+            <td class="bold">Amount Withdrawal:</td>
+            <td><span>HKD $20,000</span></td>
+          </tr>
+          <tr>
+            <td class="bold">Remarks:</td>
+            <td>--</td>
+          </tr>
+        </table>
+        </div>
+        <div class="btnArea">
+        	<input type="button" id="btnCancel" value="CANCEl" /> <input type="button" id="btnConfirm" value="CONFIRM"  />
+        </div>
+        <div class="clear"></div>
+    </div>
+</div>
+<div id="Mask" style="display:none;"></div>
+<script type="text/javascript" src="../../js/less-1.3.0.min.js"></script> 
+<script type="text/javascript" src="../../js/jquery-1.7.2.min.js"></script> 
+<script type="text/javascript" src="../../js/global.js"></script> 
+<script type="text/javascript" src="../../js/zebra_datepicker.js"></script>
+<script type="text/javascript">
+//包含头部,尾部和右边栏
+$("#headerPage").load("../shared/header.html");
+$("#footerPage").load("../shared/footer.html");
+$("#rightBarPage").load("../shared/rightBar.html");
+$.getScript("../../js/global.js");
+$("#method").on("change",function(){
+	var value=$(this).val();
+	if(value=="cheque") $(".hiddenEle").hide("fast");
+	else $(".hiddenEle").show("fast");
+});
+$("#submitBtn").on("click",function(){
+	$("#Mask").fadeTo("fast",0.3);
+	$("#confirmPop").fadeIn("fast");
+	$("#method").change();
+	return false;
+});
+$("#clearBtn").on("click",function(){
+	$("#voucher")[0].reset();
+	$("#method").change();
+	return false;
+});
+$("#Mask,#btnCancel,.close").on("click",function(){
+	$("#confirmPop").fadeOut("fast");
+	$("#Mask").fadeOut("fast");
+	return false;
+});
+$("#btnConfirm").on("click",function(){
+	window.open("fundOut_OK.html","_top");
+});
+</script>
+</body>
+</html>

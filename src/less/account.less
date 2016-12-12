@@ -1,0 +1,80 @@
+@charset "utf-8";
+/* CSS Document */
+
+//定义颜色值
+@main-color:#4F8EC3; //蓝色
+@light-color:#A3D9F5; //浅蓝色
+@gray-color:#EFEFEF;
+@lightGray-color:#F3F7F8;
+@blue-color:#0D69BE;
+@hover-color:#A3D9F5;
+@global-margin-width:10px;
+@global-border:1px solid #7A7A7A;
+
+#total{
+	position:relative;
+	select{
+		margin-top:15px;
+		margin-bottom:5px;
+		border:1px solid #ADADAD;
+	}
+	.money{
+		position:absolute;
+		color:#FFF;
+		text-align:right;
+		font-size:20px;
+		font-weight:bold;
+		padding:15px 15px 8px 20px;
+		background-color:@main-color;
+		right:0px;
+		bottom:0px;
+	}
+}
+#newEipoPop{
+	margin-left:-300px;
+	top:20%;
+	left:50%;
+	width:600px;
+	padding:5px;
+	*padding:25px 5px 5px 5px;
+	#newEIPO{
+		margin-bottom:0px;
+		.modules{
+			border:2px solid @main-color;
+			td{
+				padding-left:5px;
+			}
+		}
+	}
+}
+
+#transaction{
+	position:relative;
+	height:100%;
+	table{
+		table-layout:auto;
+	}
+	input{
+		position:relative;
+		width:92px;
+		padding-left:2px;
+	}
+	b{
+		margin-right:5px;
+	}
+	.para{
+		margin-bottom:20px;
+		td,th{
+			white-space:nowrap;
+			padding:5px 2px;
+		}
+	}
+	a.aDownload:link,a.aDownload:visited{
+		display:block;
+		float:right;
+		width:100px;
+		padding:5px 0px 5px 25px;
+		background:url(../images/common/CSV.png) left center no-repeat;
+		color:@main-color;
+	}
+}

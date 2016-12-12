@@ -1,0 +1,219 @@
+@charset "utf-8";
+/* CSS Document */
+
+@main-color:#0B6ABE; //蓝色
+@global-margin-width:10px;
+@global-border:1px solid #7A7A7A;
+
+*{
+	margin:0px;
+	padding:0px;
+}
+.clear{
+	height:0px;
+	width:0px;
+	clear:both;
+}
+img{
+	border:none;
+}
+html{
+	overflow:hidden;	
+	cursor:default;
+}
+body{
+	text-align:center;
+	background:#FFF url(../images/login/bg_3.png) repeat-x;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:12px;
+	overflow:hidden;
+	#container{
+		width:980px;
+		margin:0 auto;
+		background-color:#FFF;
+		#header{
+			position:relative;
+			height:42px;
+			padding:10px @global-margin-width 0px @global-margin-width;
+			background:#FFF url(../images/login/bg_header.png) repeat-x;
+			#logo{
+				position:absolute;
+				left:10px;
+				top:10px;
+				width:550px;
+				text-align:left;
+			}
+			#language{
+				position:absolute;
+				top:10px;
+				right:10px;
+				width:200px;
+				text-align:right;
+				color:#666;
+				font-size:14px;
+				zoom:1;
+				height:100%;
+				a:link,a:visited{
+					color:#666;
+					text-decoration:none;
+				}
+				a:hover{
+					text-decoration:underline;
+				}
+				a.selected:link,a.selected:visited{
+					color:@main-color;
+				}
+			}
+			.ce{
+				display:block;
+				position:absolute;
+				bottom:-10px;
+				right:10px;
+				color:@main-color;
+				font-weight:bold;
+			}
+		}
+		#banner{
+			margin-top:-0px !important;
+			margin-top:-15px;
+			height:135px;
+			margin:0px 10px;
+			background:url(../images/login/login_banner.png) repeat-x;
+		}
+		#content{
+			position:relative;
+			text-align:left;
+			padding:10px;
+			background:url(../images/login/loginbg.png);
+		}
+		#loginArea{
+			position:absolute;
+			margin-top:20px;
+			width:980px;
+			height:250px;
+			text-align:center;
+		}
+		#login{
+			margin:0 auto;
+			padding:0px;
+			width:340px !important;
+			width:350px;
+			height:220px;
+			font-size:16px;
+			padding:20px 20px 20px 40px;
+			*padding:20px 30px 20px 30px;
+			border:1px solid #E3E4E8;
+			border-radius:5px;
+			td{
+				text-align:left;
+				padding:10px 6px;
+				&.tit{
+					color:#265C8B;
+					font-size:34px;
+					text-align:left;
+					font-weight:bolder;
+					padding-top:0px;
+					padding-left:0px;
+				}
+				&.prompt{
+					color:#F00;
+					font-size:12px;
+					text-align:left;
+				}
+				&.btn{
+					font-size:12px;
+					text-align:right;
+					label{
+						float:left;
+					}
+					a:link,a:visited{
+						display:inline-block;
+						width:76px;
+						height:30px;
+						color:#FFFFFF;
+						font-size:14px;
+						line-height:30px;
+						text-align:center;
+						text-decoration:none;
+						background:url(../images/login/btn_login_b.png) repeat-x;
+					}
+				}
+				&.help{
+					line-height:18px;
+					padding-top:0px;
+				}
+				&.name,&.pwd{
+					input{
+						float:right;
+						width:200px;
+						height:22px;
+						padding-left:5px;
+						line-height:20px;
+						vertical-align:middle;
+						border:@global-border;
+						border-radius:3px;
+					}
+					b{
+						display:inline-block;
+						width:90px;
+						margin-right:2px;
+						text-align:center;
+					}
+				}
+				a:link,a:visited{
+					font-size:12px;
+					color:#425FC3;
+					text-decoration:none;
+				}
+				a:hover{
+					text-decoration:underline;
+				}
+			}
+			.error{
+				color:#F00;
+				font-size:12px;
+			}
+		}
+		#post{
+			margin:10px auto;
+			width:400px;
+			line-height:24px;
+			height:110px;
+			overflow:auto;
+			text-align:left;
+		}
+		#footer{
+			position:relative;
+			text-align:left;
+			color:@main-color;
+			padding:10px;
+			*padding-bottom:5px;
+			padding-top:5px;
+			line-height:18px;
+			overflow:hidden;
+			border-top:5px solid @main-color;
+			#footer_left{
+				float:left;
+			}
+			#footer_right{
+				float:right;
+				text-align:right;
+			}
+			span{
+				color:#333;
+			}
+			a:link,a:visited{
+				color:#999;
+			}
+			a:hover{
+				color:#666;
+			}
+		}
+	}
+}
+
+
+
+
+
+

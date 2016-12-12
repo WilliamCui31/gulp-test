@@ -1,0 +1,56 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link type="text/css" rel="stylesheet/less" href="../../css/global.less" />
+<link type="text/css" rel="stylesheet/less" href="../../css/main.less" />
+<link type="text/css" rel="stylesheet/less" href="../../css/services.less" />
+<title>Account Master</title>
+</head>
+
+<body>
+<div id="container">
+  <div id="headerPage"></div>
+  <div id="content" name="accountMaster">
+    <div id="left_con">
+    	<div id="enSuspended" class="mainBox">
+            <div class="title">One Time Password (OTP) Service Registration<span></span></div>
+            <div class="modules">
+                <h2>Sorry, Your registration for One Time Password(OTP) is now suspended.</h2>
+                <table width="100%">
+                    <tr class="lightBlue">
+                        <td width="25%"><strong>Account:</strong></td>
+                        <td width="75%"  >7000000 Chan Tai Man</td>
+                    </tr>
+                    <tr class="warn">
+                        <td colspan="2">**We are unable to process the registration as you have inputted accumulatively incorrect personal information 3 times, please contact our Customer Service Hotline (852) 2250 8298 for assistance.**
+                        </td>
+                    </tr>
+                </table>
+                <span><a href="#">Back to Personal Information</a></span>
+            </div>
+        </div>
+    </div>
+    <div id="rightBarPage"></div>
+    <div class="clear"></div>
+  </div>
+  <div id="footerPage"></div>
+</div>
+<script type="text/javascript" src="../../js/less-1.3.0.min.js"></script> 
+<script type="text/javascript" src="../../js/jquery-1.7.2.min.js"></script> 
+<script type="text/javascript" src="../../js/global.js"></script> 
+<script type="text/javascript" src="../../js/zebra_datepicker.js"></script> 
+<script type="text/javascript">
+//包含头部,尾部和右边栏
+$("#headerPage").load("../shared/header.html");
+$("#footerPage").load("../shared/footer.html");
+$("#rightBarPage").load("../shared/rightBar.html");
+$("#enSuspendedPage").load("enSuspended.html");
+$.getScript("../../js/global.js");
+
+//调用datepicker日历
+$("#dateStart").Zebra_DatePicker({
+});
+</script>
+</body>
+</html>

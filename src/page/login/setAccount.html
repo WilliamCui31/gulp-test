@@ -1,0 +1,69 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link type="text/css" rel="stylesheet/less" href="../../css/global.less" />
+<link type="text/css" rel="stylesheet/less" href="../../css/loginFlow.less" />
+<link type="text/css" rel="stylesheet/less" href="../../css/main.less" />
+<title>申銀萬國-登錄</title>
+</head>
+
+<body>
+<div id="container">
+    <div id="loginHeaderPage"></div>
+    <div id="content" index="2">
+    	<form id="frmAccount" name="frmAccount" action="#" method="post">
+        <div id="first">
+            <div class="tip">
+                <div class="tip-tit">温馨提示：</div>
+                <ul>
+                    <li>新等入帳號不能與原有登入密碼相同</li>
+                    <li>登入帳號必須為8-12位英文及、或數字</li>
+                    <li>登入帳號不可包含特殊字元，如符號和空格 登入帳號不可包含特殊字元，如符號和空格</li>
+                    <li>登入帳號沒有大小寫之分</li>
+                </ul>
+            </div>
+            <div class="modify">
+            	<div class="account">
+                    <div class="text">
+                        閣下可從此處自選登入帳號。如圖下欲維持<span>原有登入帳號（<strong style="color:#000;">201939111</strong>）</span>，請不需要輸入任何資料，按【下頁】越過此功能。請注意：如一經成功更改，新登入帳號將成為閣下之永久登入帳號。
+                    </div>
+                    <div class="input">
+                        <div class="name">新人帳號（如選用）</div>
+                        <div class="value"><input id="name" name="name" type="text" /></div>
+                        <div id="accountError">你輸入的帳戶已經存在</div>
+                        <div class="clear"></div>
+                    </div>
+                    <div class="direction">
+                        <input type="image" src="../../images/common/Next_cn.png" id="sbtNext" value="下一頁" />
+                    </div>
+                </div>
+            </div>
+            <div class="clear"></div>
+        </div>
+        </form>
+    </div>
+    <div id="footerPage"></div>
+</div>
+<script type="text/javascript" src="../../js/less-1.3.0.min.js"></script>
+<script type="text/javascript" src="../../js/jquery-1.7.2.min.js"></script>
+<script type="text/javascript" src="../../js/global.js"></script>
+<script type="text/javascript">
+	
+	//包含头部和尾部
+	$("#loginHeaderPage").load("../shared/loginHeader.html");
+	$("#footerPage").load("../shared/footer.html");
+	$.getScript("../../js/global.js");
+	
+	//页面逻辑
+	$("#name").focus();
+	$("#btnPrev").click(function(){
+		window.open("SFC.html","_top");
+	})
+	$("#sbtNext").click(function(){
+		window.open("setPassword.html","_top");
+		return false;
+	})
+</script>
+</body>
+</html>

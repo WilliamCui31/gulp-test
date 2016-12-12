@@ -1,0 +1,68 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link type="text/css" rel="stylesheet/less" href="../../css/global.less" />
+<link type="text/css" rel="stylesheet/less" href="../../css/loginFlow.less" />
+<link type="text/css" rel="stylesheet/less" href="../../css/main.less" />
+<title>申銀萬國-登錄</title>
+</head>
+
+<body>
+<div id="container">
+    <div id="loginHeaderPage"></div>
+    <div id="content" index="4">
+    	<form id="frmDisclaimer" name="frmDisclaimer" action="#" method="post">
+    		<div id="disclaimer">
+                <div class="agreement-tit">
+                    <div class="tit-left">免責聲明</div>
+                    <div class="tit-right">香港交易时间：2012-06-25 10:23:27</div>
+                    <div class="clear"></div>
+                </div>
+                <div class="agreement-box">
+                    <p>本人明白證券價格起伏無常，任何個別證券的變動也隨時有不斷下挫的可能性，假若情況更甚，其價值更有可能變得毫無價值。買賣證券，必定也有虧多盈少的風險存在。</p>
+
+  <p>假如本人發現被竊用登入密碼，會盡速通知貴公司，並且願意承擔一切與此相關的風險後果，假如貴公司要求本人對與上述後果相關之損失、訟費、賠償、開支或申索作出彌償，本人願意應要辦妥。</p>
+
+  <p>本人同意審閱給予貴公司的指示或給予貴公司未完成的指示。除本人有相反特定指示給予貴公司外，本人知悉一切買賣指示只能於給予該指示當天有效，而該等指示在當天交易所正式交易日結束之時失效。為免產生疑問，本人知悉限價盤將仍然生效，直到指示執行完成、指示取消或本人於限價盤指明的到期日到期。本人也知悉，限價盤的指令價格或數量，不會被任何公司行動、利益權利或任何股票停牌而調整。本人並謹此承諾登記資料真確無誤，本人亦願意在貴公司要求下承擔有關彌償責任，包括貴公司可能因依賴本人透過本網站或與本網站有關事宜而給予貴公司的資訊而招致的任何損失、訟費、賠償、開支或申索。</p>
+  <p>注意：以上中文譯本謹供參考，如與英文原文有任何差異，一概以英文版本為準。</p>
+                </div>
+                <div class="agreement-check" style="text-align:center;">
+                    <label><input type="checkbox" name="chkAgree" id="chkAgree"/> 我已經閱讀上述條款</label>
+                </div>
+                <div class="agree"><input type="image" src="../../images/common/Agree_cn.png" id="sbtAgree" name="sbtAgree" value="同 意"  disabled="disabled" /><input type="image" src="../../images/common/Disagree_cn.png" id="btnDisagree" name="btnDisagree" value="不同意" /></div>
+            </div>
+        </form>
+    </div>
+    <div id="footerPage"></div>
+</div>
+<script type="text/javascript" src="../../js/less-1.3.0.min.js"></script>
+<script type="text/javascript" src="../../js/jquery-1.7.2.min.js"></script>
+<script type="text/javascript" src="../../js/global.js"></script>
+<script type="text/javascript">
+
+	//包含头部和尾部
+	$("#loginHeaderPage").load("../shared/loginHeader.html");
+	$("#footerPage").load("../shared/footer.html");
+	$.getScript("../../js/global.js");
+	
+	//页面逻辑
+	$("#chkAgree").click(function(){
+		if($(this).attr("checked")=="checked"){
+			$("#sbtAgree").removeAttr("disabled");
+		}else{
+			$("#sbtAgree").attr("disabled","disabled");
+		}
+	})
+	$("#sbtAgree").click(function(){
+		window.open("../account/accountSummary.html","_top");
+		return false;
+	})
+	$("#btnDisagree").click(function(){
+		if(confirm("你确定要退出吗？")){
+			window.open("login.html","_top");
+		}
+	})
+</script>
+</body>
+</html>

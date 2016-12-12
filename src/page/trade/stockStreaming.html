@@ -1,0 +1,815 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link type="text/css" rel="stylesheet/less" href="../../css/global.less" />
+<link type="text/css" rel="stylesheet/less" href="../../css/main.less" />
+<link type="text/css" rel="stylesheet/less" href="../../css/trade.less" />
+<link type="text/css" rel="stylesheet" href="../../css/jquery.jscrollpane.css" media="all" />
+<script type="text/javascript" src="../../js/jquery-1.7.2.min.js"></script>
+<script type="text/javascript" src="../../js/jquery.mousewheel.js"></script>
+<script type="text/javascript" src="../../js/jquery.jscrollpane.min.js"></script>
+<script type="text/javascript" src="../../js/global.js"></script>
+<title>Stock</title>
+</head>
+
+<body>
+<div id="container">
+<div id="headerPage"></div>
+<div id="content" name="stock">
+    <div id="orderPage"></div>
+    <div id="right_con">
+    	<div id="streaming" class="mainBox" style="display:none;">
+        	<div class="title">Streaming<span></span></div>
+        	<p></p>
+            <p>内容区域</p>
+            <p>内容区域</p>
+            <p>内容区域</p>
+            <p>内容区域</p>
+            <p>内容区域</p>
+            <p>内容区域</p>
+            <p>内容区域</p>
+            <p>内容区域</p>
+            <p>内容区域</p>
+            <p>内容区域</p>
+            <p>内容区域</p>
+            <p></p>
+            <div id="appletServer">
+        		<form id="frmServer" name="frmServer" action="javascript:void(0)" method="post">
+                	<select id="server" name="server">
+                        <option value="gotoolsps2.2goasp.com">gotoolsps2.2goasp.com</option>
+                        <option value="mdfps2.2goasp.com">mdfps2.2goasp.com</option>
+                        <option value="202.68.202.50">202.68.202.50</option>
+                    </select>
+            	</form>
+			</div>
+            <div id="shk">
+            	<a href="http://202.64.120.205/ismnew/setsession.php?userid=2gotrade&password=jchan&language=E" target="_blank"><img src="../../images/trading/SHKFinancialData.gif" /></a>
+            </div>
+        </div>
+        <div id="traderStyle" class="mainBox">
+        	<div class="title">Trader<span></span></div>
+            <div class="floatTips" style="left:75px;top:8px;">Stock not found!<span>&#9670;<b>&#9670;</b></span></div>
+            <div class="pre_area switch">
+                <a href="javascript:void(0);">Full</a>|
+                <a href="javascript:void(0);" class="selected">Brief</a>|
+                <a href="javascript:void(0);">Stock History</a>
+            </div>
+            <h3>
+                <div class="hl">
+                    <input type="text" id="" name="" />
+                    <span class="traderName">
+                        <strong style="display:inline-block;">HENDERSON LAND</strong>
+                        <span title="[Equity | Stamp Duty Exemption | Shortsell | non-Intraday Short Sell | Equity | Stamp Duty Exemption]">
+                        	[Equity | Stamp Duty Exemption | Shortsell | non-Intraday Short Sell | Equity | Stamp Duty Exemption]
+                        </span>
+                    </span>
+                </div>
+                <div class="hr connectState">Connected!</div>
+            </h3>
+            <div class="traderCon modules brief">
+                <div class="traConOne">
+                   <div class="bidAsk">
+                        <div class="bid">
+                            <h3><span class="hl">86.100</span><span class="hr">Buy</span></h3>
+                            <table width="100%">
+                              <tr>
+                                <td width="40%">109.90</td>
+                                <td width="15%" class="rightAlign">9</td>
+                                <td width="45%"class="rightAlign">60400</td>
+                              </tr>
+                              <tr class="secondaryColor">
+                                <td>109.80</td>
+                                <td class="rightAlign">11</td>
+                                <td class="rightAlign">154400</td>
+                              </tr>
+                              <tr>
+                                <td>109.70</td>
+                                <td class="rightAlign">43</td>
+                                <td class="rightAlign">113600</td>
+                              </tr>
+                              <tr class="secondaryColor">
+                                <td>109.60</td>
+                                <td class="rightAlign">11</td>
+                                <td class="rightAlign">86000</td>
+                              </tr>
+                              <tr>
+                                <td>109.50</td>
+                                <td class="rightAlign">15</td>
+                                <td class="rightAlign">107200</td>
+                              </tr>
+                            </table>
+                        </div>
+                        <div class="ask">
+                            <h3><span class="hl">86.200</span><span class="hr">Sell</span></h3>
+                            <table width="100%">
+                              <tr>
+                                <td width="40%">110.10</td>
+                                <td width="15%" class="rightAlign">11</td>
+                                <td width="45%" class="rightAlign">35200</td>
+                              </tr>
+                              <tr class="secondaryColor">
+                                <td>110.20</td>
+                                <td class="rightAlign">9</td>
+                                <td class="rightAlign">122400</td>
+                              </tr>
+                              <tr>
+                                <td>110.30</td>
+                                <td class="rightAlign">12</td>
+                                <td class="rightAlign">58400</td>
+                              </tr>
+                              <tr class="secondaryColor">
+                                <td>110.40</td>
+                                <td class="rightAlign">2</td>
+                                <td class="rightAlign">17200</td>
+                              </tr>
+                              <tr>
+                                <td>110.50</td>
+                                <td class="rightAlign">7</td>
+                                <td class="rightAlign">32000</td>
+                              </tr>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="broker">
+                        <div class="brokerL">
+                            <ul>
+                                <li><em>4377</em></li>
+                                <li class="gray"><em>3449</em></li>
+                                <li>1473</li>
+                                <li class="gray">1474</li>
+                                <li>4377</li>
+                            </ul>
+                            <ul>
+                                <li class="gray">1473</li>
+                                <li>1474</li>
+                                <li class="gray">4377</li>
+                                <li>3449</li>
+                                <li class="gray"><span>-2s</span></li>
+                            </ul>
+                            <ul>
+                                <li>0690</li>
+                                <li class="gray">3449</li>
+                                <li>1473</li>
+                                <li class="gray"><span>-3s</span></li>
+                                <li>4377</li>
+                            </ul>
+                            <ul class="noBorder">
+                                <li class="gray">1473</li>
+                                <li><span>-4s</span></li>
+                                <li class="gray"><em>4377</em></li>
+                                <li><span>+15s</span></li>
+                                <li class="gray">1473</li>
+                            </ul>
+                        </div>
+                        <div class="brokerR">
+                            <ul>
+                                <li>4377</li>
+                                <li class="gray">3449</li>
+                                <li><em>1473</em></li>
+                                <li class="gray"><span>+1s</span></li>
+                                <li>1474</li>
+                            </ul>
+                            <ul>
+                                <li class="gray">1473</li>
+                                <li>1474</li>
+                                <li class="gray">4377</li>
+                                <li>3449</li>
+                                <li class="gray">1474</li>
+                            </ul>
+                            <ul>
+                                <li>0690</li>
+                                <li class="gray">3449</li>
+                                <li>1473</li>
+                                <li class="gray">4377</li>
+                                <li>3449</li>
+                            </ul>
+                            <ul class="noBorder">
+                                <li class="gray">1473</li>     
+                                <li>4377</li>
+                                <li class="gray">3449</li>
+                                <li>1473</li>
+                                <li class="gray">1474</li>
+                            </ul>
+                        </div>
+                    </div> 
+                </div>
+                <div class="traConTwo">
+                    <div class="details">
+                    	 <h3>Details</h3>
+                         <div class="trend">
+                         	<div class="rise">
+                            	<span class="trendIcon"><img src="../../images/trading/rise.png" />HKD</span> 
+                                <span class="trendData">155.600</span>
+                                <span class="changeData">+0.75<br />+0.27%</span>
+                            </div>
+                            <div class="fall" style="display:none;">
+                            	<span class="trendIcon"><img src="../../images/trading/fall.png" />HKD</span> 
+                                <span class="trendData">155.600</span>
+                                <span class="changeData">-0.75<br />-0.27%</span>
+                            </div>
+                         </div>
+                         <table width="100%">
+                              <tr>
+                                <td width="26%">Day High</td>
+                                <td width="22%">93.650</td>
+                                <td width="22%" class="leftBorder">Open</td>
+                                <td width="30%">93.450</td>
+                              </tr>
+                              <tr class="secondaryColor">
+                                <td>Day Low</td>
+                                <td>92.800</td>
+                                <td class="leftBorder">Close</td>
+                                <td>92.900</td>
+                              </tr>
+                              <tr>
+                                <td>Volume</td>
+                                <td>5,099</td>
+                                <td class="leftBorder">T'over</td>
+                                <td>475,399,441</td>
+                              </tr>
+                              <tr class="secondaryColor">
+                                <td>Lot Size</td>
+                                <td>1000</td>
+                                <td class="leftBorder">PE Ratio</td>
+                                <td>15.20</td>
+                              </tr>
+                              <tr>
+                                <td>52 wk high</td>
+                                <td><span class="rise">93.900</span></td>
+                                <td class="leftBorder">Yield</td>
+                                <td>2.23</td>
+                              </tr>
+                              <tr class="secondaryColor">
+                                <td>52 wk low</td>
+                                <td><span class="rise">66.250</span></td>
+                                <td class="leftBorder">EPS</td>
+                                <td>6.128</td>
+                              </tr>
+                              <tr>
+                                <td>IEP/IEV</td>
+                                <td>0.00/0</td>
+                                <td class="leftBorder">NAV</td>
+                                <td>86.354</td>
+                              </tr>
+                              <tr>
+                                <td>Lot Size</td>
+                                <td>1000</td>
+                                <td class="leftBorder">&nbsp;</td>
+                                <td>&nbsp;</td>
+                              </tr>
+                            </table>
+                    </div>
+                </div>
+                <div class="traConThr">
+                	<div class="transaction">
+                        <h3>Transaction</h3>
+                        <div class="dataCon">
+                            <table width="100%">
+                              <tr>
+                                <td width="40%">15：59</td>
+                                <td width="22%" class="rightAlign">1K</td>
+                                <td width="38%" class="rightAlign">110.1</td>
+                              </tr>
+                              <tr class="secondaryColor">
+                                <td>15：59</td>
+                                <td class="rightAlign">1K</td>
+                                <td class="rightAlign">109.9</td>
+                              </tr>
+                              <tr>
+                                <td>15：59</td>
+                                <td class="rightAlign">1K</td>
+                                <td class="rightAlign">110.1</td>
+                              </tr>
+                              <tr class="secondaryColor">
+                                <td>15：59</td>
+                                <td class="rightAlign">1K</td>
+                                <td class="rightAlign">109.9</td>
+                              </tr>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="related">
+                        <h3>Related</h3>
+                        <div class="dataCon">
+                            <table width="100%">
+                              <tr>
+                                <td>4556</td>
+                                <td>4559</td>
+                                <td>4595</td>
+                              </tr>
+                              <tr class="secondaryColor">
+                                <td>12193</td>
+                                <td>14279</td>
+                                <td>14950</td>
+                              </tr>
+                              <tr>
+                                <td>15817</td>
+                                <td>15979</td>
+                                <td>16596</td>
+                              </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <p><span class="updateTime">Update Time:<span>08-13-2013-16:01:04</span></span></p>
+        </div>
+        <div id="traderStyle" class="mainBox">
+        	<div class="title">Trader<span></span></div>
+            <div class="floatTips" style="display:none;left:75px;top:8px;">Stock not found!<span>&#9670;<b>&#9670;</b></span></div>
+            <div class="pre_area switch">
+                <a href="javascript:void(0);" class="selected">Full</a>|
+                <a href="javascript:void(0);">Brief</a>|
+                <a href="javascript:void(0);">Stock History</a>
+            </div>
+            <h3>
+                <div class="hl">
+                    <input type="text" id="" name="" />
+                    <span class="traderName">
+                        <strong style="display:inline-block;">HENDERSON LAND</strong>
+                        <span title="[Equity | Stamp Duty Exemption | Shortsell | non-Intraday Short Sell | Equity | Stamp Duty Exemption]">
+                        	[Equity | Stamp Duty Exemption | Shortsell | non-Intraday Short Sell | Equity | Stamp Duty Exemption]
+                        </span>
+                    </span>
+                </div>
+                <div class="hr"></div>
+            </h3>
+            <div class="traderCon modules">
+                <div class="traConOne">
+                   <div class="bidAsk">
+                        <div class="bid">
+                            <h3><span class="hl">86.100</span><span class="hr">Buy</span></h3>
+                            <table width="100%">
+                              <tr>
+                                <td width="40%">109.90</td>
+                                <td width="15%" class="rightAlign">9</td>
+                                <td width="45%"class="rightAlign">60400</td>
+                              </tr>
+                              <tr class="secondaryColor">
+                                <td>109.80</td>
+                                <td class="rightAlign">11</td>
+                                <td class="rightAlign">154400</td>
+                              </tr>
+                              <tr>
+                                <td>109.70</td>
+                                <td class="rightAlign">43</td>
+                                <td class="rightAlign">113600</td>
+                              </tr>
+                              <tr class="secondaryColor">
+                                <td>109.60</td>
+                                <td class="rightAlign">11</td>
+                                <td class="rightAlign">86000</td>
+                              </tr>
+                              <tr>
+                                <td>109.50</td>
+                                <td class="rightAlign">15</td>
+                                <td class="rightAlign">107200</td>
+                              </tr>
+                              <tr class="secondaryColor">
+                                <td width="40%">109.90</td>
+                                <td width="30%" class="rightAlign">5</td>
+                                <td width="30%"class="rightAlign">81200</td>
+                              </tr>
+                              <tr>
+                                <td>109.80</td>
+                                <td class="rightAlign">10</td>
+                                <td class="rightAlign">64800</td>
+                              </tr>
+                              <tr class="secondaryColor">
+                                <td>109.70</td>
+                                <td class="rightAlign">14</td>
+                                <td class="rightAlign">98400</td>
+                              </tr>
+                              <tr>
+                                <td>109.60</td>
+                                <td class="rightAlign">14</td>
+                                <td class="rightAlign">144800</td>
+                              </tr>
+                              <tr class="secondaryColor">
+                                <td>109.50</td>
+                                <td class="rightAlign">9</td>
+                                <td class="rightAlign">115200</td>
+                              </tr>
+                            </table>
+                        </div>
+                        <div class="ask">
+                            <h3><span class="hl">86.200</span><span class="hr">Sell</span></h3>
+                            <table width="100%">
+                              <tr>
+                                <td width="40%">110.10</td>
+                                <td width="15%" class="rightAlign">11</td>
+                                <td width="45%" class="rightAlign">35200</td>
+                              </tr>
+                              <tr class="secondaryColor">
+                                <td>110.20</td>
+                                <td class="rightAlign">9</td>
+                                <td class="rightAlign">122400</td>
+                              </tr>
+                              <tr>
+                                <td>110.30</td>
+                                <td class="rightAlign">12</td>
+                                <td class="rightAlign">58400</td>
+                              </tr>
+                              <tr class="secondaryColor">
+                                <td>110.40</td>
+                                <td class="rightAlign">2</td>
+                                <td class="rightAlign">17200</td>
+                              </tr>
+                              <tr>
+                                <td>110.50</td>
+                                <td class="rightAlign">7</td>
+                                <td class="rightAlign">32000</td>
+                              </tr>
+                              <tr class="secondaryColor">
+                                <td width="40%">110.10</td>
+                                <td width="30%" class="rightAlign">8</td>
+                                <td width="30%" class="rightAlign">81600</td>
+                              </tr>
+                              <tr>
+                                <td>110.20</td>
+                                <td class="rightAlign">33</td>
+                                <td class="rightAlign">290400</td>
+                              </tr>
+                              <tr class="secondaryColor">
+                                <td>110.30</td>
+                                <td class="rightAlign">14</td>
+                                <td class="rightAlign">203200</td>
+                              </tr>
+                              <tr>
+                                <td>110.40</td>
+                                <td class="rightAlign">35</td>
+                                <td class="rightAlign">217600</td>
+                              </tr>
+                              <tr class="secondaryColor">
+                                <td>110.50</td>
+                                <td class="rightAlign">16</td>
+                                <td class="rightAlign">153200</td>
+                              </tr>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="broker">
+                        <div class="brokerL">
+                            <ul>
+                                <li><em>4377</em></li>
+                                <li class="gray"><em>3449</em></li>
+                                <li>1473</li>
+                                <li class="gray">1474</li>
+                                <li>4377</li>
+                                <li class="gray"><span>-1s</span></li>
+                                <li>1473</li>
+                                <li class="gray">1197</li>
+                                <li>4377</li>
+                                <li class="gray">3449</li>
+                            </ul>
+                            <ul>
+                                <li class="gray">1473</li>
+                                <li>1474</li>
+                                <li class="gray">4377</li>
+                                <li>3449</li>
+                                <li class="gray"><span>-2s</span></li>
+                                <li>1474</li>
+                                <li class="gray">4377</li>
+                                <li>1498</li>
+                                <li class="gray">1473</li>
+                                <li>1474</li>
+                            </ul>
+                            <ul>
+                                <li>0690</li>
+                                <li class="gray">3449</li>
+                                <li>1473</li>
+                                <li class="gray"><span>-3s</span></li>
+                                <li>4377</li>
+                                <li class="gray">3449</li>
+                                <li>1473</li>
+                                <li class="gray">1474</li>
+                                <li>4377</li>
+                                <li class="gray">3449</li>
+                            </ul>
+                            <ul class="noBorder">
+                                <li class="gray">1473</li>
+                                <li><span>-4s</span></li>
+                                <li class="gray"><em>4377</em></li>
+                                <li><span>+15s</span></li>
+                                <li class="gray">1473</li>
+                                <li>1474</li>
+                                <li class="gray">4377</li>
+                                <li>3449</li>
+                                <li class="gray">1473</li>
+                                <li>1474</li>
+
+                            </ul>
+                        </div>
+                        <div class="brokerR">
+                            <ul>
+                                <li>4377</li>
+                                <li class="gray">3449</li>
+                                <li><em>1473</em></li>
+                                <li class="gray"><span>+1s</span></li>
+                                <li>1474</li>
+                                <li class="gray"><span>+2s</span></li>                                    
+                                <li>1473</li>
+                                <li class="gray">1197</li>
+                                <li><span>+3s</span></li>
+                                <li class="gray">3449</li>
+                            </ul>
+                            <ul>
+                                <li class="gray">1473</li>
+                                <li>1474</li>
+                                <li class="gray">4377</li>
+                                <li>3449</li>
+                                <li class="gray">1474</li>
+                                <li>4377</li>
+                                <li class="gray">1498</li>
+                                <li><span>+4s</span></li>
+                                <li class="gray">1473</li>
+                                <li>1474</li>
+                            </ul>
+                            <ul>
+                                <li>0690</li>
+                                <li class="gray">3449</li>
+                                <li>1473</li>
+                                <li class="gray">4377</li>
+                                <li>3449</li>
+                                <li class="gray">1473</li>
+                                <li>1474</li>
+                                <li class="gray"><span>+5s</span></li>
+                                <li>4377</li>
+                                <li class="gray">3449</li>
+                            </ul>
+                            <ul class="noBorder">
+                                <li class="gray">1473</li>     
+                                <li>4377</li>
+                                <li class="gray">3449</li>
+                                <li>1473</li>
+                                <li class="gray">1474</li>
+                                <li>4377</li>
+                                <li class="gray">3449</li>
+                                <li>1473</li>
+                                <li class="gray"><span>+12s</span></li>
+                                <li>1474</li>
+                            </ul>
+                        </div>
+                    </div> 
+                </div>
+                <div class="traConTwo">
+                    <div class="details">
+                    	 <h3>Details</h3>
+                         <div class="trend">
+                         	<div class="rise">
+                            	<span class="trendIcon"><img src="../../images/trading/rise.png" />HKD</span> 
+                                <span class="trendData">155.600</span>
+                                <span class="changeData">+0.75<br />+0.27%</span>
+                            </div>
+                            <div class="fall" style="display:none;">
+                            	<span class="trendIcon"><img src="../../images/trading/fall.png" />HKD</span> 
+                                <span class="trendData">155.600</span>
+                                <span class="changeData">-0.75<br />-0.27%</span>
+                            </div>
+                         </div>
+                         <table width="100%">
+                              <tr>
+                                <td width="26%">Day High</td>
+                                <td width="22%">93.650</td>
+                                <td width="22%" class="leftBorder">Open</td>
+                                <td width="30%">93.450</td>
+                              </tr>
+                              <tr class="secondaryColor">
+                                <td>Day Low</td>
+                                <td>92.800</td>
+                                <td class="leftBorder">Close</td>
+                                <td>92.900</td>
+                              </tr>
+                              <tr>
+                                <td>Vol</td>
+                                <td>5,099</td>
+                                <td class="leftBorder">T'over</td>
+                                <td>475,399,441</td>
+                              </tr>
+                              <tr class="secondaryColor">
+                                <td>Lot Size</td>
+                                <td>1000</td>
+                                <td class="leftBorder">PE Ratio</td>
+                                <td>15.20</td>
+                              </tr>
+                              <tr>
+                                <td>52 wk high</td>
+                                <td><span class="rise">93.900</span></td>
+                                <td class="leftBorder">Yield</td>
+                                <td>2.23</td>
+                              </tr>
+                              <tr class="secondaryColor">
+                                <td>52 wk low</td>
+                                <td><span class="rise">66.250</span></td>
+                                <td class="leftBorder">EPS</td>
+                                <td>6.128</td>
+                              </tr>
+                              <tr>
+                                <td>IEP/IEV</td>
+                                <td>0.00/0</td>
+                                <td class="leftBorder">NAV</td>
+                                <td>86.354</td>
+                              </tr>
+                            </table>
+                    </div>
+                    <div class="index">
+                    	<h3>Index</h3>
+                        <table width="100%">
+                          <tr>
+                            <td width="20%">HSI</td>
+                            <td width="30%">22541.13</td>
+                            <td width="25%"><span class="rise">+269.85</span></td>
+                            <td width="25%"><span class="rise">+1.01%</span></td>
+                          </tr>
+                          <tr class="secondaryColor">
+                            <td>HSIF</td>
+                            <td>22554.00</td>
+                            <td><span class="rise">+5.00</span></td>
+                            <td><span class="rise">+0.25%</span></td>
+                          </tr>                      
+                          <tr>
+                            <td>GEM</td>
+                            <td>414.35</td>
+                            <td><span class="rise">+0.75</span></td>
+                            <td><span class="rise">+0.10%</span></td>
+                          </tr>
+                          <tr class="secondaryColor">
+                            <td>HKL</td>
+                            <td>27013.22</td>
+                            <td><span class="rise">+327.85</span></td>
+                            <td><span class="rise">+4.00%</span></td>
+                          </tr>
+                          <tr>
+                            <td>HSCE</td>
+                            <td>10185.55</td>
+                            <td><span class="rise">+257.51</span></td>
+                            <td><span class="rise">+3.74%</span></td>
+                          </tr>
+                          <tr class="secondaryColor">
+                            <td>HSCC</td>
+                            <td>4347.78</td>
+                            <td><span class="rise">+47.10</span></td>
+                            <td><span class="rise">+2.66%</span></td>
+                          </tr>
+                          <tr>
+                            <td>T'over</td>
+                            <td>51.2B</td>
+                            <td></td>
+                          </tr>
+                        </table>
+                    </div>
+                </div>
+                <div class="traConThr">
+                	<div class="transaction">
+                        <h3>Transaction</h3>
+                        <div class="dataCon">
+                            <table width="100%">
+                              <tr>
+                                <td width="40%">15：59</td>
+                                <td width="22%" class="rightAlign">1K</td>
+                                <td width="38%" class="rightAlign">110.1</td>
+                              </tr>
+                              <tr class="secondaryColor">
+                                <td>15：59</td>
+                                <td class="rightAlign">1K</td>
+                                <td class="rightAlign">109.9</td>
+                              </tr>
+                              <tr>
+                                <td>15：59</td>
+                                <td class="rightAlign">1K</td>
+                                <td class="rightAlign">110.1</td>
+                              </tr>
+                              <tr class="secondaryColor">
+                                <td>15：59</td>
+                                <td class="rightAlign">1K</td>
+                                <td class="rightAlign">109.9</td>
+                              </tr>
+                              <tr>
+                                <td>15：59</td>
+                                <td class="rightAlign">2K</td>
+                                <td class="rightAlign">110.1</td>
+                              </tr>
+                              <tr class="secondaryColor">
+                                <td>15：59</td>
+                                <td class="rightAlign">6K</td>
+                                <td class="rightAlign">109.9</td>
+                              </tr>
+                              <tr>
+                                <td>15：59</td>
+                                <td class="rightAlign">2K</td>
+                                <td class="rightAlign">110.1</td>
+                              </tr>
+                              <tr class="secondaryColor">
+                                <td>15：59</td>
+                                <td class="rightAlign">3K</td>
+                                <td class="rightAlign">109.9</td>
+                              </tr>
+                              <tr>
+                                <td>15：59</td>
+                                <td class="rightAlign">1K</td>
+                                <td class="rightAlign">110.1</td>
+                              </tr>
+                              <tr class="secondaryColor">
+                                <td>15：59</td>
+                                <td class="rightAlign">10K</td>
+                                <td class="rightAlign">109.9</td>
+                              </tr>
+                              <tr>
+                                <td>15：59</td>
+                                <td class="rightAlign">1K</td>
+                                <td class="rightAlign">110.1</td>
+                              </tr>
+                              <tr class="secondaryColor">
+                                <td>15：59</td>
+                                <td class="rightAlign">10K</td>
+                                <td class="rightAlign">109.9</td>
+                              </tr>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="related">
+                        <h3>Related</h3>
+                        <div class="dataCon">
+                            <table width="100%">
+                              <tr>
+                                <td>4556</td>
+                                <td>4559</td>
+                                <td>4595</td>
+                              </tr>
+                              <tr class="secondaryColor">
+                                <td>12193</td>
+                                <td>14279</td>
+                                <td>14950</td>
+                              </tr>
+                              <tr>
+                                <td>15817</td>
+                                <td>15979</td>
+                                <td>16596</td>
+                              </tr>
+                              <tr class="secondaryColor">
+                                <td>4556</td>
+                                <td>4559</td>
+                                <td>4595</td>
+                              </tr>
+                              <tr>
+                                <td>15817</td>
+                                <td>15979</td>
+                                <td>16596</td>
+                              </tr>
+                              <tr class="secondaryColor">
+                                <td>4556</td>
+                                <td>4559</td>
+                                <td>4595</td>
+                              </tr>
+                              <tr>
+                                <td>15817</td>
+                                <td>15979</td>
+                                <td>16596</td>
+                              </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <p><span class="updateTime">Update Time:<span>08-13-2013-16:01:04</span></span></p>
+        </div>
+        <div id="simplifed_orderBookPage"></div>
+        <div id="newsPage"></div>
+        <div id="portfolioPage"></div>
+        <div id="riskPage"></div>
+    </div>
+    <div class="clear"></div>
+    <div id="nailBarPage"></div>
+</div>
+<div id="footerPage"></div>
+</div>
+<div id="Mask" style="display:none;"></div>
+<div id="confirmPopPage"></div>
+<script type="text/javascript" src="../../js/less-1.3.0.min.js"></script>
+<script type="text/javascript" src="../../js/orderConfirm.js"></script>
+<script type="text/javascript">
+//包含文件
+$("#headerPage").load("../shared/header.html");
+$("#footerPage").load("../shared/footer.html");
+$("#orderPage").load("../shared/order.html");
+$("#confirmPopPage").load("../shared/confirmPop.html");
+$("#stockNotePage").load("../shared/stockNote.html");
+$("#nailBarPage").load("../shared/nailBar.html");
+//$("#newsPage").load("../shared/news.html");
+//$("#portfolioPage").load("../shared/portfolio.html");
+$("#riskPage").load("../shared/risk.html");
+$("#simplifed_orderBookPage").load("../shared/simplifed_orderBook.html");
+$.getScript("../../js/global.js");
+$.getScript("../../js/orderConfirm.js");
+
+var t1=setTimeout(function(){
+	$("#traderStyle .traderCon .hl").css("color","#000");
+},200);
+var t2=setTimeout(function(){
+	$("#traderStyle .traderCon .hl").css("color","#FFF");
+},300);
+</script>
+<script type="text/javascript" src="../../js/zebra_datepicker.js"></script>
+</body>
+</html>
