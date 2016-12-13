@@ -17,7 +17,7 @@ table {
 }
 html{
 	overflow-y:auto;
-	overflow-x:hidden;	
+	overflow-x:hidden;
 	cursor:default;
 }
 body{
@@ -96,7 +96,7 @@ body{
 }
 #nav a:hover,#nav a.selected:link,#nav a.selected:visited{
 	color:#FFF;
-	background:url(../images/login/lmb.png) no-repeat;
+	background:url(../img/login/lmb.png) no-repeat;
 }
 #content{
 	position:relative;
@@ -142,16 +142,16 @@ body{
 }
 #login .login_top{
 	height:10px;
-	background:url(../images/login/login_top.png) bottom no-repeat;
+	background:url(../img/login/login_top.png) bottom no-repeat;
 }
 #login .login_bottom{
 	height:11px;
-	background:url(../images/login/login_bottom.png) top no-repeat;
+	background:url(../img/login/login_bottom.png) top no-repeat;
 }
 #login .login_con{
 	padding-bottom:10px;
 	background-color:#FFF;
-	background:url(../images/login/login_bg.png) repeat-y;
+	background:url(../img/login/login_bg.png) repeat-y;
 }
 #login .company_name{
 	height:75px;
@@ -159,7 +159,7 @@ body{
 	padding-top:10px;
 }
 #login .company_name img{
-	
+
 }
 #login .company_name span.ce{
 	display:block;
@@ -188,10 +188,10 @@ body{
 	color:#333;
 }
 #username{
-	background:url(../images/login/account.png) 3px center no-repeat;
+	background:url(../img/login/account.png) 3px center no-repeat;
 }
 #password,#pwdTxt{
-	background:url(../images/login/pwd.png) 3px center no-repeat;
+	background:url(../img/login/pwd.png) 3px center no-repeat;
 }
 #subLogin{
 	width:80px;
@@ -215,7 +215,7 @@ body{
 #company_logo{
 	height:40px;
 	margin-top:45px;
-	background:url(../images/login/2Go_logon.png) 90% no-repeat;
+	background:url(../img/login/2Go_logon.png) 90% no-repeat;
 	padding-bottom:5px;
 }
 #error{
@@ -272,15 +272,15 @@ body{
 }
 #createAcc .createAcc_top{
 	height:10px;
-	background:url(../images/login/createAcc_top.png) bottom no-repeat;
+	background:url(../img/login/createAcc_top.png) bottom no-repeat;
 }
 #createAcc .createAcc_bottom{
 	height:10px;
-	background:url(../images/login/createAcc_bottom.png) top no-repeat;
+	background:url(../img/login/createAcc_bottom.png) top no-repeat;
 }
 #createAcc .createAcc_con{
 	padding:20px 50px 50px 50px;
-	background:url(../images/login/createAcc_bg.png) repeat-y;
+	background:url(../img/login/createAcc_bg.png) repeat-y;
 }
 #createAcc .company_name{
 	text-align:left;
@@ -311,7 +311,7 @@ body{
 	float:right;
 	margin-top:45px;
 	padding-left:30px;
-	background:url(../images/common/line.png) left center no-repeat;
+	background:url(../img/common/line.png) left center no-repeat;
 }
 #createAcc .info img{
 	margin:-40px 0px 20px 40px;

@@ -3,46 +3,10 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="apple-mobile-web-app-capable" content="yes" />
-<link type="text/css" rel="stylesheet/less" href="../../css/global.less" />
-<link type="text/css" rel="stylesheet/less" href="../../css/main.less" />
-<link type="text/css" rel="stylesheet/less" href="../../css/account.less" />
-<script type="text/javascript" src="../../js/jquery-1.7.2.min.js"></script>
-<script type="text/javascript">
-function browserRedirect() { 
-	var sUserAgent= navigator.userAgent.toLowerCase(); 
-	var bIsIpad= sUserAgent.match(/ipad/i) == "ipad"; 
-	var bIsIphoneOs= sUserAgent.match(/iphone os/i) == "iphone os"; 
-	var bIsMidp= sUserAgent.match(/midp/i) == "midp"; 
-	var bIsUc7= sUserAgent.match(/rv:1.2.3.4/i) == "rv:1.2.3.4"; 
-	var bIsUc= sUserAgent.match(/ucweb/i) == "ucweb"; 
-	var bIsAndroid= sUserAgent.match(/android/i) == "android"; 
-	var bIsCE= sUserAgent.match(/windows ce/i) == "windows ce"; 
-	var bIsWM= sUserAgent.match(/windows mobile/i) == "windows mobile"; 
-	
-	if (bIsIpad) { 
-		//window.location.href= 'http://url/mobile.html'; 
-		alert("你用的是iPad！");
-	}else if(bIsIphoneOs){
-		alert("你用的是iPhone！");
-	}else if(bIsMidp){
-		alert("你用的是Midp！");
-	}else if(bIsUc7){
-		alert("你用的是UC7！");
-	}else if(bIsUc){
-		alert("你用的是UC！");
-	}else if(bIsAndroid){
-		alert("你用的是Android手持设备！");
-	}else if(bIsCE){
-		alert("你用的是Windows CE！");
-	}else if(bIsWM){
-		alert("你用的是Windows Mobile！");
-	}else { 
-		//window.location= 'http://url/pc.html'; 
-		alert("你用的是个人电脑！");
-	} 
-} 
-//browserRedirect(); 
-</script>
+<link rel="stylesheet" href="../../css/global.css?rev=@@hash" />
+<link rel="stylesheet" href="../../css/main.css?rev=@@hash" />
+<link rel="stylesheet" href="../../css/account.css?rev=@@hash" />
+<script type="text/javascript" src="../../js/jquery-1.7.2.min.js?rev=@@hash"></script>
 <title>Account Summary</title>
 </head>
 
@@ -64,7 +28,7 @@ function browserRedirect() {
             <div id="summary" class="mainBox">
                 <div class="title">Summary<span></span></div>
                 <div class="modules">
-                	<h4>帳面結餘（HKD-港幣）&nbsp;<img src="../../images/common/info.png" /></h4>
+                	<h4>帳面結餘（HKD-港幣）&nbsp;<img src="../../img/common/info.png" /></h4>
                     <table width="200">
                       <tr>
                         <td>帳面結餘</td>
@@ -89,7 +53,7 @@ function browserRedirect() {
                       <tr>
                         <td>HKD</td>
                         <td>Hong Kong Dollars</td>
-                        <td><img src="../../images/common/info.png" /></td>
+                        <td><img src="../../img/common/info.png" /></td>
                         <td>&nbsp;</td>
                         <td class="rightAlign">$<span>100,000,00</span></td>
                         <td>&nbsp;</td>
@@ -98,7 +62,7 @@ function browserRedirect() {
                       <tr class="secondaryColor">
                         <td>RMB</td>
                         <td>Chinese Yuan</td>
-                        <td><img src="../../images/common/info.png" /></td>
+                        <td><img src="../../img/common/info.png" /></td>
                         <td>&nbsp;</td>
                         <td class="rightAlign">$<span>10,000,00</span></td>
                         <td>&nbsp;</td>
@@ -107,7 +71,7 @@ function browserRedirect() {
                       <tr>
                         <td>JPY</td>
                         <td>Japanese Yen</td>
-                        <td><img src="../../images/common/info.png" /></td>
+                        <td><img src="../../img/common/info.png" /></td>
                         <td>&nbsp;</td>
                         <td class="rightAlign">$<span>100,000,00</span></td>
                         <td>&nbsp;</td>
@@ -116,7 +80,7 @@ function browserRedirect() {
                       <tr class="secondaryColor">
                         <td>USD</td>
                         <td>United States Dollars</td>
-                        <td><img src="../../images/common/info.png" /></td>
+                        <td><img src="../../img/common/info.png" /></td>
                         <td>&nbsp;</td>
                         <td class="rightAlign">$<span>2,000,00</span></td>
                         <td>&nbsp;</td>
@@ -189,7 +153,7 @@ function browserRedirect() {
                         <td>&nbsp;</td>
                         <td class="rightAlign"><span>$0.00</span></td>
                       </tr>
-                    </table> 
+                    </table>
                 </div>
                 <div class="modules">
                     <h5>Shenzhen "B" Shares - Equity - HKD - SYWG Investor Code</h5>
@@ -230,7 +194,7 @@ function browserRedirect() {
                         <td class="rightAlign"><span>$0.00</span></td>
                       </tr>
                     </table>
-                </div> 
+                </div>
                 <div class="modules">
                     <h5>USA - Equity - USD</h5>
                     <table class="date" width="100%">
@@ -293,17 +257,17 @@ function browserRedirect() {
               <tr class="secondaryColor">
                 <td>737</td>
                 <td>æ³“æˆŠç•¯</td>
-                <td class="centerAlign"><a href="#" class="aApplication"><img src="../../images/trading/IconOnly_Apply.png" alt="申請" title="申請" /></a></td>
+                <td class="centerAlign"><a href="#" class="aApplication"><img src="../../img/trading/IconOnly_Apply.png" alt="申請" title="申請" /></a></td>
               </tr>
               <tr>
                 <td>3883</td>
                 <td>æœ‹ä¿�ç•ˆæµš</td>
-                <td class="centerAlign"><a href="#" class="aApplication"><img src="../../images/trading/IconOnly_Apply.png" alt="申請" title="申請" /></a></td>
+                <td class="centerAlign"><a href="#" class="aApplication"><img src="../../img/trading/IconOnly_Apply.png" alt="申請" title="申請" /></a></td>
               </tr>
               <tr class="secondaryColor">
                 <td>80737</td>
                 <td>ç¥�èž�ä½›</td>
-                <td class="centerAlign"><a href="#" class="aApplication"><img src="../../images/trading/IconOnly_Apply.png" alt="申請" title="申請" /></a></td>
+                <td class="centerAlign"><a href="#" class="aApplication"><img src="../../img/trading/IconOnly_Apply.png" alt="申請" title="申請" /></a></td>
               </tr>
             </table>
         </div>

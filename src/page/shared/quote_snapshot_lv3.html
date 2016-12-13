@@ -133,7 +133,7 @@ $(function(){
 	for(var i=5;i<10;i++){
 		$("#buyTd").find("tr").eq(i).hide();
 		$("#sellTd").find("tr").eq(i).hide();
-		$("#hidden").css("background-image","url(../../images/trading/spread.png)");
+		$("#hidden").css("background-image","url(../../img/trading/spread.png)");
 	}
 });
 $("#hidden").toggle(
@@ -141,14 +141,14 @@ $("#hidden").toggle(
 		for(var i=5;i<10;i++){
 			$("#buyTd").find("tr").eq(i).hide();
 			$("#sellTd").find("tr").eq(i).hide();
-			$("#hidden").css("background-image","url(../../images/trading/spread.png)");
+			$("#hidden").css("background-image","url(../../img/trading/spread.png)");
 		}
 	},
 	function(){
 		for(var i=5;i<10;i++){
 			$("#buyTd").find("tr").eq(i).show();
 			$("#sellTd").find("tr").eq(i).show();
-			$("#hidden").css("background-image","url(../../images/trading/hidden.png)");
+			$("#hidden").css("background-image","url(../../img/trading/hidden.png)");
 		}
 	}
 )

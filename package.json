@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "http://"
+    "url": "https://github.com/WilliamCui31/gulp-test"
   },
   "keywords": [
     "gulp"
@@ -16,10 +16,21 @@
   "author": "William Cui",
   "license": "ISC",
   "devDependencies": {
+    "browser-sync": "^2.18.5",
     "gulp": "^3.9.1",
     "gulp-autoprefixer": "^3.1.1",
+    "gulp-cache": "^0.4.5",
     "gulp-clean-css": "^2.2.1",
+    "gulp-concat": "^2.6.1",
+    "gulp-htmlmin": "^3.0.0",
+    "gulp-imagemin": "^3.1.1",
     "gulp-less": "^3.3.0",
-    "gulp-make-css-url-version": "^0.0.13"
+    "gulp-livereload": "^3.8.1",
+    "gulp-make-css-url-version": "^0.0.13",
+    "gulp-rev-append": "^0.1.7",
+    "gulp-sourcemaps": "^1.9.1",
+    "gulp-uglify": "^2.0.0",
+    "html-minifier": "^3.2.3",
+    "imagemin-pngquant": "^5.0.0"
   }
 }

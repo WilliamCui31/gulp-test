@@ -11,7 +11,6 @@ $(document).ready(function(){
 	},1);*/
 	if($("#content_center").html()==null) $("#content").wrapInner("<div id='content_center' />");
 	if($("#nail_bar").html()!=null) $("#header_center").append($("#nail_bar"));
-	less.watch();
 })
 
 
@@ -72,7 +71,7 @@ $.extend({
 	},
 	//判断设备是不是ipad
 	isIpad:function(){
-		var sUserAgent= navigator.userAgent.toLowerCase(); 
+		var sUserAgent= navigator.userAgent.toLowerCase();
 		var iPad= sUserAgent.match(/ipad/i) == "ipad";
 		return iPad;
 	},
@@ -154,7 +153,7 @@ $.extend({
 	language:function(){
 		var language="en";
 		if($("#language").find("a").eq(0).hasClass("selected")){ language="zh";}
-		else if($("#language").find("a").eq(1).hasClass("selected")){ language="cn";}; 
+		else if($("#language").find("a").eq(1).hasClass("selected")){ language="cn";};
 		return language;
 	},
 	//判断ie版本
