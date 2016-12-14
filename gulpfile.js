@@ -1,78 +1,78 @@
-var gulp = require('gulp');
-var less = require('gulp-less');
-var autoprefixer = require('gulp-autoprefixer');
-var cssmin = require('gulp-clean-css');
-var uglify = require('gulp-uglify');
-var concat = require('gulp-concat');
-var imagemin = require('gulp-imagemin');
-var pngquant = require('imagemin-pngquant');
-var cache = require('gulp-cache');
-var htmlmin = require('gulp-htmlmin');
-var rev = require('gulp-rev-append');
-// var livereload = require('gulp-livereload');
-var browserSync = require('browser-sync').create();
-var reload = browserSync.reload;
+// 载入插件
+var gulp = require('gulp'),
+    less = require('gulp-less'),
+    autoprefixer = require('gulp-autoprefixer'),
+    cssmin = require('gulp-clean-css'),
+    jshint = require('gulp-jshint'),
+    uglify = require('gulp-uglify'),
+    imagemin = require('gulp-imagemin'),
+    rename = require('gulp-rename'),
+    clean = require('gulp-clean'),
+    concat = require('gulp-concat'),
+    notify = require('gulp-notify'),
+    cache = require('gulp-cache'),
+    htmlmin = require('gulp-htmlmin');
 
-var sourcemaps = require('gulp-sourcemaps');
+    var browserSync = require('browser-sync').create();
+    var reload = browserSync.reload;
 
-gulp.task('css',function(){
-  gulp.src('src/css/**/*.css', { base: 'src' })
-      .pipe(autoprefixer({
-        browsers: ['last 2 versions', 'Android >= 4.0']
-      }))
-      .pipe(cssmin({
-        advanced: true,
-        compatibility: '*',
-        keepBreaks: false,
-        keepSpecialComments: '*'
-      }))
-      .pipe(gulp.dest('dist'))
-      .pipe(reload({stream: true}));
+// less
+gulp.task('less', function() {
+  return gulp.src('src/css/*.less')
+    .pipe(less())
+    .pipe(autoprefixer('last 2 version', 'safari 5', 'ie 8', 'ie 9', 'opera 12.1', 'ios 6', 'android 4'))
+    // .pipe(gulp.dest('dist/css'))
+    // .pipe(rename({ suffix: '.min' }))
+    .pipe(cssmin({
+      advanced: true,
+      compatibility: '*',
+      keepBreaks: false,
+      keepSpecialComments: '*'
+    }))
+    .pipe(gulp.dest('dist/css'))
+    .pipe(reload({stream: true}));
 });
 
-gulp.task('less',function(){
-  gulp.src('src/less/**/*.css', { base: 'src/less' })
-      .pipe(sourcemaps.init())
-      .pipe(less())
-      .pipe(autoprefixer({
-        browsers: ['last 2 versions', 'Android >= 4.0']
-      }))
-      .pipe(cssmin({
-        advanced: true,
-        compatibility: '*',
-        keepBreaks: false,
-        keepSpecialComments: '*'
-      }))
-      .pipe(sourcemaps.write())
-      .pipe(gulp.dest('dist/css'))
-      .pipe(reload({stream: true}));
+// less
+gulp.task('css', function() {
+  return gulp.src('src/css/*.css')
+    .pipe(autoprefixer('last 2 version', 'safari 5', 'ie 8', 'ie 9', 'opera 12.1', 'ios 6', 'android 4'))
+    // .pipe(gulp.dest('dist/css'))
+    // .pipe(rename({ suffix: '.min' }))
+    .pipe(cssmin({
+      advanced: true,
+      compatibility: '*',
+      keepBreaks: false,
+      keepSpecialComments: '*'
+    }))
+    .pipe(gulp.dest('dist/css'))
+    .pipe(reload({stream: true}));
 });
 
-gulp.task('js',function(){
-  return gulp.src('src/js/**/*.js',{ base: 'src' })
-      .pipe(uglify())
-      .pipe(gulp.dest('dist'))
-      .pipe(reload({stream: true}));
+// 脚本
+gulp.task('scripts', function() {
+  return gulp.src('src/js/**/*.js')
+    // .pipe(rename({ suffix: '.min' }))
+    .pipe(uglify())
+    .pipe(gulp.dest('dist/js'))
+    // .pipe(concat('main.js'))
+    // .pipe(gulp.dest('dist/js'))
+    // .pipe(rename({ suffix: '.min' }))
+    // .pipe(gulp.dest('dist/js'))
+    .pipe(reload({stream: true}));
 });
 
-gulp.task('image',function(){
-  gulp.src('src/img/**/*.{png,jpg,gif,ico}')
-      .pipe(cache(imagemin({
-        optimizationLevel: 5,
-        progressive: true,
-        interlaced: true,
-        multipass: true,
-        svgoPlugins: [{removeViewBox: false}],
-        use: [pngquant()]
-      })))
-      .pipe(gulp.dest('dist/img'))
-      .pipe(reload({stream: true}));
+// 图片
+gulp.task('images', function() {
+  return gulp.src('src/img/**/*')
+    .pipe(cache(imagemin({ optimizationLevel: 3, progressive: true, interlaced: true })))
+    .pipe(gulp.dest('dist/img'))
+    .pipe(reload({stream: true}));
 });
 
-gulp.task('html',function(){
-  gulp.src('src/page/**/*.html')
-      .pipe(rev())
-      .pipe(cache(htmlmin({
+gulp.task('pages',function(){
+  return gulp.src('src/page/**/*.html')
+      .pipe(htmlmin({
         removeComments: true,
         collapseWhitespace: true,
         collapseBooleanAttributes: true,
@@ -81,36 +81,32 @@ gulp.task('html',function(){
         removeStyleLinkTypeAttributes: true,
         minifyJS: true,
         minifyCSS: true
-      })))
+      }))
       .pipe(gulp.dest('dist/page'))
       .pipe(reload({stream: true}));
 });
 
-// 合并js文件
-// gulp.task('concatTest',function(){
-//   return gulp.src('src/js/**/*.js')
-//       .pipe(concat('all.js'))
-//       .pipe(uglify())
-//       .pipe(gulp.dest('dist/js'))
-//       .pipe(reload({stream: true}));
-// });
+// 清理
+gulp.task('clean',function(){
+  return gulp.src(['dist/css','dist/img','dist/js','dist/page'],{ read: false })
+      .pipe(clean());
+})
 
-// livereload 刷新页面
-// gulp.task('watch',function(){
-//   livereload.listen();
-//   gulp.watch(['src/css/**/*.css','src/less/**/*.css'],['css','less']);
-// });
+gulp.task('serve',['clean'],function(){
 
-gulp.task('serve',['css','less','js','image','html'],function(){
   browserSync.init({
     server: {
       baseDir: './'
     }
   });
-  gulp.watch(['src/css/**/*.css','src/less/**/*.css'],['css','less']);
-  gulp.watch('src/js/**/*.js',['js']);
-  gulp.watch('src/img/**/*.{png,jpg,gif,ico}',['image']);
-  gulp.watch('src/page/**/*.html',['html']);
+
+  gulp.run('less','css','scripts','images','pages');
+
+  gulp.watch('src/css/*.less',['less']);
+  gulp.watch('src/css/*.css',['css']);
+  gulp.watch('src/js/**/*.js',['scripts']);
+  gulp.watch('src/img/**/*.{png,jpg,gif,ico}',['images']);
+  gulp.watch('src/page/**/*.html',['pages']);
 });
 
 gulp.task('default',['serve']);
